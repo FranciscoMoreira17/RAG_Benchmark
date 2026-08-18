@@ -1,20 +1,16 @@
 ###############################################################################
-# RAG Benchmark — Infraestrutura Completa
+# RAG Benchmark - Infraestrutura Completa
 #
 # Serviços:
 #   qdrant     → Vector DB (collections separadas por framework)
 #   phoenix    → Tracing + avaliação (UI: http://localhost:6006)
 #   ollama     → LLM juiz local para RAGAS/RAGChecker
 #
-# Collections criadas pelo init-qdrant:
-#   - benchmark_langchain
-#   - benchmark_llamaindex
-#   - benchmark_graphrag
 ###############################################################################
 
 services:
 
-  # ── Qdrant — Vector Store ────────────────────────────────────
+  # Qdrant - Vector Store ────────────────────────────────────
   qdrant:
     image: qdrant/qdrant:latest
     container_name: qdrant
@@ -32,7 +28,6 @@ services:
       timeout: 3s
       retries: 10
 
-  # ── Init Qdrant — Cria as collections (corre uma vez) ───────
   init-qdrant:
     image: curlimages/curl:latest
     container_name: init-qdrant
@@ -63,7 +58,7 @@ services:
         echo ""
         echo "=== Pronto ==="
 
-  # ── Arize Phoenix — Tracing + Avaliação ─────────────────────
+  # Arize Phoenix - Tracing + Avaliação ─────────────────────
   phoenix:
     image: arizephoenix/phoenix:latest
     container_name: phoenix
@@ -76,7 +71,7 @@ services:
       - phoenix_data:/data
     restart: unless-stopped
 
-  # ── Ollama — LLM Juiz Local ─────────────────────────────────
+  # Ollama - LLM Juiz Local ─────────────────────────────────
   ollama:
     image: ollama/ollama:latest
     container_name: ollama
