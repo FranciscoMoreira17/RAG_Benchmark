@@ -1,0 +1,118 @@
+{
+  "condicao": "llamaindex",
+  "framework": "llamaindex",
+  "repeticao": 1,
+  "config": {
+    "gen_model": "llama-3.3-70b-versatile",
+    "gen_provider": "groq",
+    "gen_temperature": 0,
+    "extract_model": "llama-3.1-8b-instant",
+    "judge_model": "gemini/gemini-2.5-flash",
+    "embedding": "intfloat/multilingual-e5-small",
+    "embedding_dim": 384,
+    "parser": "docling+tesseract-por",
+    "tokenizer_orcamento": "tiktoken/cl100k_base",
+    "context_budget_tokens": 6000,
+    "vector_db": "qdrant",
+    "collection": "benchmark_llamaindex",
+    "top_k": 5
+  },
+  "n_queries": 256,
+  "n_erros": 0,
+  "orcamento_contexto": {
+    "tokens_media": 2787.4333333333334,
+    "tokens_desvio": 1050.2103498294468,
+    "tokens_min": 1262,
+    "tokens_max": 4516,
+    "blocos_media": 4.99609375
+  },
+  "tempos": {
+    "retrieval_medio_s": 0.07452250365167856,
+    "geracao_media_s": 0.14048426505178213,
+    "total_medio_s": 0.215743956156075
+  },
+  "retrieval": {
+    "precision@5": 0.14928385416666667,
+    "recall@5": 0.65625,
+    "mrr": 0.5774088541666667,
+    "ndcg@5": 0.5972931116891094,
+    "hit_rate@5": 0.65625,
+    "n_queries": 256,
+    "ic95_recall": [
+      0.6016,
+      0.7148
+    ],
+    "ic95_hit": [
+      0.6016,
+      0.7148
+    ]
+  },
+  "retrieval_estratificado": {
+    "tipo=identificador": {
+      "precision@5": 0.1407172995780591,
+      "recall@5": 0.6413502109704642,
+      "mrr": 0.5590014064697609,
+      "ndcg@5": 0.5797765257063797,
+      "hit_rate@5": 0.6413502109704642,
+      "n_queries": 237,
+      "ic95_recall": [
+        0.5781,
+        0.7046
+      ],
+      "ic95_hit": [
+        0.5781,
+        0.7046
+      ]
+    },
+    "tipo=semantica": {
+      "precision@5": 0.256140350877193,
+      "recall@5": 0.8421052631578947,
+      "mrr": 0.8070175438596491,
+      "ndcg@5": 0.8157894736842105,
+      "hit_rate@5": 0.8421052631578947,
+      "n_queries": 19,
+      "ic95_recall": [
+        0.6842,
+        1.0
+      ],
+      "ic95_hit": [
+        0.6842,
+        1.0
+      ]
+    }
+  },
+  "juiz_llm": {
+    "faithfulness": 0.7931034482758621,
+    "answer_relevancy": 0.9137931034482759,
+    "correctness": 0.8275862068965517,
+    "_detalhe": {
+      "faithfulness": {
+        "media": 0.7931034482758621,
+        "desvio": 0.3600105692727776,
+        "n": 29
+      },
+      "answer_relevancy": {
+        "media": 0.9137931034482759,
+        "desvio": 0.18886984741557453,
+        "n": 29
+      },
+      "correctness": {
+        "media": 0.8275862068965517,
+        "desvio": 0.37773969483114905,
+        "n": 29
+      },
+      "n_falhas_parse": 1
+    },
+    "_juiz": "openai/gpt-oss-120b"
+  },
+  "classicas": {
+    "bleu": 0.18963444299984078,
+    "rouge_l": 0.37060314837326186,
+    "rouge_l_ic95": [
+      0.3188,
+      0.4225
+    ],
+    "_nota": "Sobreposição lexical com referência única. Anexo, não métrica principal.",
+    "bertscore_f1": 0.7535421252250671
+  }
+}

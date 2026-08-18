@@ -1,0 +1,81 @@
+{
+  "condicao": "estrutural-enriquecido_grafo",
+  "framework": "estrutural",
+  "repeticao": 1,
+  "config": {
+    "gen_model": "llama-3.3-70b-versatile",
+    "gen_provider": "groq",
+    "gen_temperature": 0,
+    "extract_model": "llama-3.1-8b-instant",
+    "judge_model": "gemini/gemini-2.5-flash",
+    "embedding": "intfloat/multilingual-e5-small",
+    "embedding_dim": 384,
+    "parser": "docling+tesseract-por",
+    "tokenizer_orcamento": "tiktoken/cl100k_base",
+    "context_budget_tokens": 6000,
+    "vector_db": "qdrant",
+    "collection": "benchmark_estrutural",
+    "top_k": 5,
+    "variante": "enriquecido_grafo",
+    "grafo": true,
+    "retrieval": "hibrido-rrf"
+  },
+  "n_queries": 256,
+  "n_erros": 0,
+  "orcamento_contexto": {},
+  "tempos": {
+    "retrieval_medio_s": 0.10461068339645863,
+    "geracao_media_s": 0.0,
+    "total_medio_s": 0.10462934710085392
+  },
+  "retrieval": {
+    "precision@5": 0.2633463541666667,
+    "recall@5": 0.94921875,
+    "mrr": 0.8660807291666667,
+    "ndcg@5": 0.8871890698153381,
+    "hit_rate@5": 0.94921875,
+    "n_queries": 256,
+    "ic95_recall": [
+      0.9219,
+      0.9766
+    ],
+    "ic95_hit": [
+      0.9219,
+      0.9766
+    ]
+  },
+  "retrieval_estratificado": {
+    "tipo=identificador": {
+      "precision@5": 0.24599156118143461,
+      "recall@5": 0.9451476793248945,
+      "mrr": 0.8629395218002813,
+      "ndcg@5": 0.8838467913854392,
+      "hit_rate@5": 0.9451476793248945,
+      "n_queries": 237,
+      "ic95_recall": [
+        0.9156,
+        0.9747
+      ],
+      "ic95_hit": [
+        0.9156,
+        0.9747
+      ]
+    },
+    "tipo=semantica": {
+      "precision@5": 0.47982456140350876,
+      "recall@5": 1.0,
+      "mrr": 0.9052631578947369,
+      "ndcg@5": 0.9288795954935504,
+      "hit_rate@5": 1.0,
+      "n_queries": 19,
+      "ic95_recall": [
+        1.0,
+        1.0
+      ],
+      "ic95_hit": [
+        1.0,
+        1.0
+      ]
+    }
+  }
+}

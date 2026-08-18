@@ -1,0 +1,80 @@
+{
+  "condicao": "hibrido-esparso",
+  "framework": "hibrido",
+  "repeticao": 1,
+  "config": {
+    "gen_model": "llama-3.3-70b-versatile",
+    "gen_provider": "groq",
+    "gen_temperature": 0,
+    "extract_model": "llama-3.1-8b-instant",
+    "judge_model": "gemini/gemini-2.5-flash",
+    "embedding": "intfloat/multilingual-e5-small",
+    "embedding_dim": 384,
+    "parser": "docling+tesseract-por",
+    "tokenizer_orcamento": "tiktoken/cl100k_base",
+    "context_budget_tokens": 6000,
+    "vector_db": "qdrant",
+    "collection": "benchmark_hibrido",
+    "top_k": 5,
+    "variante": "esparso",
+    "modo": "esparso"
+  },
+  "n_queries": 256,
+  "n_erros": 0,
+  "orcamento_contexto": {},
+  "tempos": {
+    "retrieval_medio_s": 0.10739249270409346,
+    "geracao_media_s": 0.0,
+    "total_medio_s": 0.10746073070913553
+  },
+  "retrieval": {
+    "precision@5": 0.21321614583333334,
+    "recall@5": 0.9140625,
+    "mrr": 0.8526041666666667,
+    "ndcg@5": 0.8680323484531156,
+    "hit_rate@5": 0.9140625,
+    "n_queries": 256,
+    "ic95_recall": [
+      0.8789,
+      0.9453
+    ],
+    "ic95_hit": [
+      0.8789,
+      0.9453
+    ]
+  },
+  "retrieval_estratificado": {
+    "tipo=identificador": {
+      "precision@5": 0.2076652601969058,
+      "recall@5": 0.9113924050632911,
+      "mrr": 0.8534458509142053,
+      "ndcg@5": 0.8679011062857037,
+      "hit_rate@5": 0.9113924050632911,
+      "n_queries": 237,
+      "ic95_recall": [
+        0.8734,
+        0.9451
+      ],
+      "ic95_hit": [
+        0.8734,
+        0.9451
+      ]
+    },
+    "tipo=semantica": {
+      "precision@5": 0.2824561403508772,
+      "recall@5": 0.9473684210526315,
+      "mrr": 0.8421052631578947,
+      "ndcg@5": 0.8696694218045173,
+      "hit_rate@5": 0.9473684210526315,
+      "n_queries": 19,
+      "ic95_recall": [
+        0.8421,
+        1.0
+      ],
+      "ic95_hit": [
+        0.8421,
+        1.0
+      ]
+    }
+  }
+}
