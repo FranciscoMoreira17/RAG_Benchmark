@@ -1,0 +1,9 @@
+{
+  "fingerprint": "163ff1c14e2cec91",
+  "config": {
+    "pipeline": "langchain-recursive",
+    "chunk_size": 1000,
+    "overlap": 200
+  },
+  "quando": "2026-07-27T22:54:49.202862+00:00"
+}

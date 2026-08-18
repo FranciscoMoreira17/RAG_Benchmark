@@ -1,0 +1,8 @@
+{
+  "fingerprint": "f7955d29a37dae65",
+  "config": {
+    "pipeline": "dre-hibrido",
+    "bm25": "Qdrant/bm25"
+  },
+  "quando": "2026-07-27T17:12:34.742648+00:00"
+}

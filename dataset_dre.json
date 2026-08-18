@@ -1,0 +1,2999 @@
+[
+  {
+    "id": "ID_AVI_000",
+    "query": "Que aviso do Diário da República trata de: Abertura de procedimento concursal comum para um posto de trabalho na categoria e carreira de assistente técnico?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Abertura de procedimento concursal comum para um posto de trabalho na categoria e carreira de assistente técnico",
+    "documentos_esperados": [
+      "4472238"
+    ],
+    "ancora": "Aviso 6188/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_001",
+    "query": "Identifique o aviso que tem como objeto: Exoneração de secretária do gabinete de apoio à vereação.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Exoneração de secretária do gabinete de apoio à vereação",
+    "documentos_esperados": [
+      "4476209"
+    ],
+    "ancora": "Aviso 6329/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_002",
+    "query": "Qual o aviso relativo a: Projeto de regulamento do campo de férias municipal - consulta pública?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Projeto de regulamento do campo de férias municipal - consulta pública",
+    "documentos_esperados": [
+      "4472261"
+    ],
+    "ancora": "Aviso 6208/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_003",
+    "query": "Que aviso do Diário da República trata de: Admissão/exclusão dos candidatos do procedimento concursal de assistente operacional - Setor de Gestão de Energia e Viaturas?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Admissão/exclusão dos candidatos do procedimento concursal de assistente operacional - Setor de Gestão de Energia e Viaturas",
+    "documentos_esperados": [
+      "4476235"
+    ],
+    "ancora": "Aviso 6352/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_DES_004",
+    "query": "Identifique o despacho que tem como objeto: Nomeação de secretária da Escola de Ciências.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Nomeação de secretária da Escola de Ciências",
+    "documentos_esperados": [
+      "4476186"
+    ],
+    "ancora": "Despacho 3572/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_005",
+    "query": "Qual o aviso relativo a: Prorrogação do prazo de elaboração da quarta alteração da primeira revisão do Plano Diretor Municipal?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Prorrogação do prazo de elaboração da quarta alteração da primeira revisão do Plano Diretor Municipal",
+    "documentos_esperados": [
+      "4474214"
+    ],
+    "ancora": "Aviso 6267/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_DES_006",
+    "query": "Que despacho do Diário da República trata de: Regulamento de Avaliação do Desempenho do Pessoal Docente?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Regulamento de Avaliação do Desempenho do Pessoal Docente",
+    "documentos_esperados": [
+      "4478204"
+    ],
+    "ancora": "Despacho 3605/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_007",
+    "query": "Identifique o aviso que tem como objeto: Homologação de lista de ordenação final - assistentes operacionais, motoristas.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Homologação de lista de ordenação final - assistentes operacionais, motoristas",
+    "documentos_esperados": [
+      "4474198"
+    ],
+    "ancora": "Aviso 6254/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_008",
+    "query": "Qual o aviso relativo a: Procedimento concursal com vista ao provimento de diretor de Serviços de Apoio Especializado, Recursos Documentais e Relações Públicas?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Procedimento concursal com vista ao provimento de diretor de Serviços de Apoio Especializado, Recursos Documentais e Relações Públicas",
+    "documentos_esperados": [
+      "4478273"
+    ],
+    "ancora": "Aviso 6455/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_009",
+    "query": "Que aviso do Diário da República trata de: Provimento no cargo de chefe de divisão municipal?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Provimento no cargo de chefe de divisão municipal",
+    "documentos_esperados": [
+      "4476208"
+    ],
+    "ancora": "Aviso 6328/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_010",
+    "query": "Identifique o aviso que tem como objeto: Lista de aposentados e reformados a partir de 1 de maio de 2021.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Lista de aposentados e reformados a partir de 1 de maio de 2021",
+    "documentos_esperados": [
+      "4478157"
+    ],
+    "ancora": "Aviso 6387/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_011",
+    "query": "Qual o aviso relativo a: Concessão de licença sem remuneração à técnica superior Marina Gregória Mendes de Sousa?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Concessão de licença sem remuneração à técnica superior Marina Gregória Mendes de Sousa",
+    "documentos_esperados": [
+      "4478252"
+    ],
+    "ancora": "Aviso 6435/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_012",
+    "query": "Que aviso do Diário da República trata de: Conclusão do período experimental de trabalhador integrado na carreira e categoria de assistente técnico?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Conclusão do período experimental de trabalhador integrado na carreira e categoria de assistente técnico",
+    "documentos_esperados": [
+      "4472275"
+    ],
+    "ancora": "Aviso 6220/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_013",
+    "query": "Identifique o aviso que tem como objeto: Abertura de procedimento concursal prévio à eleição do diretor.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Abertura de procedimento concursal prévio à eleição do diretor",
+    "documentos_esperados": [
+      "4476164"
+    ],
+    "ancora": "Aviso 6307/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_014",
+    "query": "Qual o aviso relativo a: Revisão do Plano de Emergência de Proteção Civil de Melgaço?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Revisão do Plano de Emergência de Proteção Civil de Melgaço",
+    "documentos_esperados": [
+      "4476225"
+    ],
+    "ancora": "Aviso 6344/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_DES_015",
+    "query": "Que despacho do Diário da República trata de: Tomada de posse da diretora do Agrupamento de Escolas Carolina Michaelis?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Tomada de posse da diretora do Agrupamento de Escolas Carolina Michaelis",
+    "documentos_esperados": [
+      "4474158"
+    ],
+    "ancora": "Despacho 3534/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_DEL_016",
+    "query": "Identifique o deliberação que tem como objeto: Aprovação de despesas por parte dos membros do Conselho de Gestão.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Aprovação de despesas por parte dos membros do Conselho de Gestão",
+    "documentos_esperados": [
+      "4472199"
+    ],
+    "ancora": "Deliberação 333/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_017",
+    "query": "Qual o aviso relativo a: Proposta de alteração simplificada ao Plano Diretor Municipal - período de participação pública?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Proposta de alteração simplificada ao Plano Diretor Municipal - período de participação pública",
+    "documentos_esperados": [
+      "4478217"
+    ],
+    "ancora": "Aviso 6409/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_018",
+    "query": "Que aviso do Diário da República trata de: Abertura de procedimento concursal comum por tempo indeterminado para dois postos de trabalho da carreira/categoria geral de assistente técnico?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Abertura de procedimento concursal comum por tempo indeterminado para dois postos de trabalho da carreira/categoria geral de assistente técnico",
+    "documentos_esperados": [
+      "4478225"
+    ],
+    "ancora": "Aviso 6416/2021",
+    "para_geracao": true
+  },
+  {
+    "id": "ID_EDI_019",
+    "query": "Identifique o edital que tem como objeto: Consulta pública do Plano Municipal de Defesa da Floresta contra Incêndios de Mortágua.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Consulta pública do Plano Municipal de Defesa da Floresta contra Incêndios de Mortágua",
+    "documentos_esperados": [
+      "4476227"
+    ],
+    "ancora": "Edital 389/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_DES_020",
+    "query": "Qual o despacho relativo a: Autorizado o contrato de trabalho em funções públicas de assistentes convidados?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Autorizado o contrato de trabalho em funções públicas de assistentes convidados",
+    "documentos_esperados": [
+      "4478203"
+    ],
+    "ancora": "Despacho 3604/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_021",
+    "query": "Que aviso do Diário da República trata de: Conclusão com sucesso do período experimental de seis assistentes operacionais?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Conclusão com sucesso do período experimental de seis assistentes operacionais",
+    "documentos_esperados": [
+      "4474236"
+    ],
+    "ancora": "Aviso 6288/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_022",
+    "query": "Identifique o aviso que tem como objeto: Procedimento concursal com vista ao provimento de diretor de serviços de Recursos Financeiros, Patrimoniais e Tecnológicos.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Procedimento concursal com vista ao provimento de diretor de serviços de Recursos Financeiros, Patrimoniais e Tecnológicos",
+    "documentos_esperados": [
+      "4478274"
+    ],
+    "ancora": "Aviso 6456/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_DES_023",
+    "query": "Qual o despacho relativo a: Regulamento de Matrículas e Inscrições do Instituto Politécnico do Porto?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Regulamento de Matrículas e Inscrições do Instituto Politécnico do Porto",
+    "documentos_esperados": [
+      "4476190"
+    ],
+    "ancora": "Despacho 3576/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_024",
+    "query": "Que aviso do Diário da República trata de: Mapa anual global consolidado de recrutamentos autorizados?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Mapa anual global consolidado de recrutamentos autorizados",
+    "documentos_esperados": [
+      "4478216"
+    ],
+    "ancora": "Aviso 6408/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_DES_025",
+    "query": "Identifique o despacho que tem como objeto: Delegação de competências para decidir os recursos interpostos das decisões sobre dispensa de sigilo profissional.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Delegação de competências para decidir os recursos interpostos das decisões sobre dispensa de sigilo profissional",
+    "documentos_esperados": [
+      "4474168"
+    ],
+    "ancora": "Despacho 3537/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_026",
+    "query": "Qual o aviso relativo a: Regulamento Municipal de Serviço de Abastecimento Público de Água de São Brás de Alportel?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Regulamento Municipal de Serviço de Abastecimento Público de Água de São Brás de Alportel",
+    "documentos_esperados": [
+      "4478253"
+    ],
+    "ancora": "Aviso 6436/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_027",
+    "query": "Que aviso do Diário da República trata de: Aprovação do Projeto de Regulamento das Atividades de Promoção e Divulgação da Obra de Ruy Belo?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Aprovação do Projeto de Regulamento das Atividades de Promoção e Divulgação da Obra de Ruy Belo",
+    "documentos_esperados": [
+      "4474222"
+    ],
+    "ancora": "Aviso 6274/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_028",
+    "query": "Identifique o aviso que tem como objeto: Homologação da lista unitária de ordenação final dos candidatos para técnico superior - médico veterinário.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Homologação da lista unitária de ordenação final dos candidatos para técnico superior - médico veterinário",
+    "documentos_esperados": [
+      "4478245"
+    ],
+    "ancora": "Aviso 6428/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_029",
+    "query": "Qual o aviso relativo a: Revisão do Plano Diretor Municipal de Tábua - prorrogação e suspensão do prazo?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Revisão do Plano Diretor Municipal de Tábua - prorrogação e suspensão do prazo",
+    "documentos_esperados": [
+      "4476242"
+    ],
+    "ancora": "Aviso 6357/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_030",
+    "query": "Que aviso do Diário da República trata de: Declara a homologação da lista unitária de ordenação final para a contratação de quatro técnicos superiores?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Declara a homologação da lista unitária de ordenação final para a contratação de quatro técnicos superiores",
+    "documentos_esperados": [
+      "4474184"
+    ],
+    "ancora": "Aviso 6247/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_031",
+    "query": "Identifique o aviso que tem como objeto: Cessação de funções, por aposentação, de José Alberto da Costa Ferreira.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Cessação de funções, por aposentação, de José Alberto da Costa Ferreira",
+    "documentos_esperados": [
+      "4474189"
+    ],
+    "ancora": "Aviso 6250/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_032",
+    "query": "Qual o aviso relativo a: Abertura de procedimentos concursais comuns para a carreira e categoria de assistente operacional?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Abertura de procedimentos concursais comuns para a carreira e categoria de assistente operacional",
+    "documentos_esperados": [
+      "4476228"
+    ],
+    "ancora": "Aviso 6345/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_033",
+    "query": "Que aviso do Diário da República trata de: Homologação da lista de ordenação final do procedimento concursal para assistente técnico?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Homologação da lista de ordenação final do procedimento concursal para assistente técnico",
+    "documentos_esperados": [
+      "4474202"
+    ],
+    "ancora": "Aviso 6256/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_034",
+    "query": "Identifique o aviso que tem como objeto: Lista unitária de ordenação final homologada - técnico superior na área de engenharia eletrotécnica.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Lista unitária de ordenação final homologada - técnico superior na área de engenharia eletrotécnica",
+    "documentos_esperados": [
+      "4472246"
+    ],
+    "ancora": "Aviso 6195/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_035",
+    "query": "Qual o aviso relativo a: Abertura de procedimento concursal para o cargo de diretor?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Abertura de procedimento concursal para o cargo de diretor",
+    "documentos_esperados": [
+      "4474160"
+    ],
+    "ancora": "Aviso 6238/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_DES_036",
+    "query": "Que despacho do Diário da República trata de: Subdelegação de competências para presidir a júris de provas de mestrado da Escola de Medicina?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Subdelegação de competências para presidir a júris de provas de mestrado da Escola de Medicina",
+    "documentos_esperados": [
+      "4476187"
+    ],
+    "ancora": "Despacho 3573/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_037",
+    "query": "Identifique o aviso que tem como objeto: Procedimento concursal de recrutamento e contratação de investigador doutorado na área científica de Engenharia Química.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Procedimento concursal de recrutamento e contratação de investigador doutorado na área científica de Engenharia Química",
+    "documentos_esperados": [
+      "4472190"
+    ],
+    "ancora": "Aviso 6164/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_038",
+    "query": "Qual o aviso relativo a: Procedimento concursal de recrutamento e contratação de doutorado nas áreas científicas de Biotecnologia e Bioquímica?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Procedimento concursal de recrutamento e contratação de doutorado nas áreas científicas de Biotecnologia e Bioquímica",
+    "documentos_esperados": [
+      "4474171"
+    ],
+    "ancora": "Aviso 6245/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_039",
+    "query": "Que aviso do Diário da República trata de: Cessação da modalidade de vínculo de emprego público de um assistente operacional?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Cessação da modalidade de vínculo de emprego público de um assistente operacional",
+    "documentos_esperados": [
+      "4478242"
+    ],
+    "ancora": "Aviso 6425/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_040",
+    "query": "Identifique o aviso que tem como objeto: Exoneração do cargo de secretário do gabinete de apoio pessoal à Presidência.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Exoneração do cargo de secretário do gabinete de apoio pessoal à Presidência",
+    "documentos_esperados": [
+      "4472228"
+    ],
+    "ancora": "Aviso 6181/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_EDI_041",
+    "query": "Qual o edital relativo a: Consulta pública do projeto do Regulamento de Atribuição de Apoios da Freguesia de Moreira?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Consulta pública do projeto do Regulamento de Atribuição de Apoios da Freguesia de Moreira",
+    "documentos_esperados": [
+      "4476254"
+    ],
+    "ancora": "Edital 390/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_042",
+    "query": "Que aviso do Diário da República trata de: Mapa anual global consolidado de recrutamento autorizado?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Mapa anual global consolidado de recrutamento autorizado",
+    "documentos_esperados": [
+      "4472279"
+    ],
+    "ancora": "Aviso 6224/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_LOU_043",
+    "query": "Identifique o louvor que tem como objeto: Louvor aos profissionais do Centro Hospitalar do Baixo Vouga, E. P. E.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Louvor aos profissionais do Centro Hospitalar do Baixo Vouga, E. P. E",
+    "documentos_esperados": [
+      "4472213"
+    ],
+    "ancora": "Louvor 148/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_DEC_044",
+    "query": "Qual o decreto relativo a: Regulamenta o estado de emergência decretado pelo Presidente da República?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Regulamenta o estado de emergência decretado pelo Presidente da República",
+    "documentos_esperados": [
+      "4473631"
+    ],
+    "ancora": "Decreto 6/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_045",
+    "query": "Que aviso do Diário da República trata de: Notificação da acusação deduzida no âmbito do Processo Disciplinar n.º 12/2020 PDI à trabalhadora Maria João Carvalho da Cruz Alvura?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Notificação da acusação deduzida no âmbito do Processo Disciplinar n.º 12/2020 PDI à trabalhadora Maria João Carvalho da Cruz Alvura",
+    "documentos_esperados": [
+      "4474211"
+    ],
+    "ancora": "Aviso 6264/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_DES_046",
+    "query": "Identifique o despacho que tem como objeto: Nomeia consultor da Casa Civil o mestre Bernardo Maria Carvalho Alves Pires de Lima.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Nomeia consultor da Casa Civil o mestre Bernardo Maria Carvalho Alves Pires de Lima",
+    "documentos_esperados": [
+      "4474138"
+    ],
+    "ancora": "Despacho 3517/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_047",
+    "query": "Qual o aviso relativo a: Consolidação definitiva da mobilidade na categoria de assistente técnico?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Consolidação definitiva da mobilidade na categoria de assistente técnico",
+    "documentos_esperados": [
+      "4472150"
+    ],
+    "ancora": "Aviso 6149/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_048",
+    "query": "Que aviso do Diário da República trata de: Conclusão do período experimental com sucesso na carreira e categoria técnica superior?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Conclusão do período experimental com sucesso na carreira e categoria técnica superior",
+    "documentos_esperados": [
+      "4478240"
+    ],
+    "ancora": "Aviso 6423/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_049",
+    "query": "Identifique o aviso que tem como objeto: Procedimento concursal comum de recrutamento para preenchimento de um posto de trabalho para a carreira e categoria de assistente operacional.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Procedimento concursal comum de recrutamento para preenchimento de um posto de trabalho para a carreira e categoria de assistente operacional",
+    "documentos_esperados": [
+      "4476249"
+    ],
+    "ancora": "Aviso 6364/2021",
+    "para_geracao": true
+  },
+  {
+    "id": "ID_AVI_050",
+    "query": "Qual o aviso relativo a: Abertura de procedimento concursal comum por tempo indeterminado para a carreira/categoria geral de assistente técnico, área de proteção civil?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Abertura de procedimento concursal comum por tempo indeterminado para a carreira/categoria geral de assistente técnico, área de proteção civil",
+    "documentos_esperados": [
+      "4478227"
+    ],
+    "ancora": "Aviso 6418/2021",
+    "para_geracao": true
+  },
+  {
+    "id": "ID_DES_051",
+    "query": "Que despacho do Diário da República trata de: Aposentação/jubilação do juiz desembargador Dr. Tomé de Almeida Ramião?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Aposentação/jubilação do juiz desembargador Dr. Tomé de Almeida Ramião",
+    "documentos_esperados": [
+      "4472183"
+    ],
+    "ancora": "Despacho 3500/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_DES_052",
+    "query": "Identifique o despacho que tem como objeto: Promoção ao posto imediato de diversos oficiais.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Promoção ao posto imediato de diversos oficiais",
+    "documentos_esperados": [
+      "4476152"
+    ],
+    "ancora": "Despacho 3560/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_053",
+    "query": "Qual o aviso relativo a: Celebração e rescisão de contratos de trabalho de técnicos das atividades de enriquecimento curricular?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Celebração e rescisão de contratos de trabalho de técnicos das atividades de enriquecimento curricular",
+    "documentos_esperados": [
+      "4478266"
+    ],
+    "ancora": "Aviso 6449/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_054",
+    "query": "Que aviso do Diário da República trata de: Procede à mobilidade interna intercarreiras do trabalhador Eurico Guerreiro Vicente?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Procede à mobilidade interna intercarreiras do trabalhador Eurico Guerreiro Vicente",
+    "documentos_esperados": [
+      "4472220"
+    ],
+    "ancora": "Aviso 6176/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_055",
+    "query": "Identifique o aviso que tem como objeto: Concurso para diretor de serviços de Recursos Humanos da Universidade dos Açores.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Concurso para diretor de serviços de Recursos Humanos da Universidade dos Açores",
+    "documentos_esperados": [
+      "4472286"
+    ],
+    "ancora": "Aviso 6230/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_056",
+    "query": "Qual o aviso relativo a: Abertura de procedimento concursal para técnico superior (engenharia civil)?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Abertura de procedimento concursal para técnico superior (engenharia civil)",
+    "documentos_esperados": [
+      "4478220"
+    ],
+    "ancora": "Aviso 6412/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_DES_057",
+    "query": "Que despacho do Diário da República trata de: Declara de imprescindível utilidade pública a construção da subestação de Pegões?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Declara de imprescindível utilidade pública a construção da subestação de Pegões",
+    "documentos_esperados": [
+      "4476173"
+    ],
+    "ancora": "Despacho 3567/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_058",
+    "query": "Identifique o aviso que tem como objeto: Celebração de contrato de trabalho em funções públicas por tempo indeterminado na carreira e categoria de assistente operacional.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Celebração de contrato de trabalho em funções públicas por tempo indeterminado na carreira e categoria de assistente operacional",
+    "documentos_esperados": [
+      "4476251"
+    ],
+    "ancora": "Aviso 6366/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_059",
+    "query": "Qual o aviso relativo a: Concluído com sucesso o período experimental de um trabalhador na carreira/categoria de assistente operacional - cozinheiro?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Concluído com sucesso o período experimental de um trabalhador na carreira/categoria de assistente operacional - cozinheiro",
+    "documentos_esperados": [
+      "4476243"
+    ],
+    "ancora": "Aviso 6358/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_DES_060",
+    "query": "Que despacho do Diário da República trata de: Autorizada a licença sem remuneração da técnica superior Cláudia Sofia Certainho Louro?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Autorizada a licença sem remuneração da técnica superior Cláudia Sofia Certainho Louro",
+    "documentos_esperados": [
+      "4478201"
+    ],
+    "ancora": "Despacho 3602/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_061",
+    "query": "Identifique o aviso que tem como objeto: Consolidação de mobilidade intercategorias na categoria de encarregado operacional.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Consolidação de mobilidade intercategorias na categoria de encarregado operacional",
+    "documentos_esperados": [
+      "4476210"
+    ],
+    "ancora": "Aviso 6330/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_062",
+    "query": "Qual o aviso relativo a: Conclusão dos períodos experimentais de trabalhadores na carreira/categoria de assistente técnico -?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Conclusão dos períodos experimentais de trabalhadores na carreira/categoria de assistente técnico -",
+    "documentos_esperados": [
+      "4478261"
+    ],
+    "ancora": "Aviso 6444/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_063",
+    "query": "Que aviso do Diário da República trata de: Plano de Pormenor do Bonfim - Correção material - lote 44?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Plano de Pormenor do Bonfim - Correção material - lote 44",
+    "documentos_esperados": [
+      "4472250"
+    ],
+    "ancora": "Aviso 6198/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_064",
+    "query": "Identifique o aviso que tem como objeto: Celebração de contratos de trabalho em funções públicas por tempo indeterminado com vários enfermeiros.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Celebração de contratos de trabalho em funções públicas por tempo indeterminado com vários enfermeiros",
+    "documentos_esperados": [
+      "4478147"
+    ],
+    "ancora": "Aviso 6380/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_065",
+    "query": "Qual o aviso relativo a: Início de procedimento de revisão do Plano de Pormenor da Zona Industrial de Idanha-a-Nova?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Início de procedimento de revisão do Plano de Pormenor da Zona Industrial de Idanha-a-Nova",
+    "documentos_esperados": [
+      "4478224"
+    ],
+    "ancora": "Aviso 6415/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_066",
+    "query": "Que aviso do Diário da República trata de: Abertura de procedimentos concursais comuns de recrutamento para a carreira e categoria de assistente operacional?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Abertura de procedimentos concursais comuns de recrutamento para a carreira e categoria de assistente operacional",
+    "documentos_esperados": [
+      "4474197"
+    ],
+    "ancora": "Aviso 6253/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_067",
+    "query": "Identifique o aviso que tem como objeto: Consolidação definitiva da mobilidade interna na categoria do trabalhador Sandro Eurico Ramos Varela.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Consolidação definitiva da mobilidade interna na categoria do trabalhador Sandro Eurico Ramos Varela",
+    "documentos_esperados": [
+      "4476241"
+    ],
+    "ancora": "Aviso 6356/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_068",
+    "query": "Qual o aviso relativo a: Consolidação de mobilidade na categoria entre órgãos do assistente técnico Manuel Armindo Nova Couto?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Consolidação de mobilidade na categoria entre órgãos do assistente técnico Manuel Armindo Nova Couto",
+    "documentos_esperados": [
+      "4474231"
+    ],
+    "ancora": "Aviso 6283/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_DES_069",
+    "query": "Que despacho do Diário da República trata de: Criação do mestrado em Gestão?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Criação do mestrado em Gestão",
+    "documentos_esperados": [
+      "4474177"
+    ],
+    "ancora": "Despacho 3541/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_070",
+    "query": "Identifique o aviso que tem como objeto: Celebração de contratos de trabalho nas carreiras e categorias de assistente operacional, assistente técnica e técnica superior.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Celebração de contratos de trabalho nas carreiras e categorias de assistente operacional, assistente técnica e técnica superior",
+    "documentos_esperados": [
+      "4478241"
+    ],
+    "ancora": "Aviso 6424/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_071",
+    "query": "Qual o aviso relativo a: Procedimento concursal de recrutamento para ocupação de cinco postos de trabalho da carreira e categoria não revista de bombeiro sapador (bombeiro recruta)?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Procedimento concursal de recrutamento para ocupação de cinco postos de trabalho da carreira e categoria não revista de bombeiro sapador (bombeiro recruta)",
+    "documentos_esperados": [
+      "4476204"
+    ],
+    "ancora": "Aviso 6325/2021",
+    "para_geracao": true
+  },
+  {
+    "id": "ID_AVI_072",
+    "query": "Que aviso do Diário da República trata de: Lista de ordenação final de técnico superior de design?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Lista de ordenação final de técnico superior de design",
+    "documentos_esperados": [
+      "4478244"
+    ],
+    "ancora": "Aviso 6427/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_073",
+    "query": "Identifique o aviso que tem como objeto: Plano Municipal de Defesa de Floresta Contra Incêndios de Fornos de Algodres 2021-2030 - consulta pública.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Plano Municipal de Defesa de Floresta Contra Incêndios de Fornos de Algodres 2021-2030 - consulta pública",
+    "documentos_esperados": [
+      "4472235"
+    ],
+    "ancora": "Aviso 6186/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_074",
+    "query": "Qual o aviso relativo a: Abertura de procedimento concursal para constituição de reserva de recrutamento -assistente técnico?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Abertura de procedimento concursal para constituição de reserva de recrutamento -assistente técnico",
+    "documentos_esperados": [
+      "4472271"
+    ],
+    "ancora": "Aviso 6216/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_DEC_075",
+    "query": "Que decreto do Diário da República trata de: Programa de Apoio Extraordinário aos Órgãos de Comunicação Social Privados?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Programa de Apoio Extraordinário aos Órgãos de Comunicação Social Privados",
+    "documentos_esperados": [
+      "4474137"
+    ],
+    "ancora": "Decreto 9/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_DES_076",
+    "query": "Identifique o despacho que tem como objeto: Consolidação da mobilidade na categoria do técnico superior Francisco Álvaro Fernandes Carriço.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Consolidação da mobilidade na categoria do técnico superior Francisco Álvaro Fernandes Carriço",
+    "documentos_esperados": [
+      "4478173"
+    ],
+    "ancora": "Despacho 3594/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_077",
+    "query": "Qual o aviso relativo a: Contratação de assistente técnico para o exercício de funções públicas por tempo indeterminado?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Contratação de assistente técnico para o exercício de funções públicas por tempo indeterminado",
+    "documentos_esperados": [
+      "4474216"
+    ],
+    "ancora": "Aviso 6269/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_078",
+    "query": "Que aviso do Diário da República trata de: Consolidação definitiva da mobilidade na categoria da trabalhadora Inês Isabel Mota Antunes?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Consolidação definitiva da mobilidade na categoria da trabalhadora Inês Isabel Mota Antunes",
+    "documentos_esperados": [
+      "4476248"
+    ],
+    "ancora": "Aviso 6363/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_079",
+    "query": "Identifique o aviso que tem como objeto: Procedimento concursal para três lugares de bombeiro sapador.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Procedimento concursal para três lugares de bombeiro sapador",
+    "documentos_esperados": [
+      "4472258"
+    ],
+    "ancora": "Aviso 6206/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_DES_080",
+    "query": "Qual o despacho relativo a: Alteração das áreas de jurisdição - Itália e Santa Sé?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Alteração das áreas de jurisdição - Itália e Santa Sé",
+    "documentos_esperados": [
+      "4476143"
+    ],
+    "ancora": "Despacho 3555/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_081",
+    "query": "Que aviso do Diário da República trata de: Celebração de contrato de trabalho em funções públicas, por tempo indeterminado, na categoria de professor coordenador?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Celebração de contrato de trabalho em funções públicas, por tempo indeterminado, na categoria de professor coordenador",
+    "documentos_esperados": [
+      "4474188"
+    ],
+    "ancora": "Aviso 6249/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_082",
+    "query": "Identifique o aviso que tem como objeto: Consolidação da mobilidade intercarreiras na carreira de fiscalização do trabalhador Nuno Filipe Pereira Monteiro Napoleão.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Consolidação da mobilidade intercarreiras na carreira de fiscalização do trabalhador Nuno Filipe Pereira Monteiro Napoleão",
+    "documentos_esperados": [
+      "4478254"
+    ],
+    "ancora": "Aviso 6437/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_DES_083",
+    "query": "Qual o despacho relativo a: Nomeação de novos membros para o Conselho de Ética, para o triénio 2021-2023?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Nomeação de novos membros para o Conselho de Ética, para o triénio 2021-2023",
+    "documentos_esperados": [
+      "4472195"
+    ],
+    "ancora": "Despacho 3504/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_DES_084",
+    "query": "Que despacho do Diário da República trata de: Alterações ao plano de estudos do mestrado em Comunicação Social - Novos Media, da Escola Superior de Educação de Coimbra?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Alterações ao plano de estudos do mestrado em Comunicação Social - Novos Media, da Escola Superior de Educação de Coimbra",
+    "documentos_esperados": [
+      "4476189"
+    ],
+    "ancora": "Despacho 3575/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_085",
+    "query": "Identifique o aviso que tem como objeto: Delegação de competências no conselho administrativo.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Delegação de competências no conselho administrativo",
+    "documentos_esperados": [
+      "4476167"
+    ],
+    "ancora": "Aviso 6310/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_DES_086",
+    "query": "Qual o despacho relativo a: Nomeia consultora da Casa Civil a licenciada Mafalda da Gama Lopes Vaz Pinto?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Nomeia consultora da Casa Civil a licenciada Mafalda da Gama Lopes Vaz Pinto",
+    "documentos_esperados": [
+      "4474140"
+    ],
+    "ancora": "Despacho 3519/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_087",
+    "query": "Que aviso do Diário da República trata de: Abertura do período de consulta pública do projeto regulamentar para o centro coordenador dos transportes de Fafe?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Abertura do período de consulta pública do projeto regulamentar para o centro coordenador dos transportes de Fafe",
+    "documentos_esperados": [
+      "4472232"
+    ],
+    "ancora": "Aviso 6184/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_DEL_088",
+    "query": "Identifique o deliberação que tem como objeto: Autoriza a acumulação de funções de António Figueira.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Autoriza a acumulação de funções de António Figueira",
+    "documentos_esperados": [
+      "4476195"
+    ],
+    "ancora": "Deliberação 343/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_089",
+    "query": "Qual o aviso relativo a: Audiência dos interessados - assistente técnico -?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Audiência dos interessados - assistente técnico -",
+    "documentos_esperados": [
+      "4478265"
+    ],
+    "ancora": "Aviso 6448/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_090",
+    "query": "Que aviso do Diário da República trata de: Proposta de Regulamento de Isenção de Derrama do Município de Ferreira do Zêzere?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Proposta de Regulamento de Isenção de Derrama do Município de Ferreira do Zêzere",
+    "documentos_esperados": [
+      "4478222"
+    ],
+    "ancora": "Aviso 6413/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_091",
+    "query": "Identifique o aviso que tem como objeto: Delimitação da área de reabilitação urbana (ARU) e operação de reabilitação urbana (ORU) simples de Carrazedo da Cabugueira.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Delimitação da área de reabilitação urbana (ARU) e operação de reabilitação urbana (ORU) simples de Carrazedo da Cabugueira",
+    "documentos_esperados": [
+      "4474235"
+    ],
+    "ancora": "Aviso 6287/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_092",
+    "query": "Qual o aviso relativo a: Homologação da lista unitária de ordenação final dos candidatos para técnico superior - engenheiro eletrotécnico?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Homologação da lista unitária de ordenação final dos candidatos para técnico superior - engenheiro eletrotécnico",
+    "documentos_esperados": [
+      "4478246"
+    ],
+    "ancora": "Aviso 6429/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_093",
+    "query": "Que aviso do Diário da República trata de: Conclusão com sucesso do período experimental de diversos trabalhadores na carreira e categoria de técnico superior?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Conclusão com sucesso do período experimental de diversos trabalhadores na carreira e categoria de técnico superior",
+    "documentos_esperados": [
+      "4478175"
+    ],
+    "ancora": "Aviso 6392/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_094",
+    "query": "Identifique o aviso que tem como objeto: Lista de ordenação final do procedimento concursal para recrutamento de um técnico superior - área de geografia.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Lista de ordenação final do procedimento concursal para recrutamento de um técnico superior - área de geografia",
+    "documentos_esperados": [
+      "4472254"
+    ],
+    "ancora": "Aviso 6202/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_095",
+    "query": "Qual o aviso relativo a: Suspensão parcial do Plano de Pormenor da Zona Industrial de Idanha-a-Nova com estabelecimento de medidas preventivas?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Suspensão parcial do Plano de Pormenor da Zona Industrial de Idanha-a-Nova com estabelecimento de medidas preventivas",
+    "documentos_esperados": [
+      "4478223"
+    ],
+    "ancora": "Aviso 6414/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_096",
+    "query": "Que aviso do Diário da República trata de: Celebração de contratos de trabalho em funções públicas a termo resolutivo certo e conclusão do período experimental na categoria de assistente técnico?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Celebração de contratos de trabalho em funções públicas a termo resolutivo certo e conclusão do período experimental na categoria de assistente técnico",
+    "documentos_esperados": [
+      "4476214"
+    ],
+    "ancora": "Aviso 6333/2021",
+    "para_geracao": true
+  },
+  {
+    "id": "ID_AVI_097",
+    "query": "Identifique o aviso que tem como objeto: Abertura de procedimento concursal comum de recrutamento para a carreira e categoria de técnico superior, no setor de atividade de engenharia civil.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Abertura de procedimento concursal comum de recrutamento para a carreira e categoria de técnico superior, no setor de atividade de engenharia civil",
+    "documentos_esperados": [
+      "4474196"
+    ],
+    "ancora": "Aviso 6252/2021",
+    "para_geracao": true
+  },
+  {
+    "id": "ID_AVI_098",
+    "query": "Qual o aviso relativo a: Nomeação do coordenador municipal da Proteção Civil?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Nomeação do coordenador municipal da Proteção Civil",
+    "documentos_esperados": [
+      "4474205"
+    ],
+    "ancora": "Aviso 6259/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_099",
+    "query": "Que aviso do Diário da República trata de: 3.ª alteração ao Plano Diretor Municipal de Cuba?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "3.ª alteração ao Plano Diretor Municipal de Cuba",
+    "documentos_esperados": [
+      "4478219"
+    ],
+    "ancora": "Aviso 6411/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_100",
+    "query": "Identifique o aviso que tem como objeto: Cessação do recrutamento por mobilidade de um assistente técnico.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Cessação do recrutamento por mobilidade de um assistente técnico",
+    "documentos_esperados": [
+      "4478248"
+    ],
+    "ancora": "Aviso 6431/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_DES_101",
+    "query": "Qual o despacho relativo a: Delegação de competências no diretor executivo e na coordenadora da Divisão Académica?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Delegação de competências no diretor executivo e na coordenadora da Divisão Académica",
+    "documentos_esperados": [
+      "4474174"
+    ],
+    "ancora": "Despacho 3539/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_102",
+    "query": "Que aviso do Diário da República trata de: Revogação substitutiva de ato administrativo de início de alteração de plano diretor municipal?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Revogação substitutiva de ato administrativo de início de alteração de plano diretor municipal",
+    "documentos_esperados": [
+      "4476229"
+    ],
+    "ancora": "Aviso 6346/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_103",
+    "query": "Identifique o aviso que tem como objeto: Discussão pública da operação de reabilitação urbana do núcleo antigo de Arruda dos Vinhos.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Discussão pública da operação de reabilitação urbana do núcleo antigo de Arruda dos Vinhos",
+    "documentos_esperados": [
+      "4478214"
+    ],
+    "ancora": "Aviso 6406/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_DES_104",
+    "query": "Qual o despacho relativo a: Alteração à estrutura orgânica e organização dos serviços do Município de Reguengos de Monsaraz?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Alteração à estrutura orgânica e organização dos serviços do Município de Reguengos de Monsaraz",
+    "documentos_esperados": [
+      "4476237"
+    ],
+    "ancora": "Despacho 3580/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_105",
+    "query": "Que aviso do Diário da República trata de: Projeto do Regulamento do Estatuto de Estudante Atleta da Universidade de Évora?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Projeto do Regulamento do Estatuto de Estudante Atleta da Universidade de Évora",
+    "documentos_esperados": [
+      "4478187"
+    ],
+    "ancora": "Aviso 6397/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_106",
+    "query": "Identifique o aviso que tem como objeto: Cessação jurídica de emprego público por aposentação, na categoria de assistente operacional.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Cessação jurídica de emprego público por aposentação, na categoria de assistente operacional",
+    "documentos_esperados": [
+      "4476258"
+    ],
+    "ancora": "Aviso 6372/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_107",
+    "query": "Qual o aviso relativo a: Aprovação do Regulamento do Inventário e Cadastro dos Bens da Freguesia?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Aprovação do Regulamento do Inventário e Cadastro dos Bens da Freguesia",
+    "documentos_esperados": [
+      "4472269"
+    ],
+    "ancora": "Aviso 6215/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_DEL_108",
+    "query": "Que deliberação do Diário da República trata de: Alteração da organização interna da Unidade de Contribuintes Estratégicos?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Alteração da organização interna da Unidade de Contribuintes Estratégicos",
+    "documentos_esperados": [
+      "4478163"
+    ],
+    "ancora": "Deliberação 346/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_109",
+    "query": "Identifique o aviso que tem como objeto: Prorrogação do prazo de elaboração da 2.ª revisão do Plano Diretor Municipal de Terras de Bouro.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Prorrogação do prazo de elaboração da 2.ª revisão do Plano Diretor Municipal de Terras de Bouro",
+    "documentos_esperados": [
+      "4478255"
+    ],
+    "ancora": "Aviso 6438/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_110",
+    "query": "Qual o aviso relativo a: Conclusão dos períodos experimentais de trabalhadores na carreira e categoria de técnico superior?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Conclusão dos períodos experimentais de trabalhadores na carreira e categoria de técnico superior",
+    "documentos_esperados": [
+      "4478262"
+    ],
+    "ancora": "Aviso 6445/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_111",
+    "query": "Que aviso do Diário da República trata de: Trabalhadores aposentados em 2020?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Trabalhadores aposentados em 2020",
+    "documentos_esperados": [
+      "4478235"
+    ],
+    "ancora": "Aviso 6419/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_112",
+    "query": "Identifique o aviso que tem como objeto: Consolidação de mobilidade entre órgãos e serviços de Mónica Paula Dias Teixeira.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Consolidação de mobilidade entre órgãos e serviços de Mónica Paula Dias Teixeira",
+    "documentos_esperados": [
+      "4476245"
+    ],
+    "ancora": "Aviso 6360/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_113",
+    "query": "Qual o aviso relativo a: Conclusão com sucesso do período experimental de Ana Maria Quelha Bolhosa?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Conclusão com sucesso do período experimental de Ana Maria Quelha Bolhosa",
+    "documentos_esperados": [
+      "4474230"
+    ],
+    "ancora": "Aviso 6282/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_EDI_114",
+    "query": "Que edital do Diário da República trata de: Alteração ao Regulamento e Tabela de Taxas Municipais?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Alteração ao Regulamento e Tabela de Taxas Municipais",
+    "documentos_esperados": [
+      "4478239"
+    ],
+    "ancora": "Edital 399/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_115",
+    "query": "Identifique o aviso que tem como objeto: Conclusão com sucesso do período experimental de dois trabalhadores na carreira/categoria de assistente operacional - auxiliar de serviços gerais.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Conclusão com sucesso do período experimental de dois trabalhadores na carreira/categoria de assistente operacional - auxiliar de serviços gerais",
+    "documentos_esperados": [
+      "4478256"
+    ],
+    "ancora": "Aviso 6439/2021",
+    "para_geracao": true
+  },
+  {
+    "id": "ID_DES_116",
+    "query": "Qual o despacho relativo a: Determina os pontos de passagem autorizados na fronteira terrestre?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Determina os pontos de passagem autorizados na fronteira terrestre",
+    "documentos_esperados": [
+      "4473633"
+    ],
+    "ancora": "Despacho 3516-A/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_117",
+    "query": "Que aviso do Diário da República trata de: Designação de coordenador municipal de Proteção Civil?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Designação de coordenador municipal de Proteção Civil",
+    "documentos_esperados": [
+      "4474215"
+    ],
+    "ancora": "Aviso 6268/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_118",
+    "query": "Identifique o aviso que tem como objeto: Contratação de assistentes operacionais para o exercício de funções públicas por tempo indeterminado.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Contratação de assistentes operacionais para o exercício de funções públicas por tempo indeterminado",
+    "documentos_esperados": [
+      "4476232"
+    ],
+    "ancora": "Aviso 6349/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_EDI_119",
+    "query": "Qual o edital relativo a: Concurso interno de promoção para três professores coordenadores para a ESSS, do Instituto Politécnico de Santarém?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Concurso interno de promoção para três professores coordenadores para a ESSS, do Instituto Politécnico de Santarém",
+    "documentos_esperados": [
+      "4478198"
+    ],
+    "ancora": "Edital 397/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_120",
+    "query": "Que aviso do Diário da República trata de: Conclusão dos períodos experimentais para a carreira e categoria de assistente operacional?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Conclusão dos períodos experimentais para a carreira e categoria de assistente operacional",
+    "documentos_esperados": [
+      "4476246"
+    ],
+    "ancora": "Aviso 6361/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_121",
+    "query": "Identifique o aviso que tem como objeto: Homologação da lista de ordenação final do procedimento concursal para um posto de trabalho na carreira de assistente operacional (serviços gerais).",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Homologação da lista de ordenação final do procedimento concursal para um posto de trabalho na carreira de assistente operacional (serviços gerais)",
+    "documentos_esperados": [
+      "4476252"
+    ],
+    "ancora": "Aviso 6367/2021",
+    "para_geracao": true
+  },
+  {
+    "id": "ID_AVI_122",
+    "query": "Qual o aviso relativo a: Procedimento concursal comum para 28 assistentes operacionais - lista unitária de ordenação final (homologada)?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Procedimento concursal comum para 28 assistentes operacionais - lista unitária de ordenação final (homologada)",
+    "documentos_esperados": [
+      "4476238"
+    ],
+    "ancora": "Aviso 6354/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_123",
+    "query": "Que aviso do Diário da República trata de: Abertura de procedimentos concursais para provimento de cargos dirigentes intermédios de 2.º e 3.º graus?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Abertura de procedimentos concursais para provimento de cargos dirigentes intermédios de 2.º e 3.º graus",
+    "documentos_esperados": [
+      "4472288"
+    ],
+    "ancora": "Aviso 6232/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_124",
+    "query": "Identifique o aviso que tem como objeto: Cessação de funções da trabalhadora Elisabete Maria Leite Oliveira, por motivo de ter ingressado na segurança social.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Cessação de funções da trabalhadora Elisabete Maria Leite Oliveira, por motivo de ter ingressado na segurança social",
+    "documentos_esperados": [
+      "4476211"
+    ],
+    "ancora": "Aviso 6331/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_125",
+    "query": "Qual o aviso relativo a: Procedimento concursal comum de recrutamento para preenchimento de um posto de trabalho para a carreira e categoria de assistente técnico?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Procedimento concursal comum de recrutamento para preenchimento de um posto de trabalho para a carreira e categoria de assistente técnico",
+    "documentos_esperados": [
+      "4476250"
+    ],
+    "ancora": "Aviso 6365/2021",
+    "para_geracao": true
+  },
+  {
+    "id": "ID_DES_126",
+    "query": "Que despacho do Diário da República trata de: Designação no cargo de diretor da Alfândega de Leixões do licenciado Carlos Alberto Braga da Cruz Silva?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Designação no cargo de diretor da Alfândega de Leixões do licenciado Carlos Alberto Braga da Cruz Silva",
+    "documentos_esperados": [
+      "4474147"
+    ],
+    "ancora": "Despacho 3525/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_DES_127",
+    "query": "Identifique o despacho que tem como objeto: Subdelegação de competências do Comandante no chefe de serviço.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Subdelegação de competências do Comandante no chefe de serviço",
+    "documentos_esperados": [
+      "4474154"
+    ],
+    "ancora": "Despacho 3532/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_128",
+    "query": "Qual o aviso relativo a: Abertura de procedimento concursal comum por tempo indeterminado para as carreiras/categorias gerais de assistente técnico e de assistente operacional?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Abertura de procedimento concursal comum por tempo indeterminado para as carreiras/categorias gerais de assistente técnico e de assistente operacional",
+    "documentos_esperados": [
+      "4478226"
+    ],
+    "ancora": "Aviso 6417/2021",
+    "para_geracao": true
+  },
+  {
+    "id": "ID_AVI_129",
+    "query": "Que aviso do Diário da República trata de: Prorrogação do prazo de elaboração da 6.ª alteração ao Plano Diretor Municipal?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Prorrogação do prazo de elaboração da 6.ª alteração ao Plano Diretor Municipal",
+    "documentos_esperados": [
+      "4478247"
+    ],
+    "ancora": "Aviso 6430/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_130",
+    "query": "Identifique o aviso que tem como objeto: Procedimento concursal comum para a contratação por tempo determinado de um assistente operacional (cabouqueiro).",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Procedimento concursal comum para a contratação por tempo determinado de um assistente operacional (cabouqueiro)",
+    "documentos_esperados": [
+      "4472257"
+    ],
+    "ancora": "Aviso 6205/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_131",
+    "query": "Qual o aviso relativo a: Cessação da relação jurídica de emprego por aposentação e por falecimento?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Cessação da relação jurídica de emprego por aposentação e por falecimento",
+    "documentos_esperados": [
+      "4478250"
+    ],
+    "ancora": "Aviso 6433/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_DES_132",
+    "query": "Que despacho do Diário da República trata de: Nomeia consultora da Casa Civil a assistente graduada sénior de infeciologia Dr.ª Maria Isabel Beato Viegas Aldir?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Nomeia consultora da Casa Civil a assistente graduada sénior de infeciologia Dr.ª Maria Isabel Beato Viegas Aldir",
+    "documentos_esperados": [
+      "4474141"
+    ],
+    "ancora": "Despacho 3520/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_133",
+    "query": "Identifique o aviso que tem como objeto: Mobilidade entre órgãos e serviços de Daniel da Costa Luís.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Mobilidade entre órgãos e serviços de Daniel da Costa Luís",
+    "documentos_esperados": [
+      "4476244"
+    ],
+    "ancora": "Aviso 6359/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_134",
+    "query": "Qual o aviso relativo a: Homologação da lista unitária de ordenação final relativa ao procedimento concursal para um posto de trabalho de assistente técnico?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Homologação da lista unitária de ordenação final relativa ao procedimento concursal para um posto de trabalho de assistente técnico",
+    "documentos_esperados": [
+      "4476205"
+    ],
+    "ancora": "Aviso 6326/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_135",
+    "query": "Que aviso do Diário da República trata de: Cessações de vínculo de emprego público com os trabalhadores Emídio Teodoro Esteves e Carlos Manuel Pimenta Ramos?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Cessações de vínculo de emprego público com os trabalhadores Emídio Teodoro Esteves e Carlos Manuel Pimenta Ramos",
+    "documentos_esperados": [
+      "4476256"
+    ],
+    "ancora": "Aviso 6370/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_136",
+    "query": "Identifique o aviso que tem como objeto: Mobilidade interna intercarreiras da trabalhadora Graça Laurinda Passos Gonçalves Morgado.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Mobilidade interna intercarreiras da trabalhadora Graça Laurinda Passos Gonçalves Morgado",
+    "documentos_esperados": [
+      "4474219"
+    ],
+    "ancora": "Aviso 6272/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_137",
+    "query": "Qual o aviso relativo a: Abertura de procedimento concursal para um assistente operacional?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Abertura de procedimento concursal para um assistente operacional",
+    "documentos_esperados": [
+      "4473133"
+    ],
+    "ancora": "Aviso 6234-A/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_138",
+    "query": "Que aviso do Diário da República trata de: Abertura de procedimentos concursais para ocupação de vários postos de trabalho de assistente operacional por tempo indeterminado?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Abertura de procedimentos concursais para ocupação de vários postos de trabalho de assistente operacional por tempo indeterminado",
+    "documentos_esperados": [
+      "4476230"
+    ],
+    "ancora": "Aviso 6347/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_DES_139",
+    "query": "Identifique o despacho que tem como objeto: Composição do conselho coordenador da avaliação dos Serviços de Ação Social da Universidade do Minho.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Composição do conselho coordenador da avaliação dos Serviços de Ação Social da Universidade do Minho",
+    "documentos_esperados": [
+      "4474183"
+    ],
+    "ancora": "Despacho 3546/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_140",
+    "query": "Qual o aviso relativo a: Exclusão dos candidatos ao concurso externo de ingresso para bombeiro sapador do Regimento de Sapadores Bombeiros?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Exclusão dos candidatos ao concurso externo de ingresso para bombeiro sapador do Regimento de Sapadores Bombeiros",
+    "documentos_esperados": [
+      "4474212"
+    ],
+    "ancora": "Aviso 6265/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_141",
+    "query": "Que aviso do Diário da República trata de: Conclusão dos períodos experimentais de trabalhadores na carreira/categoria de assistente operacional -?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Conclusão dos períodos experimentais de trabalhadores na carreira/categoria de assistente operacional -",
+    "documentos_esperados": [
+      "4478263"
+    ],
+    "ancora": "Aviso 6446/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_DEL_142",
+    "query": "Identifique o deliberação que tem como objeto: Designação no cargo de coordenadora do Serviço Local de Laurinda Andreia Pereira Faria.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Designação no cargo de coordenadora do Serviço Local de Laurinda Andreia Pereira Faria",
+    "documentos_esperados": [
+      "4476169"
+    ],
+    "ancora": "Deliberação 342/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_143",
+    "query": "Qual o aviso relativo a: Concurso para diretor de serviços de Recursos Financeiros da Universidade dos Açores?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Concurso para diretor de serviços de Recursos Financeiros da Universidade dos Açores",
+    "documentos_esperados": [
+      "4472285"
+    ],
+    "ancora": "Aviso 6229/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_144",
+    "query": "Que aviso do Diário da República trata de: Alteração da data da prova de avaliação do estágio de acesso a despachante oficial/representante aduaneiro?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Alteração da data da prova de avaliação do estágio de acesso a despachante oficial/representante aduaneiro",
+    "documentos_esperados": [
+      "4474169"
+    ],
+    "ancora": "Aviso 6243/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_DES_145",
+    "query": "Identifique o despacho que tem como objeto: Autorizados contratos de trabalho em funções públicas de professora adjunta convidada e de assistentes convidados.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Autorizados contratos de trabalho em funções públicas de professora adjunta convidada e de assistentes convidados",
+    "documentos_esperados": [
+      "4478202"
+    ],
+    "ancora": "Despacho 3603/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_POR_146",
+    "query": "Qual o portaria relativo a: Fixa as normas regulamentares para a repartição dos resultados líquidos de exploração dos jogos sociais atribuídos ao Ministério da Saúde?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Fixa as normas regulamentares para a repartição dos resultados líquidos de exploração dos jogos sociais atribuídos ao Ministério da Saúde",
+    "documentos_esperados": [
+      "4476137"
+    ],
+    "ancora": "Portaria 77/2021",
+    "para_geracao": true
+  },
+  {
+    "id": "ID_AVI_147",
+    "query": "Que aviso do Diário da República trata de: Prorrogação da mobilidade interna intercarreiras de assistente técnico para encarregado operacional?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Prorrogação da mobilidade interna intercarreiras de assistente técnico para encarregado operacional",
+    "documentos_esperados": [
+      "4474232"
+    ],
+    "ancora": "Aviso 6284/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_148",
+    "query": "Identifique o aviso que tem como objeto: Audiência prévia aos candidatos excluídos para a carreira/categoria geral de técnico superior - Projeto Ciência Viva Gaia.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Audiência prévia aos candidatos excluídos para a carreira/categoria geral de técnico superior - Projeto Ciência Viva Gaia",
+    "documentos_esperados": [
+      "4478259"
+    ],
+    "ancora": "Aviso 6442/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_EDI_149",
+    "query": "Qual o edital relativo a: Consulta pública do projeto do Regulamento de Estacionamento Público do Município de Monção?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Consulta pública do projeto do Regulamento de Estacionamento Público do Município de Monção",
+    "documentos_esperados": [
+      "4476226"
+    ],
+    "ancora": "Edital 388/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_POR_150",
+    "query": "Que portaria do Diário da República trata de: Primeira alteração ao Regulamento do Regime de Apoio à Armazenagem dos Produtos da Pesca, aprovado pela?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Primeira alteração ao Regulamento do Regime de Apoio à Armazenagem dos Produtos da Pesca, aprovado pela",
+    "documentos_esperados": [
+      "4476138"
+    ],
+    "ancora": "Portaria 78/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_DES_151",
+    "query": "Identifique o despacho que tem como objeto: Designa Pedro Nuno de Pinho Matos Barbosa para exercer, em regime de substituição, o cargo de subdiretor-geral das Artes.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Designa Pedro Nuno de Pinho Matos Barbosa para exercer, em regime de substituição, o cargo de subdiretor-geral das Artes",
+    "documentos_esperados": [
+      "4478148"
+    ],
+    "ancora": "Despacho 3586/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_152",
+    "query": "Qual o aviso relativo a: Consolidação definitiva da mobilidade interna na categoria de Sónia Margarida Esperanço da Silva Raposo?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Consolidação definitiva da mobilidade interna na categoria de Sónia Margarida Esperanço da Silva Raposo",
+    "documentos_esperados": [
+      "4476145"
+    ],
+    "ancora": "Aviso 6302/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_153",
+    "query": "Que aviso do Diário da República trata de: Celebração de vários contratos de trabalho em funções públicas, na modalidade de contrato de trabalho por tempo indeterminado?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Celebração de vários contratos de trabalho em funções públicas, na modalidade de contrato de trabalho por tempo indeterminado",
+    "documentos_esperados": [
+      "4472233"
+    ],
+    "ancora": "Aviso 6185/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_154",
+    "query": "Identifique o aviso que tem como objeto: Renovação da comissão de serviço do cargo de chefe de divisão Administrativa e Financeira.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Renovação da comissão de serviço do cargo de chefe de divisão Administrativa e Financeira",
+    "documentos_esperados": [
+      "4472240"
+    ],
+    "ancora": "Aviso 6190/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_DES_155",
+    "query": "Qual o despacho relativo a: Designação em comissão de serviço de chefe de divisão de Projetos, Obras e Equipamentos?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Designação em comissão de serviço de chefe de divisão de Projetos, Obras e Equipamentos",
+    "documentos_esperados": [
+      "4474207"
+    ],
+    "ancora": "Despacho 3551/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_156",
+    "query": "Que aviso do Diário da República trata de: Recrutamento para exercício de funções de técnico superior, por mobilidade?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Recrutamento para exercício de funções de técnico superior, por mobilidade",
+    "documentos_esperados": [
+      "4474146"
+    ],
+    "ancora": "Aviso 6235/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_DES_157",
+    "query": "Identifique o despacho que tem como objeto: Exoneração do cônsul honorário de Portugal em Ulan Bator.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Exoneração do cônsul honorário de Portugal em Ulan Bator",
+    "documentos_esperados": [
+      "4474145"
+    ],
+    "ancora": "Despacho 3524/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_158",
+    "query": "Qual o aviso relativo a: Celebra contrato de trabalho em funções públicas por tempo indeterminado com um assistente operacional para o Departamento de Educação?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Celebra contrato de trabalho em funções públicas por tempo indeterminado com um assistente operacional para o Departamento de Educação",
+    "documentos_esperados": [
+      "4474213"
+    ],
+    "ancora": "Aviso 6266/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_DES_159",
+    "query": "Que despacho do Diário da República trata de: Promoção, por escolha, ao posto de Sargento-Chefe do 370384, Sargento-Ajudante C Augusto Farinha?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Promoção, por escolha, ao posto de Sargento-Chefe do 370384, Sargento-Ajudante C Augusto Farinha",
+    "documentos_esperados": [
+      "4472146"
+    ],
+    "ancora": "Despacho 3484/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_160",
+    "query": "Identifique o aviso que tem como objeto: Procedimento concursal de recrutamento e contratação de doutorado científica na área científica de Ciências e Engenharia do Ambiente.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Procedimento concursal de recrutamento e contratação de doutorado científica na área científica de Ciências e Engenharia do Ambiente",
+    "documentos_esperados": [
+      "4474170"
+    ],
+    "ancora": "Aviso 6244/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_161",
+    "query": "Qual o aviso relativo a: Lista de ordenação final do?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Lista de ordenação final do",
+    "documentos_esperados": [
+      "4476206"
+    ],
+    "ancora": "Aviso 6327/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_DES_162",
+    "query": "Que despacho do Diário da República trata de: Contratação de pessoal docente da Escola Superior de Educação do Instituto Politécnico de Santarém?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Contratação de pessoal docente da Escola Superior de Educação do Instituto Politécnico de Santarém",
+    "documentos_esperados": [
+      "4478193"
+    ],
+    "ancora": "Despacho 3599/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_163",
+    "query": "Identifique o aviso que tem como objeto: Pedido de rescisão de contrato de Maria de Lourdes Gomes Gaspar.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Pedido de rescisão de contrato de Maria de Lourdes Gomes Gaspar",
+    "documentos_esperados": [
+      "4478151"
+    ],
+    "ancora": "Aviso 6382/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_164",
+    "query": "Qual o aviso relativo a: Celebração de contrato de trabalho em funções públicas com a trabalhadora Paula Alexandra Rodrigues Patrocínio?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Celebração de contrato de trabalho em funções públicas com a trabalhadora Paula Alexandra Rodrigues Patrocínio",
+    "documentos_esperados": [
+      "4472251"
+    ],
+    "ancora": "Aviso 6199/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_DES_165",
+    "query": "Que despacho do Diário da República trata de: Contratação de pessoal docente da Escola Superior de Desporto de Rio Maior do Instituto Politécnico de Santarém?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Contratação de pessoal docente da Escola Superior de Desporto de Rio Maior do Instituto Politécnico de Santarém",
+    "documentos_esperados": [
+      "4478194"
+    ],
+    "ancora": "Despacho 3600/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_166",
+    "query": "Identifique o aviso que tem como objeto: Abertura de procedimento concursal por tempo indeterminado para três assistentes operacionais e um assistente técnico.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Abertura de procedimento concursal por tempo indeterminado para três assistentes operacionais e um assistente técnico",
+    "documentos_esperados": [
+      "4478243"
+    ],
+    "ancora": "Aviso 6426/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_167",
+    "query": "Qual o aviso relativo a: Consolidação da mobilidade intercarreiras ou intercategorias de assistente técnica para técnica superior?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Consolidação da mobilidade intercarreiras ou intercategorias de assistente técnica para técnica superior",
+    "documentos_esperados": [
+      "4474234"
+    ],
+    "ancora": "Aviso 6286/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_168",
+    "query": "Que aviso do Diário da República trata de: Autorização de licença sem remuneração de Pedro Silva?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Autorização de licença sem remuneração de Pedro Silva",
+    "documentos_esperados": [
+      "4474224"
+    ],
+    "ancora": "Aviso 6276/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_DES_169",
+    "query": "Identifique o despacho que tem como objeto: Conclusão dos períodos experimentais de trabalhadores da carreira e categoria de assistente operacional.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Conclusão dos períodos experimentais de trabalhadores da carreira e categoria de assistente operacional",
+    "documentos_esperados": [
+      "4478188"
+    ],
+    "ancora": "Despacho 3597/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_DES_170",
+    "query": "Qual o despacho relativo a: Delegação no diretor de Infraestruturas, Comodoro Carlos Alberto Lopes Moreira?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Delegação no diretor de Infraestruturas, Comodoro Carlos Alberto Lopes Moreira",
+    "documentos_esperados": [
+      "4472145"
+    ],
+    "ancora": "Despacho 3483/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_171",
+    "query": "Que aviso do Diário da República trata de: Concurso deserto por inexistência de candidatos?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Concurso deserto por inexistência de candidatos",
+    "documentos_esperados": [
+      "4474238"
+    ],
+    "ancora": "Aviso 6290/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_DES_172",
+    "query": "Identifique o despacho que tem como objeto: Nomeação de duas docentes para cargo de adjuntas.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Nomeação de duas docentes para cargo de adjuntas",
+    "documentos_esperados": [
+      "4476163"
+    ],
+    "ancora": "Despacho 3564/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_DEC_173",
+    "query": "Qual o decreto relativo a: Programa de Apoio à Restauração e Hotelaria para a Aquisição de Produtos Açorianos?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Programa de Apoio à Restauração e Hotelaria para a Aquisição de Produtos Açorianos",
+    "documentos_esperados": [
+      "4474136"
+    ],
+    "ancora": "Decreto 8/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_174",
+    "query": "Que aviso do Diário da República trata de: Recrutamento por recurso à mobilidade interna na categoria de dois(duas) técnicos(as) superiores na área de contabilidade e auditoria?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Recrutamento por recurso à mobilidade interna na categoria de dois(duas) técnicos(as) superiores na área de contabilidade e auditoria",
+    "documentos_esperados": [
+      "4476233"
+    ],
+    "ancora": "Aviso 6350/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_175",
+    "query": "Identifique o aviso que tem como objeto: Celebração de contrato de trabalho em funções públicas por tempo indeterminado e conclusão do período experimental na categoria de assistente operacional.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Celebração de contrato de trabalho em funções públicas por tempo indeterminado e conclusão do período experimental na categoria de assistente operacional",
+    "documentos_esperados": [
+      "4476216"
+    ],
+    "ancora": "Aviso 6335/2021",
+    "para_geracao": true
+  },
+  {
+    "id": "ID_AVI_176",
+    "query": "Qual o aviso relativo a: Procede à mobilidade interna de intercarreiras da trabalhadora Ana Filipa Antunes Alves?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Procede à mobilidade interna de intercarreiras da trabalhadora Ana Filipa Antunes Alves",
+    "documentos_esperados": [
+      "4474240"
+    ],
+    "ancora": "Aviso 6292/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_177",
+    "query": "Que aviso do Diário da República trata de: Consolidação definitiva da mobilidade interna na categoria de Ana Margarida Ferreira Mendes Soares Meneses Barbosa?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Consolidação definitiva da mobilidade interna na categoria de Ana Margarida Ferreira Mendes Soares Meneses Barbosa",
+    "documentos_esperados": [
+      "4476146"
+    ],
+    "ancora": "Aviso 6303/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_178",
+    "query": "Identifique o aviso que tem como objeto: Homologação da lista unitária de ordenação final do procedimento concursal para assistente operacional.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Homologação da lista unitária de ordenação final do procedimento concursal para assistente operacional",
+    "documentos_esperados": [
+      "4472276"
+    ],
+    "ancora": "Aviso 6221/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_179",
+    "query": "Qual o aviso relativo a: Lista definitiva de candidatos admitidos ao procedimento concursal na carreira/categoria de técnico superior, aberto pelo?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Lista definitiva de candidatos admitidos ao procedimento concursal na carreira/categoria de técnico superior, aberto pelo",
+    "documentos_esperados": [
+      "4474200"
+    ],
+    "ancora": "Aviso 6255/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_DES_180",
+    "query": "Que despacho do Diário da República trata de: Delegação de competências nos vice-presidentes e presidentes/diretores das escolas do Instituto Politécnico de Lisboa?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Delegação de competências nos vice-presidentes e presidentes/diretores das escolas do Instituto Politécnico de Lisboa",
+    "documentos_esperados": [
+      "4472210"
+    ],
+    "ancora": "Despacho 3512/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_DES_181",
+    "query": "Identifique o despacho que tem como objeto: Transição para a situação de reserva de Coronéis da Guarda Nacional Republicana.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Transição para a situação de reserva de Coronéis da Guarda Nacional Republicana",
+    "documentos_esperados": [
+      "4476155"
+    ],
+    "ancora": "Despacho 3563/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_EDI_182",
+    "query": "Qual o edital relativo a: Proposta de regulamento do tarifário social de água, saneamento e resíduos de Arouca?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Proposta de regulamento do tarifário social de água, saneamento e resíduos de Arouca",
+    "documentos_esperados": [
+      "4476207"
+    ],
+    "ancora": "Edital 387/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_183",
+    "query": "Que aviso do Diário da República trata de: Conclusão do período experimental de trabalhadora da carreira e categoria de assistente técnico?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Conclusão do período experimental de trabalhadora da carreira e categoria de assistente técnico",
+    "documentos_esperados": [
+      "4472265"
+    ],
+    "ancora": "Aviso 6212/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_184",
+    "query": "Identifique o aviso que tem como objeto: Consolidação de mobilidade interna de Paulo Alexandre Guerreiro Rodrigues.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Consolidação de mobilidade interna de Paulo Alexandre Guerreiro Rodrigues",
+    "documentos_esperados": [
+      "4474245"
+    ],
+    "ancora": "Aviso 6297/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_LOU_185",
+    "query": "Qual o louvor relativo a: Concessão de louvor ao Coronel de Infantaria NIM 09946386, António José Pires Mendes?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Concessão de louvor ao Coronel de Infantaria NIM 09946386, António José Pires Mendes",
+    "documentos_esperados": [
+      "4478143"
+    ],
+    "ancora": "Louvor 150/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_186",
+    "query": "Que aviso do Diário da República trata de: Contrato de trabalho por tempo indeterminado de Sónia Andreia Soares Martins para a categoria de assistente técnico?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Contrato de trabalho por tempo indeterminado de Sónia Andreia Soares Martins para a categoria de assistente técnico",
+    "documentos_esperados": [
+      "4474242"
+    ],
+    "ancora": "Aviso 6294/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_187",
+    "query": "Identifique o aviso que tem como objeto: Consolidação definitiva das mobilidades intercarreiras e intercategorias nesta freguesia de vários trabalhadores.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Consolidação definitiva das mobilidades intercarreiras e intercategorias nesta freguesia de vários trabalhadores",
+    "documentos_esperados": [
+      "4474241"
+    ],
+    "ancora": "Aviso 6293/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_188",
+    "query": "Qual o aviso relativo a: Projeto de regulamento de utilização da praia fluvial do Clube Náutico de Avis e envolvente?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Projeto de regulamento de utilização da praia fluvial do Clube Náutico de Avis e envolvente",
+    "documentos_esperados": [
+      "4472226"
+    ],
+    "ancora": "Aviso 6180/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_189",
+    "query": "Que aviso do Diário da República trata de: Homologação da lista de ordenação final do procedimento concursal comum para recrutamento de um técnico superior na área de desporto?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Homologação da lista de ordenação final do procedimento concursal comum para recrutamento de um técnico superior na área de desporto",
+    "documentos_esperados": [
+      "4474217"
+    ],
+    "ancora": "Aviso 6270/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_190",
+    "query": "Identifique o aviso que tem como objeto: Abertura de procedimento concursal para provimento de cargo de direção intermédia de 1.º grau.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Abertura de procedimento concursal para provimento de cargo de direção intermédia de 1.º grau",
+    "documentos_esperados": [
+      "4478275"
+    ],
+    "ancora": "Aviso 6457/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_191",
+    "query": "Qual o aviso relativo a: Decisão de elaboração da 1.ª alteração à Revisão e Ampliação do Plano de Pormenor do Parque Empresarial do Casarão - Águeda?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Decisão de elaboração da 1.ª alteração à Revisão e Ampliação do Plano de Pormenor do Parque Empresarial do Casarão - Águeda",
+    "documentos_esperados": [
+      "4478210"
+    ],
+    "ancora": "Aviso 6403/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_192",
+    "query": "Que aviso do Diário da República trata de: Celebrado contrato de trabalho em funções públicas por tempo indeterminado com Hélder de Azevedo Gomes?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Celebrado contrato de trabalho em funções públicas por tempo indeterminado com Hélder de Azevedo Gomes",
+    "documentos_esperados": [
+      "4474227"
+    ],
+    "ancora": "Aviso 6279/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_193",
+    "query": "Identifique o aviso que tem como objeto: Abertura de procedimentos concursais comuns de recrutamento para postos de trabalho da carreira e categoria de assistente operacional.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Abertura de procedimentos concursais comuns de recrutamento para postos de trabalho da carreira e categoria de assistente operacional",
+    "documentos_esperados": [
+      "4478213"
+    ],
+    "ancora": "Aviso 6405/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_194",
+    "query": "Qual o aviso relativo a: Lista unitária de ordenação final ao procedimento concursal para recrutamento de um técnico superior - área de arquitetura?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Lista unitária de ordenação final ao procedimento concursal para recrutamento de um técnico superior - área de arquitetura",
+    "documentos_esperados": [
+      "4472253"
+    ],
+    "ancora": "Aviso 6201/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_195",
+    "query": "Que aviso do Diário da República trata de: Procedimento concursal externo de ingresso para um técnico de informática do grau 1, nível 1?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Procedimento concursal externo de ingresso para um técnico de informática do grau 1, nível 1",
+    "documentos_esperados": [
+      "4478249"
+    ],
+    "ancora": "Aviso 6432/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_196",
+    "query": "Identifique o aviso que tem como objeto: Contratos de trabalho em funções públicas por tempo indeterminado na carreira de assistentes operacionais.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Contratos de trabalho em funções públicas por tempo indeterminado na carreira de assistentes operacionais",
+    "documentos_esperados": [
+      "4474233"
+    ],
+    "ancora": "Aviso 6285/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_DES_197",
+    "query": "Qual o despacho relativo a: Conversão em definitivas as colocações provisórias de vários escrivães auxiliares e técnicos de justiça auxiliares?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Conversão em definitivas as colocações provisórias de vários escrivães auxiliares e técnicos de justiça auxiliares",
+    "documentos_esperados": [
+      "4478146"
+    ],
+    "ancora": "Despacho 3585/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_DES_198",
+    "query": "Que despacho do Diário da República trata de: Contratação de pessoal docente da Escola Superior Agrária deste Instituto?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Contratação de pessoal docente da Escola Superior Agrária deste Instituto",
+    "documentos_esperados": [
+      "4478195"
+    ],
+    "ancora": "Despacho 3601/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_199",
+    "query": "Identifique o aviso que tem como objeto: Abertura de procedimento concursal para cargo de direção intermédia de 1.º grau.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Abertura de procedimento concursal para cargo de direção intermédia de 1.º grau",
+    "documentos_esperados": [
+      "4472290"
+    ],
+    "ancora": "Aviso 6234/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_200",
+    "query": "Qual o aviso relativo a: Conclusão dos períodos experimentais de trabalhadores na carreira/categoria de assistente operacional?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Conclusão dos períodos experimentais de trabalhadores na carreira/categoria de assistente operacional",
+    "documentos_esperados": [
+      "4478264"
+    ],
+    "ancora": "Aviso 6447/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_DES_201",
+    "query": "Que despacho do Diário da República trata de: 4.ª revisão à organização dos Serviços Municipais?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "4.ª revisão à organização dos Serviços Municipais",
+    "documentos_esperados": [
+      "4472234"
+    ],
+    "ancora": "Despacho 3514/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_DES_202",
+    "query": "Identifique o despacho que tem como objeto: Nomeia consultora da Casa Civil a licenciada Maria João Farinhas Ruela.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Nomeia consultora da Casa Civil a licenciada Maria João Farinhas Ruela",
+    "documentos_esperados": [
+      "4474139"
+    ],
+    "ancora": "Despacho 3518/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_203",
+    "query": "Qual o aviso relativo a: Recrutamento por recurso à mobilidade interna na categoria de um(a) técnico(a) superior da área de direito?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Recrutamento por recurso à mobilidade interna na categoria de um(a) técnico(a) superior da área de direito",
+    "documentos_esperados": [
+      "4476234"
+    ],
+    "ancora": "Aviso 6351/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_204",
+    "query": "Que aviso do Diário da República trata de: Aprovação do mapa global consolidado de recrutamentos autorizados para várias categorias?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Aprovação do mapa global consolidado de recrutamentos autorizados para várias categorias",
+    "documentos_esperados": [
+      "4476260"
+    ],
+    "ancora": "Aviso 6374/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_205",
+    "query": "Identifique o aviso que tem como objeto: Projeto de operação de reabilitação urbana - Centro Urbano de Coutada.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Projeto de operação de reabilitação urbana - Centro Urbano de Coutada",
+    "documentos_esperados": [
+      "4474208"
+    ],
+    "ancora": "Aviso 6261/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_206",
+    "query": "Qual o aviso relativo a: Mapa anual global de recrutamentos?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Mapa anual global de recrutamentos",
+    "documentos_esperados": [
+      "4476236"
+    ],
+    "ancora": "Aviso 6353/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_207",
+    "query": "Que aviso do Diário da República trata de: Abertura de procedimento concursal comum para quatro postos de trabalho para assistente técnico e assistente operacional?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Abertura de procedimento concursal comum para quatro postos de trabalho para assistente técnico e assistente operacional",
+    "documentos_esperados": [
+      "4478258"
+    ],
+    "ancora": "Aviso 6441/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_208",
+    "query": "Identifique o aviso que tem como objeto: Denúncia de contratos de professora adjunta convidada e de assistente convidado.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Denúncia de contratos de professora adjunta convidada e de assistente convidado",
+    "documentos_esperados": [
+      "4478199"
+    ],
+    "ancora": "Aviso 6401/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_209",
+    "query": "Qual o aviso relativo a: Celebração de contratos de trabalho em funções públicas a termo resolutivo certo e conclusão do período experimental na categoria de técnico superior?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Celebração de contratos de trabalho em funções públicas a termo resolutivo certo e conclusão do período experimental na categoria de técnico superior",
+    "documentos_esperados": [
+      "4476223"
+    ],
+    "ancora": "Aviso 6342/2021",
+    "para_geracao": true
+  },
+  {
+    "id": "ID_AVI_210",
+    "query": "Que aviso do Diário da República trata de: Abertura de procedimento concursal para provimento de cargo de direção intermédia?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Abertura de procedimento concursal para provimento de cargo de direção intermédia",
+    "documentos_esperados": [
+      "4478278"
+    ],
+    "ancora": "Aviso 6460/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_211",
+    "query": "Identifique o aviso que tem como objeto: Cessação da relação jurídica de emprego público, por aposentação.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Cessação da relação jurídica de emprego público, por aposentação",
+    "documentos_esperados": [
+      "4474209"
+    ],
+    "ancora": "Aviso 6262/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_DES_212",
+    "query": "Qual o despacho relativo a: Subdelegação de competências do vice-presidente nos membros do seu pelouro?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Subdelegação de competências do vice-presidente nos membros do seu pelouro",
+    "documentos_esperados": [
+      "4476175"
+    ],
+    "ancora": "Despacho 3569/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_213",
+    "query": "Que aviso do Diário da República trata de: Celebração de contrato de trabalho em funções públicas de João Francisco Maurício Dinis e composição do júri do período experimental?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Celebração de contrato de trabalho em funções públicas de João Francisco Maurício Dinis e composição do júri do período experimental",
+    "documentos_esperados": [
+      "4478238"
+    ],
+    "ancora": "Aviso 6422/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_214",
+    "query": "Identifique o aviso que tem como objeto: Abertura de procedimento concursal para ocupação de 25 postos de trabalho de assistente operacional, por tempo indeterminado.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Abertura de procedimento concursal para ocupação de 25 postos de trabalho de assistente operacional, por tempo indeterminado",
+    "documentos_esperados": [
+      "4476231"
+    ],
+    "ancora": "Aviso 6348/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_215",
+    "query": "Qual o aviso relativo a: Consolidação definitiva da mobilidade interna na categoria de Aida Dalila Moreno Pinto?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Consolidação definitiva da mobilidade interna na categoria de Aida Dalila Moreno Pinto",
+    "documentos_esperados": [
+      "4476144"
+    ],
+    "ancora": "Aviso 6301/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_216",
+    "query": "Que aviso do Diário da República trata de: Consolidação da mobilidade na categoria da trabalhadora Neide Rute Pereira Martinho?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Consolidação da mobilidade na categoria da trabalhadora Neide Rute Pereira Martinho",
+    "documentos_esperados": [
+      "4474226"
+    ],
+    "ancora": "Aviso 6278/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_217",
+    "query": "Identifique o aviso que tem como objeto: Designação de trabalhadores em mobilidade na modalidade intercarreiras.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Designação de trabalhadores em mobilidade na modalidade intercarreiras",
+    "documentos_esperados": [
+      "4474229"
+    ],
+    "ancora": "Aviso 6281/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_218",
+    "query": "Qual o aviso relativo a: Extinção da relação jurídica de emprego público, por motivo de aposentação/reforma, de vários trabalhadores?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Extinção da relação jurídica de emprego público, por motivo de aposentação/reforma, de vários trabalhadores",
+    "documentos_esperados": [
+      "4472219"
+    ],
+    "ancora": "Aviso 6175/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_219",
+    "query": "Que aviso do Diário da República trata de: Conclusão com sucesso do período experimental de Liliana Maria Esteves Veríssimo Jesus?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Conclusão com sucesso do período experimental de Liliana Maria Esteves Veríssimo Jesus",
+    "documentos_esperados": [
+      "4472244"
+    ],
+    "ancora": "Aviso 6193/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_220",
+    "query": "Identifique o aviso que tem como objeto: Lista de ordenação final do procedimento concursal comum para dois assistentes operacionais.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Lista de ordenação final do procedimento concursal comum para dois assistentes operacionais",
+    "documentos_esperados": [
+      "4472268"
+    ],
+    "ancora": "Aviso 6214/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_221",
+    "query": "Qual o aviso relativo a: Procedimento concursal para recrutamento de um investigador doutorado?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Procedimento concursal para recrutamento de um investigador doutorado",
+    "documentos_esperados": [
+      "4476185"
+    ],
+    "ancora": "Aviso 6316/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_LOU_222",
+    "query": "Que louvor do Diário da República trata de: Concessão de louvor ao Capitão-de-Fragata AN NII 24887, Rui Miguel Batista Rebelo?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Concessão de louvor ao Capitão-de-Fragata AN NII 24887, Rui Miguel Batista Rebelo",
+    "documentos_esperados": [
+      "4476150"
+    ],
+    "ancora": "Louvor 149/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_223",
+    "query": "Identifique o aviso que tem como objeto: Concurso para diretor de serviços de Aquisições e Património da Universidade dos Açores.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Concurso para diretor de serviços de Aquisições e Património da Universidade dos Açores",
+    "documentos_esperados": [
+      "4472284"
+    ],
+    "ancora": "Aviso 6228/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_224",
+    "query": "Qual o aviso relativo a: Cessação da relação jurídica de emprego público por tempo indeterminado de dois trabalhadores por motivo de aposentação?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Cessação da relação jurídica de emprego público por tempo indeterminado de dois trabalhadores por motivo de aposentação",
+    "documentos_esperados": [
+      "4476224"
+    ],
+    "ancora": "Aviso 6343/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_DES_225",
+    "query": "Que despacho do Diário da República trata de: Homologação da lista definitiva de ordenação final do concurso documental para dois professores adjuntos da área disciplinar de Farmácia?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Homologação da lista definitiva de ordenação final do concurso documental para dois professores adjuntos da área disciplinar de Farmácia",
+    "documentos_esperados": [
+      "4478189"
+    ],
+    "ancora": "Despacho 3598/2021",
+    "para_geracao": true
+  },
+  {
+    "id": "ID_AVI_226",
+    "query": "Identifique o aviso que tem como objeto: Regulamento de Apoio à Natalidade do Munícipio da Calheta.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Regulamento de Apoio à Natalidade do Munícipio da Calheta",
+    "documentos_esperados": [
+      "4478215"
+    ],
+    "ancora": "Aviso 6407/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_227",
+    "query": "Qual o aviso relativo a: Consolidação da mobilidade da carreira da assistente operacional Lurdes Esperança Figueiredo?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Consolidação da mobilidade da carreira da assistente operacional Lurdes Esperança Figueiredo",
+    "documentos_esperados": [
+      "4472277"
+    ],
+    "ancora": "Aviso 6222/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_228",
+    "query": "Que aviso do Diário da República trata de: Abertura de procedimento concursal - doutorado nível inicial - Projeto BiCat4Energy?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Abertura de procedimento concursal - doutorado nível inicial - Projeto BiCat4Energy",
+    "documentos_esperados": [
+      "4478186"
+    ],
+    "ancora": "Aviso 6396/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_229",
+    "query": "Identifique o aviso que tem como objeto: Conclusão com sucesso do período experimental do técnico superior Sérgio Alberto Borges Teixeira.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Conclusão com sucesso do período experimental do técnico superior Sérgio Alberto Borges Teixeira",
+    "documentos_esperados": [
+      "4472256"
+    ],
+    "ancora": "Aviso 6204/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_230",
+    "query": "Qual o aviso relativo a: Lista de equipamento informático doado no 2.º semestre de 2020?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Lista de equipamento informático doado no 2.º semestre de 2020",
+    "documentos_esperados": [
+      "4474185"
+    ],
+    "ancora": "Aviso 6248/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_231",
+    "query": "Que aviso do Diário da República trata de: Homologação da lista de ordenação final do procedimento concursal para assistente operacional?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Homologação da lista de ordenação final do procedimento concursal para assistente operacional",
+    "documentos_esperados": [
+      "4474203"
+    ],
+    "ancora": "Aviso 6257/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_232",
+    "query": "Identifique o aviso que tem como objeto: Conclusão com sucesso do período experimental na carreira e categoria de técnico superior.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Conclusão com sucesso do período experimental na carreira e categoria de técnico superior",
+    "documentos_esperados": [
+      "4474239"
+    ],
+    "ancora": "Aviso 6291/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_233",
+    "query": "Qual o aviso relativo a: Cessação do vínculo de emprego público, por motivo de aposentação, de vários trabalhadores?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Cessação do vínculo de emprego público, por motivo de aposentação, de vários trabalhadores",
+    "documentos_esperados": [
+      "4478200"
+    ],
+    "ancora": "Aviso 6402/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_EDI_234",
+    "query": "Que edital do Diário da República trata de: Primeira alteração ao Regulamento do Programa Municipal de Arrendamento Jovem?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Primeira alteração ao Regulamento do Programa Municipal de Arrendamento Jovem",
+    "documentos_esperados": [
+      "4472224"
+    ],
+    "ancora": "Edital 381/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_DEL_235",
+    "query": "Identifique o deliberação que tem como objeto: Autoriza a redução de horário de Maria Fátima Aguiar Pereira.",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Autoriza a redução de horário de Maria Fátima Aguiar Pereira",
+    "documentos_esperados": [
+      "4472212"
+    ],
+    "ancora": "Deliberação 334/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_AVI_236",
+    "query": "Qual o aviso relativo a: Homologação da lista de ordenação final do procedimento concursal no âmbito do programa de regularização extraordinária dos vínculos precários?",
+    "tipo": "identificador",
+    "camada": 1,
+    "ground_truth": "Homologação da lista de ordenação final do procedimento concursal no âmbito do programa de regularização extraordinária dos vínculos precários",
+    "documentos_esperados": [
+      "4476255"
+    ],
+    "ancora": "Aviso 6369/2021",
+    "para_geracao": true
+  },
+  {
+        "id": "C2_LEI14_001",
+        "query": "Qual o grau mínimo de incapacidade atribuído aos doentes oncológicos recém-diagnosticados ao abrigo da Lei 14/2021, e por que período?",
+        "tipo": "semantica", "camada": 2,
+        "ground_truth": "Um grau mínimo de incapacidade de 60% no período de cinco anos após o diagnóstico.",
+        "documentos_esperados": ["4476135"],
+        "ancora": "Lei 14/2021",
+        "para_geracao": true
+    },
+    {
+        "id": "C2_LEI14_002",
+        "query": "Segundo a Lei 14/2021, quem é competente para emitir o atestado de incapacidade dos doentes oncológicos?",
+        "tipo": "semantica", "camada": 2,
+        "ground_truth": "O hospital onde o diagnóstico foi realizado, sendo competente um médico especialista diferente do médico que segue o doente.",
+        "documentos_esperados": ["4476135"],
+        "ancora": "Lei 14/2021", "para_geracao": true
+    },
+    {
+        "id": "C2_RES3_001",
+        "query": "A Resolução 3/2025-PG dispensou os serviços da Secção Regional dos Açores de fiscalização prévia em 2026?",
+        "tipo": "semantica", "camada": 2,
+        "ground_truth": "Não. A resolução delibera não dispensar de fiscalização prévia em 2026 qualquer dos serviços ou organismos sujeitos à jurisdição da Secção Regional dos Açores.",
+        "documentos_esperados": ["6440261"],
+        "ancora": "Resolução 3/2025-PG", "para_geracao": true
+    },
+    {
+        "id": "C2_RES3_002",
+        "query": "Que programa foi aprovado pela Resolução 3/2025-PG e a que plano está subordinado?",
+        "tipo": "semantica", "camada": 2,
+        "ground_truth": "O programa anual da Secção Regional dos Açores para 2026, subordinado ao Plano Trienal para 2026-2028.",
+        "documentos_esperados": ["6440261"],
+        "ancora": "Resolução 3/2025-PG", "para_geracao": false
+    },
+    {
+        "id": "C2_DL29A_001",
+        "query": "Qual o valor da base remuneratória da Administração Pública (BRAP) fixado pelo Decreto-Lei 29-A/2026?",
+        "tipo": "semantica", "camada": 2,
+        "ground_truth": "934,99 €",
+        "documentos_esperados": ["6430432"],
+        "ancora": "Decreto-Lei 29-A/2026", "para_geracao": true
+    },
+    {
+        "id": "C2_DL29A_002",
+        "query": "Segundo o Decreto-Lei 29-A/2026, como são atualizadas as remunerações base mensais até 2631,62 €?",
+        "tipo": "semantica", "camada": 2,
+        "ground_truth": "São atualizadas em 56,58 €.",
+        "documentos_esperados": ["6430432"],
+        "ancora": "Decreto-Lei 29-A/2026", "para_geracao": true
+    },
+    {
+        "id": "C2_DL29A_003",
+        "query": "Que artigos do Decreto-Lei 1/2025 são revogados pelo Decreto-Lei 29-A/2026?",
+        "tipo": "semantica", "camada": 2,
+        "ground_truth": "Os artigos 2.º, 4.º, 5.º e 6.º do Decreto-Lei 1/2025, de 16 de janeiro.",
+        "documentos_esperados": ["6430432"],
+        "ancora": "Decreto-Lei 29-A/2026", "para_geracao": false
+    },
+    {
+        "id": "C2_DEC11A_001",
+        "query": "Para que dia foi decretado o luto nacional pelo Decreto 11-A/2026?",
+        "tipo": "semantica", "camada": 2,
+        "ground_truth": "7 de março de 2026.",
+        "documentos_esperados": ["6463768"],
+        "ancora": "Decreto 11-A/2026", "para_geracao": false
+    },
+    {
+        "id": "C2_PORT77_001",
+        "query": "Segundo a Portaria 77/2021, que percentagem dos resultados líquidos dos jogos sociais é atribuída à Administração Central do Sistema de Saúde e com que finalidade?",
+        "tipo": "semantica", "camada": 2,
+        "ground_truth": "60% para a Administração Central do Sistema de Saúde, I. P., com vista ao financiamento da Rede Nacional de Cuidados Continuados Integrados.",
+        "documentos_esperados": ["4476137"],
+        "ancora": "Portaria 77/2021", "para_geracao": true
+    },
+    {
+        "id": "C2_PORT77_002",
+        "query": "De acordo com a Portaria 77/2021, que percentagem dos resultados dos jogos sociais se destina às entidades que atuam nos comportamentos aditivos e dependências, incluindo o programa de troca de seringas?",
+        "tipo": "semantica", "camada": 2,
+        "ground_truth": "25% para as entidades que prosseguem atribuições nos domínios do planeamento, prevenção e tratamento dos comportamentos aditivos e das dependências, incluindo o programa de troca de seringas.",
+        "documentos_esperados": ["4476137"],
+        "ancora": "Portaria 77/2021", "para_geracao": true
+    },
+    {
+        "id": "C2_DLR9_001",
+        "query": "Em que consiste o apoio financeiro do Programa de Apoio Extraordinário aos Órgãos de Comunicação Social Privados criado pelo Decreto Legislativo Regional 9/2021/A?",
+        "tipo": "semantica", "camada": 2,
+        "ground_truth": "Apoio monetário extraordinário correspondente a 90% da retribuição mínima mensal garantida na Região Autónoma dos Açores, por trabalhador com contrato de trabalho há pelo menos três meses, por mês, entre janeiro e junho de 2021.",
+        "documentos_esperados": ["4474137"],
+        "ancora": "Decreto Legislativo Regional 9/2021/A", "para_geracao": true
+    },
+    {
+        "id": "C2_DLR9_002",
+        "query": "Que obrigação de manutenção de emprego impõe o Decreto Legislativo Regional 9/2021/A aos beneficiários do programa de apoio, e qual a consequência do incumprimento?",
+        "tipo": "semantica", "camada": 2,
+        "ground_truth": "O beneficiário compromete-se a manter o nível de emprego pelo menos até cinco meses após a receção do apoio referente ao último mês em que é beneficiário; o não cumprimento obriga à devolução do apoio recebido.",
+        "documentos_esperados": ["4474137"],
+        "ancora": "Decreto Legislativo Regional 9/2021/A", "para_geracao": true
+    },
+    {
+        "id": "C2_RCM2A_001",
+        "query": "Qual o montante máximo global autorizado à PSP pela Resolução do Conselho de Ministros 2-A/2026 para a aquisição de e-gates, software e serviços de manutenção nas fronteiras aéreas?",
+        "tipo": "semantica", "camada": 2,
+        "ground_truth": "Até ao montante máximo global de € 7 463 800,00, ao qual acresce o IVA à taxa legal em vigor.",
+        "documentos_esperados": ["6404703"],
+        "ancora": "Resolução do Conselho de Ministros 2-A/2026", "para_geracao": true
+    },
+    {
+        "id": "C2_RCM2A_002",
+        "query": "Que tipo de procedimento pré-contratual foi autorizado pela Resolução do Conselho de Ministros 2-A/2026 e com que fundamento?",
+        "tipo": "semantica", "camada": 2,
+        "ground_truth": "Ajuste direto por motivos de urgência imperiosa, ao abrigo da alínea c) do n.º 1 do artigo 24.º do Código dos Contratos Públicos.",
+        "documentos_esperados": ["6404703"],
+        "ancora": "Resolução do Conselho de Ministros 2-A/2026", "para_geracao": false
+    },
+  {
+        "id": "C2_PORT78_001",
+        "query": "Segundo a Portaria 78/2021, qual o limite máximo das quantidades elegíveis para a ajuda à armazenagem, face às quantidades anuais de cada produto colocadas à venda em leilão pela organização de produtores?",
+        "tipo": "semantica", "camada": 2,
+        "ground_truth": "As quantidades elegíveis para a ajuda à armazenagem não podem exceder 25% das quantidades anuais de cada um dos produtos em causa, colocados à venda, em leilão, pela organização de produtores.",
+        "documentos_esperados": ["4476138"],
+        "ancora": "Portaria 78/2021", "para_geracao": true
+    },
+    {
+        "id": "C2_DESP4300_001",
+        "query": "Até que limite de valor o Conselho de Gestão da Universidade de Lisboa delegou a competência para autorizar o pagamento de despesas no Despacho 4300/2026, e que exigência impõe quanto à assinatura das ordens de pagamento?",
+        "tipo": "semantica", "camada": 2,
+        "ground_truth": "A competência foi delegada até ao limite de € 2 000 000,00, exigindo-se que todas as ordens de pagamento no âmbito da delegação sejam obrigatoriamente assinadas em conjunto por dois membros do Conselho de Gestão.",
+        "documentos_esperados": ["6497788"],
+        "ancora": "Despacho 4300/2026", "para_geracao": true
+    },
+    {
+        "id": "C2_DLR8_001",
+        "query": "Qual a percentagem base do subsídio não reembolsável concedido pelo Decreto Legislativo Regional 8/2021/A para a aquisição de produtos com o selo «Marca Açores», e em quanto é majorada no caso de produtos com certificação IGP, DOP, DOC ou Artesanato dos Açores?",
+        "tipo": "semantica", "camada": 2,
+        "ground_truth": "O apoio base corresponde a 30% do montante da aquisição; no caso de produtos com certificação IGP, DOP, DOC ou Artesanato dos Açores, é majorado em 40%.",
+        "documentos_esperados": ["4474136"],
+        "ancora": "Decreto Legislativo Regional 8/2021/A", "para_geracao": true
+    },
+    {
+        "id": "C2_DLR8_002",
+        "query": "Segundo o Decreto Legislativo Regional 8/2021/A, qual a consequência da prestação culposa de falsas declarações nas candidaturas após o pagamento do subsídio, e por quanto tempo ficam os beneficiários faltosos impedidos de se candidatar?",
+        "tipo": "semantica", "camada": 2,
+        "ground_truth": "Após o pagamento do subsídio, a prestação culposa de falsas declarações determina o reembolso do mesmo; os beneficiários faltosos ficam impedidos de se candidatar ao apoio durante o período de três anos.",
+        "documentos_esperados": ["4474136"],
+        "ancora": "Decreto Legislativo Regional 8/2021/A", "para_geracao": true
+    },
+    {
+        "id": "C2_DLR8_003",
+        "query": "De acordo com o Decreto Legislativo Regional 8/2021/A, qual o montante máximo anual de apoio financeiro por estabelecimento e por empresa?",
+        "tipo": "semantica", "camada": 2,
+        "ground_truth": "O apoio financeiro não pode exceder anualmente 7500 € por estabelecimento, até ao montante máximo anual de 15 000 € por empresa.",
+        "documentos_esperados": ["4474136"],
+        "ancora": "Decreto Legislativo Regional 8/2021/A", "para_geracao": true
+    }  
+]

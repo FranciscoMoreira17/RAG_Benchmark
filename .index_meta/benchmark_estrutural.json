@@ -1,0 +1,8 @@
+{
+  "fingerprint": "a5429b2fac13c7cb",
+  "config": {
+    "pipeline": "estrutural-enriquecido",
+    "bm25": "Qdrant/bm25"
+  },
+  "quando": "2026-07-28T16:45:13.666843+00:00"
+}

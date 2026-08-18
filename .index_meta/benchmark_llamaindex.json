@@ -1,0 +1,8 @@
+{
+  "fingerprint": "bb020285ee9da909",
+  "config": {
+    "pipeline": "llamaindex-sentence",
+    "chunk_size": 512
+  },
+  "quando": "2026-07-28T15:55:07.926033+00:00"
+}

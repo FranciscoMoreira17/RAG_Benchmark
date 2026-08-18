@@ -1,0 +1,93 @@
+###############################################################################
+# RAG Benchmark — Infraestrutura Completa
+#
+# Serviços:
+#   qdrant     → Vector DB (collections separadas por framework)
+#   phoenix    → Tracing + avaliação (UI: http://localhost:6006)
+#   ollama     → LLM juiz local para RAGAS/RAGChecker
+#
+# Collections criadas pelo init-qdrant:
+#   - benchmark_langchain
+#   - benchmark_llamaindex
+#   - benchmark_graphrag
+###############################################################################
+
+services:
+
+  # ── Qdrant — Vector Store ────────────────────────────────────
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: qdrant
+    ports:
+      - "6333:6333"   # REST API
+      - "6334:6334"   # gRPC
+    volumes:
+      - qdrant_data:/qdrant/storage
+    environment:
+      - QDRANT__SERVICE__GRPC_PORT=6334
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:6333/healthz || exit 1"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  # ── Init Qdrant — Cria as collections (corre uma vez) ───────
+  init-qdrant:
+    image: curlimages/curl:latest
+    container_name: init-qdrant
+    depends_on:
+      qdrant:
+        condition: service_healthy
+    restart: "no"
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        echo "=== A criar collections Qdrant (1024 dims, cosine) ==="
+
+        for COLLECTION in benchmark_langchain benchmark_llamaindex benchmark_graphrag benchmark_okf; do
+          echo "  → $$COLLECTION"
+          curl -sf -X PUT "http://qdrant:6333/collections/$$COLLECTION" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "vectors": {
+                "size": 1024,
+                "distance": "Cosine"
+              }
+            }' || echo "    (já existe ou erro)"
+        done
+
+        echo ""
+        echo "=== Collections criadas ==="
+        curl -sf "http://qdrant:6333/collections" | head -c 500
+        echo ""
+        echo "=== Pronto ==="
+
+  # ── Arize Phoenix — Tracing + Avaliação ─────────────────────
+  phoenix:
+    image: arizephoenix/phoenix:latest
+    container_name: phoenix
+    ports:
+      - "6006:6006"   # UI + OTLP HTTP
+      - "4317:4317"   # OTLP gRPC
+    environment:
+      - PHOENIX_TELEMETRY_ENABLED=false
+    volumes:
+      - phoenix_data:/data
+    restart: unless-stopped
+
+  # ── Ollama — LLM Juiz Local ─────────────────────────────────
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    restart: unless-stopped
+
+
+volumes:
+  qdrant_data:
+  phoenix_data:
+  ollama_data:

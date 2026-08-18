@@ -1,0 +1,24 @@
+# RAG Benchmark — Dependências
+
+python-dotenv
+google-genai
+sentence-transformers
+qdrant-client
+pymupdf4llm
+openai
+pandas
+numpy
+
+langchain-core
+langchain-community
+langchain-google-genai
+langchain-qdrant
+
+llama-index
+llama-index-vector-stores-qdrant
+llama-index-embeddings-huggingface
+llama-index-llms-google-genai
+
+arize-phoenix-otel
+arize-phoenix-client
+openinference-instrumentation-langchain
