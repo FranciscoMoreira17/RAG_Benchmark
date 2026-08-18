@@ -1,0 +1,45 @@
+{
+  "start_date": "2026-03-17",
+  "end_date": "2026-03-23",
+  "total_dates": 7,
+  "successful": 0,
+  "failed": 7,
+  "results": [
+    {
+      "date": "2026-03-17",
+      "success": false,
+      "message": "Timeout (5 minutes)"
+    },
+    {
+      "date": "2026-03-18",
+      "success": false,
+      "message": "Timeout (5 minutes)"
+    },
+    {
+      "date": "2026-03-19",
+      "success": false,
+      "message": "Timeout (5 minutes)"
+    },
+    {
+      "date": "2026-03-20",
+      "success": false,
+      "message": "Timeout (5 minutes)"
+    },
+    {
+      "date": "2026-03-21",
+      "success": false,
+      "message": "Scraper failed: Unknown error"
+    },
+    {
+      "date": "2026-03-22",
+      "success": false,
+      "message": "Scraper failed: Unknown error"
+    },
+    {
+      "date": "2026-03-23",
+      "success": false,
+      "message": "Timeout (5 minutes)"
+    }
+  ],
+  "timestamp": "2026-05-06T00:15:54.110975"
+}

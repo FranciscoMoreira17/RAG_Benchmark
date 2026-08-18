@@ -1,0 +1,37 @@
+{
+  "decreto_119_2026.pdf": {
+    "n_paginas": 4,
+    "paginas_com_texto": 0,
+    "racio": 0.0,
+    "chars_por_pagina": 0.0,
+    "paginas_vazias": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "chars_extraidos": 11526,
+    "ocr_forcado": true,
+    "reprocessado": false
+  },
+  "decreto_lei_131_2026.pdf": {
+    "n_paginas": 11,
+    "paginas_com_texto": 11,
+    "racio": 1.0,
+    "chars_por_pagina": 3286.0,
+    "paginas_vazias": [],
+    "chars_extraidos": 35766,
+    "ocr_forcado": false,
+    "reprocessado": false
+  },
+  "decreto_lei_84_2026.pdf": {
+    "n_paginas": 36,
+    "paginas_com_texto": 36,
+    "racio": 1.0,
+    "chars_por_pagina": 2997.527777777778,
+    "paginas_vazias": [],
+    "chars_extraidos": 106997,
+    "ocr_forcado": false,
+    "reprocessado": false
+  }
+}

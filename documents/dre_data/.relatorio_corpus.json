@@ -1,0 +1,89 @@
+{
+  "n_ficheiros": 71,
+  "ficheiros_partidos": [],
+  "contagens": {
+    "total_lidos": 8277,
+    "aceites": 8243,
+    "erro_scraping": 23,
+    "grande_demais": 10,
+    "sem_guid": 1
+  },
+  "limiares": {
+    "min_chars": 50,
+    "max_chars": 500000
+  },
+  "distribuicao_tipos": {
+    "Anúncio": 3998,
+    "Aviso": 2538,
+    "Despacho": 1004,
+    "Regulamento": 213,
+    "Edital": 119,
+    "Louvor": 97,
+    "Deliberação": 64,
+    "Decreto-lei": 54,
+    "Declaração": 47,
+    "Resolução": 44,
+    "Decreto": 21,
+    "Portaria": 11,
+    "Acórdão": 9,
+    "Lei": 6,
+    "Édito": 6,
+    "Alvará": 5,
+    "Contrato": 3,
+    "Acordo": 1,
+    "Parecer": 1,
+    "Diretiva": 1,
+    "Mapa": 1
+  },
+  "tamanhos": {
+    "min": 220,
+    "max": 431417,
+    "mediana": 4359,
+    "media": 6971.616644425573,
+    "curtos_lt2000": 2662,
+    "medios_2000_8000": 4580,
+    "longos_gt8000": 1001
+  },
+  "excluidos_grandes_amostra": [
+    [
+      "Aviso 155/2026/2, de 5 de Janeiro",
+      7206722
+    ],
+    [
+      "Regulamento 19/2026, de 12 de Janeiro",
+      18995840
+    ],
+    [
+      "Regulamento 83/2026, de 23 de Janeiro",
+      735350
+    ],
+    [
+      "Decreto Legislativo Regional 4/2026/A, de 4 de Fevereiro",
+      537014
+    ],
+    [
+      "Aviso (extrato) 3452/2026/2, de 17 de Fevereiro",
+      633621
+    ],
+    [
+      "Aviso (extrato) 4081/2026/2, de 24 de Fevereiro",
+      1185493
+    ],
+    [
+      "Aviso 4369/2026/2, de 27 de Fevereiro",
+      1509439
+    ],
+    [
+      "Regulamento 208/2026, de 3 de Março",
+      1166103
+    ],
+    [
+      "Despacho (extrato) 2987/2026, de 9 de Março",
+      5159236
+    ],
+    [
+      "Aviso 6211/2026/2, de 19 de Março",
+      54276140
+    ]
+  ]
+}
