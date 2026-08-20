@@ -232,9 +232,9 @@ python runner.py --framework <nome> --ablacao         # Todas as variantes OKF
 
 **Quotas de API.** A geração com Llama 70B via Groq tem um limite de ~100k tokens/dia, o que permite aproximadamente uma condição completa por dia (30 queries × ~2.600 tokens de contexto). O juiz LLM (`gpt-oss-120b`) tem quota separada de 200k tokens/dia. Planear a execução em dias consecutivos.
 
-**PDFs digitalizados.** Alguns PDFs do DRE são digitalizações de imagem sem texto extraível. O pipeline OKF integra Tesseract OCR automaticamente para estes casos. As frameworks genéricas (LangChain, LlamaIndex) podem falhar silenciosamente nestes documentos.
+**PDFs digitalizados.** Alguns PDFs do DRE são digitalizações de imagem sem texto extraível. O pipeline consegue integrar Tesseract OCR automaticamente para estes casos. As frameworks genéricas (LangChain, LlamaIndex) podem falhar silenciosamente nestes documentos.
 
-**Segmentação por artigo.** A decisão arquitetural central do OKF: um artigo = um chunk. Isto garante que a unidade semântica jurídica nunca é fragmentada entre chunks, ao contrário do chunking genérico (RecursiveCharacterTextSplitter, SentenceSplitter) que corta arbitrariamente dentro de artigos.
+**Segmentação por artigo.** A decisão arquitetural central: um artigo = um chunk. Isto garante que a unidade semântica jurídica nunca é fragmentada entre chunks, ao contrário do chunking genérico (RecursiveCharacterTextSplitter, SentenceSplitter) que corta arbitrariamente dentro de artigos.
 
 **Embedding com prefixos E5.** O modelo `multilingual-e5-small` exige prefixos `query:` nas queries e `passage:` nos documentos. Omitir estes prefixos degrada severamente a qualidade do retrieval. Todas as frameworks utilizam a mesma classe `E5Embedder` do `config.py` para garantir consistência.
 
