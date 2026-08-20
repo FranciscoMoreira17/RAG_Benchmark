@@ -54,7 +54,7 @@ Cada framework/condição utiliza uma collection dedicada no Qdrant. Todas parti
 | `benchmark_langchain` | LangChain | Chunking genérico (RecursiveCharacterTextSplitter) |
 | `benchmark_llamaindex` | LlamaIndex | Chunking por frase (SentenceSplitter) |
 | `benchmark_estrutural` | OKF (Estrutural) | Segmentação por artigo; partilhada entre variantes `enriquecido` e `enriquecido_grafo` |
-| `benchmark_hibrido` | Artigo (OKF) | Texto cru |
+| `benchmark_hibrido` | Artigo (OKF) | Segmentação por artigo |
 
 As collections são criadas automaticamente pelo serviço `init-qdrant` no Docker Compose. Para recriá-las manualmente:
 
@@ -67,9 +67,9 @@ O benchmark avalia **7 condições de retrieval** e **4 condições de geração
 
 | Condição | Segmentação | Embedding | Retrieval | Grafo | Collection |
 |---|---|---|---|---|---|
-| `hibrido-denso` | Artigo (OKF) | Texto cru | Denso | Não | `benchmark_hibrido` |
-| `hibrido-esparso` | Artigo (OKF) | Texto cru | BM25 (esparso) | Não | `benchmark_hibrido` |
-| `hibrido-hibrido` | Artigo (OKF) | Texto cru | Denso + BM25 (RRF) | Não | `benchmark_hibrido` |
+| `hibrido-denso` | Artigo | Texto cru | Denso | Não | `benchmark_hibrido` |
+| `hibrido-esparso` | Artigo | Texto cru | BM25 (esparso) | Não | `benchmark_hibrido` |
+| `hibrido-hibrido(RRF)` | Artigo | Texto cru | Denso + BM25 (RRF) | Não | `benchmark_hibrido` |
 | `estrutural-enriquecido` | Artigo (OKF) | Frontmatter prepended | Denso + BM25 (RRF) | Não | `benchmark_estrutural` |
 | `estrutural-enriquecido_grafo` | Artigo (OKF) | Frontmatter prepended | Denso + BM25 (RRF) | Sim | `benchmark_estrutural` |
 | `langchain` | RecursiveCharacter | Texto cru | Denso | Não | `benchmark_langchain` |
@@ -240,4 +240,4 @@ python runner.py --framework <nome> --ablacao         # Todas as variantes OKF
 
 ## Licença
 
-Projeto académico - ESTG, Politécnico do Porto.
+Projeto de investigação - ESTG, Politécnico do Porto.
