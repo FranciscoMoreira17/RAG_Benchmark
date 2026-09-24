@@ -15,7 +15,7 @@ Camadas, por ordem de peso:
 
 Uso:
     python avaliacao.py --pasta resultados/ --so-retrieval
-    python avaliacao.py --ficheiro resultados/hibrido-denso_r1_....json
+    python avaliacao.py --ficheiro resultados/UnitLevelSegmentation-denso_r1_....json
     python avaliacao.py --comparar
     python avaliacao.py --ficheiro X.json --langsmith
 """
@@ -182,6 +182,37 @@ def metricas_estratificadas(resultados: list[dict], k: int = 5) -> dict:
             out[f"tipo={tipo}"] = m
     return out
 
+
+
+def _rotulo_camada(valor) -> str:
+    """Mapeia a camada para rótulo legível. Dataset novo: 1=facil, 2=dificil."""
+    return {1: "facil", 2: "dificil"}.get(valor, f"camada{valor}")
+
+
+def estratificacao_por_camada(resultados: list[dict], k: int = 5) -> dict:
+    """Estratifica o retrieval por camada (1=facil, 2=dificil)."""
+    out = {}
+    por = defaultdict(list)
+    for r in resultados:
+        por[r.get("camada")].append(r)
+    for cam in sorted(por, key=lambda v: (v is None, v)):
+        m = metricas_retrieval(por[cam], k)
+        if m:
+            out[f"camada={_rotulo_camada(cam)}"] = m
+    return out
+
+
+def estratificacao_tipo_camada(resultados: list[dict], k: int = 5) -> dict:
+    """Estratifica pelas 4 subcategorias: tipo x camada."""
+    out = {}
+    por = defaultdict(list)
+    for r in resultados:
+        por[(r.get("tipo", "?"), r.get("camada"))].append(r)
+    for (tipo, cam) in sorted(por, key=lambda c: (str(c[0]), (c[1] is None, c[1]))):
+        m = metricas_retrieval(por[(tipo, cam)], k)
+        if m:
+            out[f"tipo={tipo}|camada={_rotulo_camada(cam)}"] = m
+    return out
 
 
 def verificar_orcamento(resultados: list[dict]) -> dict:
@@ -525,6 +556,8 @@ def avaliar_ficheiro(caminho: str, so_retrieval: bool = False,
     print("\n  [1] Retrieval (guid, determinístico)...")
     resumo["retrieval"] = metricas_retrieval(resultados, k=k)
     resumo["retrieval_estratificado"] = metricas_estratificadas(resultados, k=k)
+    resumo["retrieval_por_camada"] = estratificacao_por_camada(resultados, k=k)
+    resumo["retrieval_tipo_camada"] = estratificacao_tipo_camada(resultados, k=k)
 
     if not so_retrieval:
         from juiz_llm import avaliar_llm_juiz
@@ -585,6 +618,11 @@ def imprimir_resumo(resumo: dict):
 # Comparação
 # =====================================================================
 def comparar():
+    """Lê *_avaliacao.json e escreve UMA folha de Excel com 7 tabelas empilhadas."""
+    import openpyxl
+    from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
+    from openpyxl.utils import get_column_letter
+
     ficheiros = glob.glob(os.path.join(RESULTADOS_DIR, "*_avaliacao.json"))
     if not ficheiros:
         print("Sem avaliações. Corre primeiro --pasta resultados/")
@@ -596,55 +634,156 @@ def comparar():
             r = json.load(f)
         por_condicao[r["condicao"]].append(r)
 
-    linhas = []
-    for cond, reps in sorted(por_condicao.items()):
-        def media(getter):
-            vals = [v for v in (getter(r) for r in reps) if v is not None]
-            return statistics.mean(vals) if vals else None
+    def media_desvio(reps, getter):
+        vals = [v for v in (getter(r) for r in reps) if v is not None]
+        if not vals:
+            return None, None
+        return statistics.mean(vals), (statistics.pstdev(vals) if len(vals) > 1 else 0.0)
 
-        def desvio(getter):
-            vals = [v for v in (getter(r) for r in reps) if v is not None]
-            return statistics.pstdev(vals) if len(vals) > 1 else 0.0
+    def g_retr(r, m): return (r.get("retrieval") or {}).get(m)
+    def g_estr(r, bloco, chave, m): return (r.get(bloco, {}).get(chave) or {}).get(m)
+    def g_juiz(r, m, sub):
+        d = (r.get("juiz_llm") or {}).get("_detalhe") or {}
+        return d.get(m, {}).get(sub) if m in d else ((r.get("juiz_llm") or {}).get(m) if sub == "media" else None)
+    def g_clas(r, m): return (r.get("classicas") or {}).get(m)
+    def g_custo(r, caminho):
+        d = r
+        for p in caminho:
+            d = (d or {}).get(p) if isinstance(d, dict) else None
+        return d
 
-        def estrat(r, chave, metrica):
-            return (r.get("retrieval_estratificado", {}).get(chave) or {}).get(metrica)
+    def tab_geral():
+        L = []
+        for cond, reps in sorted(por_condicao.items()):
+            hit_m, hit_s = media_desvio(reps, lambda r: g_retr(r, "hit_rate@5"))
+            rec_m, _ = media_desvio(reps, lambda r: g_retr(r, "recall@5"))
+            mrr_m, _ = media_desvio(reps, lambda r: g_retr(r, "mrr"))
+            ndcg_m, _ = media_desvio(reps, lambda r: g_retr(r, "ndcg@5"))
+            prec_m, _ = media_desvio(reps, lambda r: g_retr(r, "precision@5"))
+            n = (reps[0].get("retrieval") or {}).get("n_queries")
+            L.append({"condicao": cond, "n_exec": len(reps), "n_queries": n,
+                      "hit@5": hit_m, "hit@5_sd": hit_s, "recall@5": rec_m,
+                      "mrr": mrr_m, "ndcg@5": ndcg_m, "precision@5": prec_m})
+        return pd.DataFrame(L)
 
-        linhas.append({
-            "condicao": cond,
-            "n_exec": len(reps),
-            "precision@5": media(lambda r: (r.get("retrieval") or {}).get("precision@5")),
-            "hit@5": media(lambda r: (r.get("retrieval") or {}).get("hit_rate@5")),
-            "hit@5_sd": desvio(lambda r: (r.get("retrieval") or {}).get("hit_rate@5")),
-            "recall@5": media(lambda r: (r.get("retrieval") or {}).get("recall@5")),
-            "ndcg@5": media(lambda r: (r.get("retrieval") or {}).get("ndcg@5")),
-            "mrr": media(lambda r: (r.get("retrieval") or {}).get("mrr")),
-            "hit_ident": media(lambda r: estrat(r, "tipo=identificador", "hit_rate@5")),
-            "hit_seman": media(lambda r: estrat(r, "tipo=semantica", "hit_rate@5")),
-            "faithful": media(lambda r: (r.get("juiz_llm") or {}).get("faithfulness")),
-            "relevancy": media(lambda r: (r.get("juiz_llm") or {}).get("answer_relevancy")),
-            "correctness": media(lambda r: (r.get("juiz_llm") or {}).get("correctness")),
-            "tokens_ctx": media(lambda r: (r.get("orcamento_contexto") or {}).get("tokens_media")),
-            "latencia_s": media(lambda r: (r.get("tempos") or {}).get("total_medio_s")),
-        })
+    def tab_estrato(bloco, ordem, etiqueta):
+        L = []
+        for cond, reps in sorted(por_condicao.items()):
+            chaves = set()
+            for r in reps:
+                chaves.update((r.get(bloco) or {}).keys())
+            seq = [c for c in ordem if c in chaves] + sorted(c for c in chaves if c not in ordem)
+            for chave in seq:
+                hit_m, hit_s = media_desvio(reps, lambda r: g_estr(r, bloco, chave, "hit_rate@5"))
+                rec_m, _ = media_desvio(reps, lambda r: g_estr(r, bloco, chave, "recall@5"))
+                mrr_m, _ = media_desvio(reps, lambda r: g_estr(r, bloco, chave, "mrr"))
+                ndcg_m, _ = media_desvio(reps, lambda r: g_estr(r, bloco, chave, "ndcg@5"))
+                n = g_estr(reps[0], bloco, chave, "n_queries")
+                L.append({"condicao": cond,
+                          etiqueta: chave.split("=", 1)[-1] if "=" in chave else chave,
+                          "n_queries": n, "hit@5": hit_m, "hit@5_sd": hit_s,
+                          "recall@5": rec_m, "mrr": mrr_m, "ndcg@5": ndcg_m})
+        return pd.DataFrame(L)
 
-    df = pd.DataFrame(linhas)
-    pd.set_option("display.width", 220)
-    pd.set_option("display.max_columns", 60)
+    def tab_geracao():
+        L = []
+        for cond, reps in sorted(por_condicao.items()):
+            f_m, _ = media_desvio(reps, lambda r: g_juiz(r, "faithfulness", "media"))
+            f_s, _ = media_desvio(reps, lambda r: g_juiz(r, "faithfulness", "desvio"))
+            r_m, _ = media_desvio(reps, lambda r: g_juiz(r, "answer_relevancy", "media"))
+            r_s, _ = media_desvio(reps, lambda r: g_juiz(r, "answer_relevancy", "desvio"))
+            c_m, _ = media_desvio(reps, lambda r: g_juiz(r, "correctness", "media"))
+            c_s, _ = media_desvio(reps, lambda r: g_juiz(r, "correctness", "desvio"))
+            n = g_juiz(reps[0], "faithfulness", "n")
+            L.append({"condicao": cond, "n_geracao": n,
+                      "faithfulness": f_m, "faith_sd": f_s,
+                      "relevancy": r_m, "relev_sd": r_s,
+                      "correctness": c_m, "correct_sd": c_s})
+        return pd.DataFrame(L)
 
-    print(f"\n{'=' * 110}")
-    print("  COMPARAÇÃO DE CONDIÇÕES")
-    print(f"{'=' * 110}\n")
-    print(df.to_string(index=False, float_format=lambda x: f"{x:.3f}"))
+    def tab_classicas():
+        L = []
+        for cond, reps in sorted(por_condicao.items()):
+            b, _ = media_desvio(reps, lambda r: g_clas(r, "bleu"))
+            ro, _ = media_desvio(reps, lambda r: g_clas(r, "rouge_l"))
+            be, _ = media_desvio(reps, lambda r: g_clas(r, "bertscore_f1"))
+            L.append({"condicao": cond, "bleu": b, "rouge_l": ro, "bertscore_f1": be})
+        return pd.DataFrame(L)
 
-    print("\n  Leitura:")
-    print("   • hit@5 global é a métrica principal de retrieval.")
-    print("   • hit_ident vs hit_seman revela onde cada estratégia ganha:")
-    print("     espera-se BM25 forte em identificador, denso/híbrido em semântica.")
-    print("   • Diferenças < desvio entre execuções não são interpretáveis.")
-    print("   • tokens_ctx semelhante entre condições ⇒ comparação não confundida.")
+    def tab_custo():
+        L = []
+        for cond, reps in sorted(por_condicao.items()):
+            tok, _ = media_desvio(reps, lambda r: g_custo(r, ["orcamento_contexto", "tokens_media"]))
+            rt, _ = media_desvio(reps, lambda r: g_custo(r, ["tempos", "retrieval_medio_s"]))
+            gt, _ = media_desvio(reps, lambda r: g_custo(r, ["tempos", "geracao_media_s"]))
+            tt, _ = media_desvio(reps, lambda r: g_custo(r, ["tempos", "total_medio_s"]))
+            ne, _ = media_desvio(reps, lambda r: r.get("n_erros"))
+            nq, _ = media_desvio(reps, lambda r: r.get("n_queries"))
+            L.append({"condicao": cond, "n_queries": nq, "n_erros": ne,
+                      "tokens_ctx": tok, "lat_retrieval_s": rt,
+                      "lat_geracao_s": gt, "lat_total_s": tt})
+        return pd.DataFrame(L)
 
-    destino = os.path.join(RESULTADOS_DIR, "comparacao_final.csv")
-    df.to_csv(destino, index=False)
+    tabelas = [
+        ("1. RETRIEVAL - GERAL", tab_geral()),
+        ("2. RETRIEVAL - POR TIPO (factual/lookup vs semantica)",
+         tab_estrato("retrieval_estratificado",
+                     ["tipo=factual/lookup", "tipo=semantica"], "tipo")),
+        ("3. RETRIEVAL - POR CAMADA (facil vs dificil)",
+         tab_estrato("retrieval_por_camada",
+                     ["camada=facil", "camada=dificil"], "camada")),
+        ("4. RETRIEVAL - TIPO x CAMADA (4 subcategorias)",
+         tab_estrato("retrieval_tipo_camada",
+                     ["tipo=factual/lookup|camada=facil",
+                      "tipo=factual/lookup|camada=dificil",
+                      "tipo=semantica|camada=facil",
+                      "tipo=semantica|camada=dificil"], "subcategoria")),
+        ("5. GERACAO - JUIZ LLM", tab_geracao()),
+        ("6. METRICAS CLASSICAS (anexo)", tab_classicas()),
+        ("7. CUSTO / EXECUCAO", tab_custo()),
+    ]
+
+    wb = openpyxl.Workbook()
+    ws = wb.active
+    ws.title = "comparacao"
+
+    titulo_font = Font(name="Arial", bold=True, size=12, color="1F4E78")
+    header_font = Font(name="Arial", bold=True, color="FFFFFF")
+    header_fill = PatternFill("solid", fgColor="305496")
+    body_font = Font(name="Arial", size=10)
+    thin = Side(style="thin", color="D9D9D9")
+    borda = Border(left=thin, right=thin, top=thin, bottom=thin)
+
+    linha = 1
+    larguras = defaultdict(int)
+    for titulo, df in tabelas:
+        ws.cell(row=linha, column=1, value=titulo).font = titulo_font
+        linha += 1
+        if df is None or df.empty:
+            ws.cell(row=linha, column=1, value="(sem dados)").font = body_font
+            linha += 3
+            continue
+        for j, col in enumerate(df.columns, start=1):
+            c = ws.cell(row=linha, column=j, value=str(col))
+            c.font = header_font; c.fill = header_fill; c.border = borda
+            c.alignment = Alignment(horizontal="center", vertical="center")
+            larguras[j] = max(larguras[j], len(str(col)) + 2)
+        linha += 1
+        for _, row in df.iterrows():
+            for j, col in enumerate(df.columns, start=1):
+                val = row[col]
+                if isinstance(val, float):
+                    val = round(val, 4)
+                c = ws.cell(row=linha, column=j, value=val)
+                c.font = body_font; c.border = borda
+                larguras[j] = max(larguras[j], len(str(val)) + 2)
+            linha += 1
+        linha += 2
+    for j, w in larguras.items():
+        ws.column_dimensions[get_column_letter(j)].width = min(max(w, 10), 40)
+
+    destino = os.path.join(RESULTADOS_DIR, "comparacao_final.xlsx")
+    wb.save(destino)
     print(f"\n  Exportado: {destino}")
 
 

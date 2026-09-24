@@ -1,30 +1,34 @@
 """
-rag_hibrido.py — Retrieval denso, esparso (BM25) e híbrido (RRF)
-=================================================================
-Uma framework, três condições, um índice. Cada ponto no Qdrant tem
-DOIS vetores: denso (E5, 1024d, semântico) e esparso (BM25, lexical).
-Indexa-se uma vez; o modo de retrieval é escolhido no responder().
+rag_overlap.py — Segmentação cega por janela deslizante (fixed-size + overlap)
+==============================================================================
+Condição de baseline: fixed-size chunking com overlap, CEGO à estrutura.
+Ao contrário do RAG Estrutural (que deteta artigos/blocos/janelas), esta
+condição ignora por completo a estrutura do documento e corta TODOS os
+documentos em janelas de tamanho fixo em caracteres, com sobreposição.
+
+  Janela  = 1200 caracteres
+  Overlap = 15% (180 caracteres)
+  Passo   = 1020 caracteres
+
+O tamanho de 1200 chars foi fixado empiricamente (ver medir_tokens_chunk.py):
+com o tokenizer do E5, ~99.5% dos chunks ficam <= 512 tokens (P99 = 478),
+a janela do modelo — evitando truncagem silenciosa no embedding denso.
+
+Propósito na tese: isolar o valor da segmentação consciente da estrutura.
+Comparada com o RAG Estrutural sob o mesmo embedder e o mesmo retrieval,
+a diferença entre esta condição e a estrutural é APENAS a inteligência de
+segmentação. É o degrau mais ingénuo da escada de ablação.
+
+Reutiliza toda a lógica de retrieval do rag_hibrido (denso/esparso/híbrido
+por RRF); só muda a segmentação (cega) e a collection.
 
   --variante denso     → só similaridade vetorial (E5)
-  --variante esparso   → só BM25 (baseline lexical)
-  --variante hibrido   → fusão RRF dos dois rankings
+  --variante esparso   → só BM25
+  --variante hibrido   → fusão RRF dos dois
 
-Porque isto importa para a tese: o corpus DRE está cheio de
-identificadores (números de anúncio, NIPC, entidades). O BM25
-resolve-os por correspondência exata; o denso capta paráfrase. A
-comparação das três condições responde à pergunta central — o
-retrieval semântico acrescenta valor neste corpus, ou o BM25 basta?
-
-Unidade indexada = SEGMENTO. Alvo de retrieval = doc_id (guid) do
-documento-pai. Vários segmentos podem partilhar doc_id; na
-avaliação conta se o doc_id certo foi recuperado.
-
-Nota: geração usa o mesmo gerador e orçamento das outras condições,
-para paridade. O BM25 puro raramente é usado com geração — mas
-mantém-se disponível para completude.
+Unidade indexada = SEGMENTO (janela). Alvo de retrieval = doc_id (guid).
 """
 
-import os
 import time
 import hashlib
 
@@ -33,21 +37,25 @@ from config import (
     qdrant_client,
     montar_contexto,
     get_groq_client,
-    fingerprint_ingestao,
     SYSTEM_PROMPT,
     GEN_MODEL,
     EMBEDDING_DIM,
 )
 from runner import FrameworkBase
 from dre_loader import carregar_corpus_dre, corpus_fingerprint
-from dre_segmentador import segmentar_corpus
 
 from qdrant_client import models as qm
 from fastembed import SparseTextEmbedding
 
-COLLECTION = "benchmark_hibrido"      # partilhada pelas três variantes
+COLLECTION = "benchmark_overlap"
 BM25_MODEL = "Qdrant/bm25"
-PREFETCH = 50                          # candidatos por ramo antes da fusão
+PREFETCH = 50
+
+JANELA_CHARS = 1200
+OVERLAP_PCT = 0.15
+OVERLAP_CHARS = int(JANELA_CHARS * OVERLAP_PCT)   # 180
+PASSO = JANELA_CHARS - OVERLAP_CHARS              # 1020
+MIN_SEGMENTO_CHARS = 40
 
 VARIANTES = {
     "denso":   {"modo": "denso"},
@@ -60,9 +68,61 @@ def _point_id(chunk_id: str) -> int:
     return int(hashlib.md5(chunk_id.encode()).hexdigest()[:15], 16)
 
 
+def segmentar_cego(docs: list[dict]) -> tuple[list[dict], dict]:
+    """
+    Corta TODOS os documentos em janelas de JANELA_CHARS com OVERLAP_CHARS
+    de sobreposição, ignorando qualquer estrutura. Produz a mesma estrutura
+    de dicionário que dre_segmentador, para compatibilidade com a ingestão.
+    """
+    todos = []
+    n_janelas = []
+    for d in docs:
+        texto = d["texto"]
+        segs_doc = []
+        i = 0
+        while i < len(texto):
+            janela = texto[i:i + JANELA_CHARS].strip()
+            if len(janela) >= MIN_SEGMENTO_CHARS:
+                segs_doc.append(janela)
+            i += PASSO
+        # documento demasiado curto para uma janela mínima → um segmento
+        if not segs_doc and texto.strip():
+            segs_doc = [texto.strip()]
+        n_janelas.append(len(segs_doc))
+        for j, janela in enumerate(segs_doc):
+            todos.append({
+                "doc_id": d["id"],
+                "chunk_id": f"{d['id']}::{j}",
+                "texto": janela,
+                "rotulo": f"janela@{j}",
+                "nivel_segmentacao": "overlap",
+                "titulo": d["titulo"],
+                "tipo": d["tipo"],
+                "numero": d["numero"],
+                "data_publicacao": d["data_publicacao"],
+                "url": d["url"],
+            })
+
+    from statistics import mean, median
+    relatorio = {
+        "n_documentos": len(docs),
+        "n_segmentos": len(todos),
+        "segmentos_por_doc_media": mean(n_janelas) if n_janelas else 0,
+        "segmentos_por_doc_mediana": median(n_janelas) if n_janelas else 0,
+        "segmentos_por_doc_max": max(n_janelas) if n_janelas else 0,
+        "janela_chars": JANELA_CHARS,
+        "overlap_chars": OVERLAP_CHARS,
+    }
+    print(f"  [OVL] {len(docs)} docs → {len(todos)} segmentos "
+          f"(janela={JANELA_CHARS}, overlap={OVERLAP_CHARS}, "
+          f"media {relatorio['segmentos_por_doc_media']:.1f}/doc, "
+          f"max {relatorio['segmentos_por_doc_max']})")
+    return todos, relatorio
+
+
 class Framework(FrameworkBase):
 
-    nome = "hibrido"
+    nome = "overlap"
     usa_qdrant = True
 
     def __init__(self, variante: str = "hibrido"):
@@ -71,7 +131,7 @@ class Framework(FrameworkBase):
         self.variante = variante
         self.modo = VARIANTES[variante]["modo"]
         self.collection = COLLECTION
-        self.nome_run = f"hibrido-{variante}"
+        self.nome_run = f"overlap-{variante}"
         self._groq = None
         self._sparse = None
 
@@ -86,29 +146,38 @@ class Framework(FrameworkBase):
         return self._groq
 
     def config_ingestao(self) -> dict:
-        # Todas as variantes partilham índice → mesmo fingerprint.
-        return {"pipeline": "dre-hibrido", "bm25": BM25_MODEL}
+        return {
+            "pipeline": "dre-overlap",
+            "bm25": BM25_MODEL,
+            "janela_chars": JANELA_CHARS,
+            "overlap_chars": OVERLAP_CHARS,
+        }
 
     def descricao(self) -> dict:
-        return {"variante": self.variante, "modo": self.modo}
+        return {
+            "variante": self.variante,
+            "modo": self.modo,
+            "janela_chars": JANELA_CHARS,
+            "overlap_chars": OVERLAP_CHARS,
+            "segmentacao": "cega (fixed-size + overlap)",
+        }
 
     # ─────────────────────────────────────────────────────────
     # Ingestão (uma vez para as três variantes)
     # ─────────────────────────────────────────────────────────
     def ingerir(self) -> dict:
         docs = carregar_corpus_dre()
-        segmentos, rel_seg = segmentar_corpus(docs)
+        segmentos, rel_seg = segmentar_cego(docs)
 
         textos = [s["texto"] for s in segmentos]
 
-        print(f"    [HIB] Embedding denso (E5) de {len(textos)} segmentos...")
+        print(f"    [OVL] Embedding denso (E5) de {len(textos)} segmentos...")
         densos = embedding_model.embed_documents(textos)
 
-        print(f"    [HIB] Embedding esparso (BM25)...")
+        print(f"    [OVL] Embedding esparso (BM25)...")
         sparse = self._get_sparse()
         esparsos = list(sparse.embed(textos, batch_size=64))
 
-        # Recriar collection com DOIS espaços de vetores
         if qdrant_client.collection_exists(self.collection):
             qdrant_client.delete_collection(self.collection)
         qdrant_client.create_collection(
@@ -121,11 +190,11 @@ class Framework(FrameworkBase):
             },
         )
 
-        print(f"    [HIB] A indexar {len(segmentos)} pontos...")
+        print(f"    [OVL] A indexar {len(segmentos)} pontos...")
         pontos = []
-        for i, (seg, dv, sv) in enumerate(zip(segmentos, densos, esparsos)):
+        for seg, dv, sv in zip(segmentos, densos, esparsos):
             payload = {
-                "doc_id": seg["doc_id"],          # guid — alvo de retrieval
+                "doc_id": seg["doc_id"],
                 "chunk_id": seg["chunk_id"],
                 "texto": seg["texto"],
                 "titulo": seg["titulo"],
@@ -149,16 +218,18 @@ class Framework(FrameworkBase):
             qdrant_client.upsert(collection_name=self.collection,
                                  points=pontos[i:i + 100], wait=True)
 
-        print(f"    [HIB] {len(pontos)} pontos → {self.collection}")
+        print(f"    [OVL] {len(pontos)} pontos → {self.collection}")
         return {
             "n_chunks": len(pontos),
             "n_documentos": len(docs),
-            "segmentacao": rel_seg["distribuicao_nivel_documento"],
+            "segmentacao": {"overlap": rel_seg["n_segmentos"]},
+            "janela_chars": JANELA_CHARS,
+            "overlap_chars": OVERLAP_CHARS,
             "corpus_fingerprint": corpus_fingerprint(docs),
         }
 
     # ─────────────────────────────────────────────────────────
-    # Retrieval segundo o modo
+    # Retrieval segundo o modo (idêntico ao rag_hibrido)
     # ─────────────────────────────────────────────────────────
     def _retrieve(self, query: str, top_k: int):
         qv_dense = embedding_model.embed_query(query)
@@ -170,7 +241,6 @@ class Framework(FrameworkBase):
                 limit=top_k, with_payload=True,
             ).points
 
-        # esparso da query
         sparse = self._get_sparse()
         sv = next(iter(sparse.query_embed(query)))
         sparse_vec = qm.SparseVector(indices=sv.indices.tolist(),
@@ -183,7 +253,6 @@ class Framework(FrameworkBase):
                 limit=top_k, with_payload=True,
             ).points
 
-        # híbrido: prefetch nos dois ramos + fusão RRF
         return qdrant_client.query_points(
             collection_name=self.collection,
             prefetch=[
@@ -195,8 +264,6 @@ class Framework(FrameworkBase):
         ).points
 
     def recuperar(self, query: str, top_k: int = 5) -> dict:
-        """Só retrieval — sem geração. Para a fase de avaliação de
-        retrieval, que não consome gerador nem quota."""
         t0 = time.time()
         resultados = self._retrieve(query, top_k)
         tempo_retrieval = time.time() - t0

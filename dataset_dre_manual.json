@@ -1,0 +1,1202 @@
+[
+  {
+    "id": "ID_001",
+    "query": "Que lei procede à avaliação independente dos incêndios de agosto de 2025 em território de Portugal continental?",
+    "tipo": "factual/lookup",
+    "camada": 1,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6415922"
+    ],
+    "ancora": "Lei 5/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_002",
+    "query": "Qual foi a classificação final obtida pelo trabalhador Ivo António dos Santos Florência na avaliação do período experimental?",
+    "tipo": "factual/lookup",
+    "camada": 1,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6421760"
+    ],
+    "ancora": "Aviso 1359/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_003",
+    "query": "Qual o número do processo relativo ao pagamento de créditos requerido por Maria Dulce de Jesus Ferreira, por óbito de Serafim de Sousa Pereira?",
+    "tipo": "factual/lookup",
+    "camada": 1,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6421672"
+    ],
+    "ancora": "Édito 11/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_004",
+    "query": "Em quantos dias após a publicação no Diário da República entra em vigor o Regulamento do Programa Challenges You?",
+    "tipo": "factual/lookup",
+    "camada": 1,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6423298"
+    ],
+    "ancora": "Edital 73/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_005",
+    "query": "Quantos eleitores nacionais estavam inscritos no recenseamento eleitoral no concelho de Águeda, com data de referência de 31 de dezembro de 2025?",
+    "tipo": "factual/lookup",
+    "camada": 1,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6458229"
+    ],
+    "ancora": "Mapa 2/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_006",
+    "query": "Qual é o valor do preço base do procedimento de concurso público para a aquisição de papel laser 75g/m² no formato A4?",
+    "tipo": "factual/lookup",
+    "camada": 1,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6432456"
+    ],
+    "ancora": "Anúncio 2923/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_007",
+    "query": "Qual é o número máximo de lotes autorizado no procedimento de concurso público promovido pelo Citeforma?",
+    "tipo": "factual/lookup",
+    "camada": 1,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6407240"
+    ],
+    "ancora": "Anúncio 478/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_008",
+    "query": "Qual foi a nota final obtida pela trabalhadora Cátia Sofia Coelho Soares na conclusão do período experimental?",
+    "tipo": "factual/lookup",
+    "camada": 1,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6408720"
+    ],
+    "ancora": "Despacho 370/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_009",
+    "query": "Por que período de tempo foram renovadas as comissões de serviço dos dirigentes Ana Catarina Gonçalves Soares e Jorge Manuel Vilela Araújo?",
+    "tipo": "factual/lookup",
+    "camada": 1,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6470861"
+    ],
+    "ancora": "Aviso 5379/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_010",
+    "query": "Qual é o grau mínimo de incapacidade atribuído aos doentes oncológicos recém-diagnosticados no período de cinco anos após o diagnóstico, ao abrigo da Lei 14/2021?",
+    "tipo": "factual/lookup",
+    "camada": 1,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "4476135"
+    ],
+    "ancora": "Lei 14/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_011",
+    "query": "Com que data produziu efeitos a cessação da relação jurídica de emprego público do trabalhador Luis Miguel da Silva Gonçalinho, ao abrigo do Aviso 6425/2021?",
+    "tipo": "factual/lookup",
+    "camada": 1,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "4478242"
+    ],
+    "ancora": "Aviso 6425/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_012",
+    "query": "Qual é a remuneração mensal e a posição remuneratória do contrato de trabalho em funções públicas celebrado com o trabalhador Paulo Sérgio Alves Pires, ao abrigo do Aviso 3590/2026/2?",
+    "tipo": "factual/lookup",
+    "camada": 1,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6444334"
+    ],
+    "ancora": "Aviso 3590/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_013",
+    "query": "Qual é a diretiva do Conselho, de 21 de maio de 1992, relativa à preservação dos habitats naturais e da fauna e da flora selvagens, referida no Decreto-Lei 17/2026?",
+    "tipo": "factual/lookup",
+    "camada": 1,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6424667"
+    ],
+    "ancora": "Decreto-lei 17/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_014",
+    "query": "Em que data passou à situação de reserva o militar José Pedro Ramos de Oliveira (CMG M), ao abrigo do Despacho 1060/2026?",
+    "tipo": "factual/lookup",
+    "camada": 1,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6430178"
+    ],
+    "ancora": "Despacho 1060/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_015",
+    "query": "Qual é a data de publicação do Decreto-Lei 15/2026, que procede à alteração do regime da Rede Natura 2000?",
+    "tipo": "factual/lookup",
+    "camada": 1,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6423403"
+    ],
+    "ancora": "Decreto-lei 15/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_016",
+    "query": "Foi determinada a cessação de que procedimento concursal, ao abrigo do Aviso n.º 1029/2026/2?",
+    "tipo": "factual/lookup",
+    "camada": 1,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6417306"
+    ],
+    "ancora": "Aviso 1029/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_017",
+    "query": "Em que diploma legal se fundamenta a exigência de apresentação de comprovativo de cumprimento das obrigações declarativas no Registo Central do Beneficiário Efetivo, introduzida pela alteração ao Regulamento para a Concessão de Benefícios Públicos?",
+    "tipo": "factual/lookup",
+    "camada": 1,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6414267"
+    ],
+    "ancora": "Regulamento 39/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_018",
+    "query": "Qual foi a classificação obtida por Ana Cristina Amaral Moreno na conclusão do seu período experimental, ao abrigo do Aviso 5426/2026/2?",
+    "tipo": "factual/lookup",
+    "camada": 1,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6470911"
+    ],
+    "ancora": "Aviso 5426/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_019",
+    "query": "Qual é o NIPC da entidade adjudicante Águas do Tejo Atlântico, SA?",
+    "tipo": "factual/lookup",
+    "camada": 1,
+    "ground_truth": "A entidade adjudicante Águas do Tejo Atlântico, SA tem o NIPC 514387130.",
+    "documentos_esperados": [
+      "6431684"
+    ],
+    "ancora": "Anúncio 2643/2026",
+    "para_geracao": true
+  },
+  {
+    "id": "ID_020",
+    "query": "A que instituto pertence o Conselho Diretivo que conferiu a delegação de competências ao abrigo da Deliberação 8/2026, referida no Despacho 640/2026?",
+    "tipo": "factual/lookup",
+    "camada": 1,
+    "ground_truth": "O Conselho Diretivo que conferiu a delegação de competências ao abrigo da Deliberação 8/2026 pertence ao Instituto Nacional de Emergência Médica, I. P. (INEM, I. P.).",
+    "documentos_esperados": [
+      "6417231"
+    ],
+    "ancora": "Despacho 640/2026",
+    "para_geracao": true
+  },
+  {
+    "id": "ID_021",
+    "query": "A quem foram subdelegadas as competências no âmbito do Despacho 1082/2026?",
+    "tipo": "factual/lookup",
+    "camada": 1,
+    "ground_truth": "No âmbito do Despacho 1082/2026, as competências foram subdelegadas no Diretor do Departamento de Proteção Civil, Dr. António Godinho.",
+    "documentos_esperados": [
+      "6430242"
+    ],
+    "ancora": "Despacho 1082/2026",
+    "para_geracao": true
+  },
+  {
+    "id": "ID_022",
+    "query": "Qual a posição e o nível na tabela remuneratória única do contrato de trabalho em funções públicas celebrado com a trabalhadora Maria Margarida Duarte Carvalho Ribeiro, ao abrigo do Aviso 3939/2026/2?",
+    "tipo": "factual/lookup",
+    "camada": 1,
+    "ground_truth": "O contrato de trabalho em funções públicas celebrado com Maria Margarida Duarte Carvalho Ribeiro, na carreira de Técnico Superior, corresponde à posição 1, nível 16 da tabela remuneratória única.",
+    "documentos_esperados": [
+      "6449376"
+    ],
+    "ancora": "Aviso 3939/2026",
+    "para_geracao": true
+  },
+  {
+    "id": "ID_023",
+    "query": "A partir de que data produz efeitos a delegação de competências deliberada pelo Conselho Administrativo da Escola Profissional de Desenvolvimento Rural do Rodo, ao abrigo do Aviso 6310/2021?",
+    "tipo": "factual/lookup",
+    "camada": 1,
+    "ground_truth": "A delegação de competências deliberada pelo Conselho Administrativo da Escola Profissional de Desenvolvimento Rural do Rodo produz efeitos reportados a 19 de fevereiro de 2021.",
+    "documentos_esperados": [
+      "4476167"
+    ],
+    "ancora": "Aviso 6310/2021",
+    "para_geracao": true
+  },
+  {
+    "id": "ID_024",
+    "query": "Para que cargo foi designado Ângelo Miguel da Luz Pinto, em regime de comissão de serviço, ao abrigo do Despacho 291/2026?",
+    "tipo": "factual/lookup",
+    "camada": 1,
+    "ground_truth": "Ângelo Miguel da Luz Pinto foi designado, em regime de comissão de serviço, para o cargo de conselheiro técnico na Representação Permanente de Portugal junto da União Europeia (REPER), em Bruxelas.",
+    "documentos_esperados": [
+      "6404175"
+    ],
+    "ancora": "Despacho 291/2026",
+    "para_geracao": true
+  },
+  {
+    "id": "ID_025",
+    "query": "Para que mandato foram delegadas as competências da Câmara Municipal no seu Presidente, ao abrigo da Deliberação 73/2026?",
+    "tipo": "factual/lookup",
+    "camada": 1,
+    "ground_truth": "As competências da Câmara Municipal foram delegadas no seu Presidente para o mandato de 2025 a 2029.",
+    "documentos_esperados": [
+      "6418796"
+    ],
+    "ancora": "Deliberação 73/2026",
+    "para_geracao": true
+  },
+  {
+    "id": "ID_026",
+    "query": "Em que reunião ordinária da Câmara Municipal de Loures foi aprovada a proposta que deu origem ao Regulamento de Funcionamento da Academia dos Saberes, e em que data ocorreu essa reunião, ao abrigo do Aviso 947/2026/2?",
+    "tipo": "factual/lookup",
+    "camada": 2,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6415805"
+    ],
+    "ancora": "Aviso 947/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_027",
+    "query": "Que acordo foi celebrado entre o Município do Seixal e o Ministério da Educação para expandir a rede de educação pré-escolar no concelho?",
+    "tipo": "factual/lookup",
+    "camada": 2,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6417344"
+    ],
+    "ancora": "Acordo 1/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_028",
+    "query": "Que concurso público foi lançado pela Unidade Local de Saúde de Gaia/Espinho para a aquisição de vias anteriores lombares?",
+    "tipo": "factual/lookup",
+    "camada": 2,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6432952"
+    ],
+    "ancora": "Anúncio 3002/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_029",
+    "query": "Que classificação final obteve Ana Cristina Faria da Silva na conclusão do seu período experimental como assistente técnica na Junta de Freguesia?",
+    "tipo": "factual/lookup",
+    "camada": 2,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6451360"
+    ],
+    "ancora": "Aviso 4093/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_030",
+    "query": "Quem foi provido no cargo de Diretor do Departamento Jurídico da Câmara Municipal da Maia, em comissão de serviço a partir de 1 de janeiro de 2026?",
+    "tipo": "factual/lookup",
+    "camada": 2,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6458336"
+    ],
+    "ancora": "Aviso 4525/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_031",
+    "query": "Qual foi o preço base do concurso público lançado pelo Município da Moita para o aluguer operacional de dois veículos elétricos ligeiros de passageiros?",
+    "tipo": "factual/lookup",
+    "camada": 2,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6466731"
+    ],
+    "ancora": "Anúncio 5578/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_032",
+    "query": "Para que posição remuneratória da categoria de técnico superior foi valorizada a trabalhadora Ana Cláudia Matias dos Santos Cardoso da Silva na consolidação da sua mobilidade na Área Metropolitana do Porto?",
+    "tipo": "factual/lookup",
+    "camada": 2,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6465905"
+    ],
+    "ancora": "Aviso 5031/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_033",
+    "query": "Qual o preço base do concurso público lançado pelo Estado-Maior do Exército para a aquisição e montagem de mobiliário destinado às novas instalações do Comando das Forças Terrestres?",
+    "tipo": "factual/lookup",
+    "camada": 2,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "4477170"
+    ],
+    "ancora": "Anúncio 4450/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_034",
+    "query": "Quantos trabalhadores se aposentaram na carreira de Assistente Operacional, ao abrigo do Aviso 5129/2026/2?",
+    "tipo": "factual/lookup",
+    "camada": 2,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6467823"
+    ],
+    "ancora": "Aviso 5129/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_035",
+    "query": "Qual o cargo de direção que João Carlos Garcia Rodrigues Praça exercia e a partir de que data cessou a sua comissão de serviço?",
+    "tipo": "factual/lookup",
+    "camada": 2,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6420252"
+    ],
+    "ancora": "Aviso 1254/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_036",
+    "query": "Qual é o código de oferta na bolsa de emprego público (BEP) do procedimento concursal comum para contratação de Técnico/a Superior com licenciatura em Serviço Social, referido no Aviso 4853/2026/2?",
+    "tipo": "factual/lookup",
+    "camada": 2,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6463305"
+    ],
+    "ancora": "Aviso 4853/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_037",
+    "query": "Qual é o escalão, o índice e o diploma legal que fixam a remuneração da Doutora Ana Maria de Castro Faria Salgado na sequência da sua contratação como Professora Auxiliar?",
+    "tipo": "factual/lookup",
+    "camada": 2,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6443200"
+    ],
+    "ancora": "Despacho 2019/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_038",
+    "query": "Qual é o valor do preço base do procedimento e o número máximo de lotes autorizado no anúncio que altera o procedimento n.º 5963/2026, promovido pela Marinha para o serviço de manutenção de embarcações e motas de água?",
+    "tipo": "factual/lookup",
+    "camada": 2,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6481444"
+    ],
+    "ancora": "Anúncio 6871/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_039",
+    "query": "Qual é o valor do preço base do procedimento de concurso público para o Aluguer Operacional de uma Viatura Ligeira de Passageiros Tipo 4x4, promovido pelo Município da Guarda?",
+    "tipo": "factual/lookup",
+    "camada": 2,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6431256"
+    ],
+    "ancora": "Anúncio 2506/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_040",
+    "query": "Qual é a remuneração base mensal do assistente operacional da área funcional de Construção Civil que concluiu com sucesso o período experimental, colocado na 1.ª posição remuneratória, nível 5?",
+    "tipo": "factual/lookup",
+    "camada": 2,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6436850"
+    ],
+    "ancora": "Aviso 2972/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_041",
+    "query": "Qual é a remuneração base mensal, a posição remuneratória e o nível remuneratório atribuídos a Igor Carmo de Nora na sequência da celebração do seu contrato de trabalho em funções públicas por tempo indeterminado?",
+    "tipo": "factual/lookup",
+    "camada": 2,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6420301"
+    ],
+    "ancora": "Aviso 1297/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_042",
+    "query": "Qual é o valor do preço base do procedimento no anúncio que altera o procedimento n.º 5213/2026, promovido pela Infraestruturas de Portugal para a empreitada de remodelação do Edifício 1 do Campus Pragal?",
+    "tipo": "factual/lookup",
+    "camada": 2,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6497951"
+    ],
+    "ancora": "Anúncio 8285/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_043",
+    "query": "Quantos dos militares graduados ao posto de Segundo-Cabo pelo Despacho 4586/2026 pertencem à especialidade de Piloto Aviador (PA)?",
+    "tipo": "factual/lookup",
+    "camada": 2,
+    "ground_truth": "Dos 113 militares graduados ao posto de Segundo-Cabo pelo Despacho 4586/2026, 20 pertencem à especialidade de Piloto Aviador (PA).",
+    "documentos_esperados": [
+      "6504692"
+    ],
+    "ancora": "Despacho 4586/2026",
+    "para_geracao": true
+  },
+  {
+    "id": "ID_044",
+    "query": "Qual é o valor do preço base do procedimento e o número máximo de lotes autorizado no anúncio que altera o procedimento n.º 1925/2026, promovido pelos Serviços Partilhados do Ministério da Saúde para a aquisição de serviços de operação de sistemas?",
+    "tipo": "factual/lookup",
+    "camada": 2,
+    "ground_truth": "O anúncio que altera o procedimento n.º 1925/2026, promovido pelos Serviços Partilhados do Ministério da Saúde, EPE para a aquisição de serviços de operação de sistemas, tem um preço base de 4.739.903,04 EUR e um número máximo de 3 lotes autorizado.",
+    "documentos_esperados": [
+      "6453342"
+    ],
+    "ancora": "Anúncio 4530/2026",
+    "para_geracao": true
+  },
+  {
+    "id": "ID_045",
+    "query": "Qual é o nome que foi acrescentado à lista de trabalhadores na sequência da retificação introduzida pela Declaração de Retificação n.º 280/2021 à Deliberação n.º 117/2021?",
+    "tipo": "factual/lookup",
+    "camada": 2,
+    "ground_truth": "O nome acrescentado à lista de trabalhadores na sequência da retificação introduzida pela Declaração de Retificação n.º 280/2021 é Eduarda Rodrigues Costa.",
+    "documentos_esperados": [
+      "4478207"
+    ],
+    "ancora": "Declaração 280/2021",
+    "para_geracao": true
+  },
+  {
+    "id": "ID_046",
+    "query": "Qual é o prazo de execução do contrato de empreitada de obras públicas promovido pela AdRA, Águas da Região de Aveiro no concelho de Aveiro, com preço base de 201 300 EUR?",
+    "tipo": "factual/lookup",
+    "camada": 2,
+    "ground_truth": "O prazo de execução do contrato de empreitada de reabilitação da EE017 (CP 18/2021_DEGA), promovido pela AdRA, Águas da Região de Aveiro, S. A., é de 120 dias.",
+    "documentos_esperados": [
+      "4478679"
+    ],
+    "ancora": "Anúncio 4519/2021",
+    "para_geracao": true
+  },
+  {
+    "id": "ID_047",
+    "query": "Qual é o preço base do procedimento de concurso público promovido por uma unidade local de saúde no distrito do Porto para a aquisição de próteses, com um número máximo de 3 lotes autorizado?",
+    "tipo": "factual/lookup",
+    "camada": 2,
+    "ground_truth": "O preço base do procedimento de concurso público promovido pela Unidade Local de Saúde do Tâmega e Sousa, EPE para a aquisição de próteses do joelho para 2026 é de 215.127,00 EUR.",
+    "documentos_esperados": [
+      "6435679"
+    ],
+    "ancora": "Anúncio 3191/2026",
+    "para_geracao": true
+  },
+  {
+    "id": "ID_048",
+    "query": "Qual foi a classificação final obtida pelo candidato aprovado no procedimento concursal comum para um posto de trabalho da carreira de técnico superior no mapa de pessoal de uma câmara municipal, cuja lista de ordenação final foi homologada em janeiro de 2026?",
+    "tipo": "factual/lookup",
+    "camada": 2,
+    "ground_truth": "O candidato aprovado, Gonçalo José Falcão Beato Antunes, obteve a classificação final de 20,00 valores no procedimento concursal comum para técnico superior no Mapa de Pessoal da Câmara Municipal de Idanha-a-Nova.",
+    "documentos_esperados": [
+      "6420276"
+    ],
+    "ancora": "Aviso 1274/2026",
+    "para_geracao": true
+  },
+  {
+    "id": "ID_049",
+    "query": "Qual é o preço base do procedimento de concurso público promovido pela Marinha para o fornecimento de sobressalentes, com um número máximo de 72 lotes autorizado?",
+    "tipo": "factual/lookup",
+    "camada": 2,
+    "ground_truth": "O preço base do procedimento de concurso público promovido pela Marinha para o fornecimento de sobressalentes para o aprontamento do NRP Francisco de Almeida é de 138.144,00 EUR.",
+    "documentos_esperados": [
+      "6505216"
+    ],
+    "ancora": "Anúncio 8830/2026",
+    "para_geracao": true
+  },
+  {
+    "id": "ID_050",
+    "query": "Qual é o preço base do procedimento de concurso público promovido pela Marinha para o fornecimento de sobressalentes, com um número máximo de 72 lotes autorizado?",
+    "tipo": "factual/lookup",
+    "camada": 2,
+    "ground_truth": "O preço base do procedimento de concurso público promovido pelo Município de Sintra para a aquisição de material de canalização em regime de fornecimento para o ano de 2026 é de 35.000,00 EUR.",
+    "documentos_esperados": [
+      "6413666"
+    ],
+    "ancora": "Anúncio 833/2026",
+    "para_geracao": true
+  },
+  {
+    "id": "ID_051",
+    "query": "Que obra pública foi lançada por uma junta de freguesia de Coimbra para construir um edifício destinado a velórios e cerimónias fúnebres?",
+    "tipo": "semantica",
+    "camada": 1,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6420357"
+    ],
+    "ancora": "Anúncio 1386/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_052",
+    "query": "Que regras aprovou uma junta de freguesia do Algarve para gerir o empréstimo temporário das suas viaturas a associações locais?",
+    "tipo": "semantica",
+    "camada": 1,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6481395"
+    ],
+    "ancora": "Regulamento 267/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_053",
+    "query": "Que empresa de transportes públicos da Madeira abriu concurso para comprar uma frota de autocarros de piso rebaixado?",
+    "tipo": "semantica",
+    "camada": 1,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "4474283"
+    ],
+    "ancora": "Declaração 119/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_054",
+    "query": "Que hospital do Alentejo abriu concurso para adquirir reagentes laboratoriais usados na análise de tecidos?",
+    "tipo": "semantica",
+    "camada": 1,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6406192"
+    ],
+    "ancora": "Anúncio 452/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_055",
+    "query": "Quem assumiu as funções do presidente do conselho científico de uma faculdade de desporto durante uma ausência temporária em janeiro de 2026?",
+    "tipo": "semantica",
+    "camada": 1,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6432283"
+    ],
+    "ancora": "Despacho 1501/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_056",
+    "query": "Que hospital do Alentejo Central abriu concurso para adquirir uma caixa de ferramentas cirúrgicas destinada a operações periféricas?",
+    "tipo": "semantica",
+    "camada": 1,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6400995"
+    ],
+    "ancora": "Anúncio 102/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_057",
+    "query": "Que hospital de Lisboa abriu concurso internacional para fornecimento de adesivos usados em cirurgia para o ano de 2026?",
+    "tipo": "semantica",
+    "camada": 1,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6432406"
+    ],
+    "ancora": "Anúncio 2873/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_058",
+    "query": "Que câmara municipal do distrito do Porto abriu um período de consulta pública sobre uma proposta de alteração ao seu plano de ordenamento do território?",
+    "tipo": "semantica",
+    "camada": 1,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6480665"
+    ],
+    "ancora": "Aviso 6107-A/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_059",
+    "query": "Que organismo público ligado à segurança alimentar e veterinária abriu concurso para contratar o transporte de amostras dentro do país e para a Europa durante dois anos?",
+    "tipo": "semantica",
+    "camada": 1,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6404700"
+    ],
+    "ancora": "Anúncio 377/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_060",
+    "query": "Que câmara municipal do Algarve abriu concurso para comprar duas carrinhas de caixa aberta para a sua frota?",
+    "tipo": "semantica",
+    "camada": 1,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6418906"
+    ],
+    "ancora": "Anúncio 1284/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_061",
+    "query": "Que documento oficial atribui distinções honoríficas do Estado português, incluindo o grau de Grã-Cruz da Ordem do Infante D. Henrique a um oficial-general?",
+    "tipo": "semantica",
+    "camada": 1,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "4478139"
+    ],
+    "ancora": "Alvará 6/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_062",
+    "query": "Que documento apresenta a apreciação do Tribunal de Contas sobre as contas públicas do Estado relativas ao ano de 2024?",
+    "tipo": "semantica",
+    "camada": 1,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6420209"
+    ],
+    "ancora": "Parecer 1/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_063",
+    "query": "Que trabalhador foi contratado por tempo indeterminado como funcionário operacional para desempenhar funções num departamento de gestão de infraestruturas e equipamentos?",
+    "tipo": "semantica",
+    "camada": 1,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6443253"
+    ],
+    "ancora": "Aviso 3477/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_064",
+    "query": "Que docente foi contratado a tempo parcial como professor auxiliar convidado para a faculdade de economia de uma universidade do Algarve?",
+    "tipo": "semantica",
+    "camada": 1,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "4478177"
+    ],
+    "ancora": "Contrato 193/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_065",
+    "query": "Que câmara municipal da zona de Lisboa abriu concurso para contratar serviços especializados de apoio técnico na área da informática?",
+    "tipo": "semantica",
+    "camada": 1,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6446186"
+    ],
+    "ancora": "Anúncio 3999/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_066",
+    "query": "Que câmara municipal do distrito de Bragança delegou no seu presidente um conjunto de competências executivas em reunião realizada no final de 2025?",
+    "tipo": "semantica",
+    "camada": 1,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6404208"
+    ],
+    "ancora": "Aviso 561/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_067",
+    "query": "Que recomendação dirigiu o Parlamento ao Governo para proteger uma antiga sala de espetáculos classificada na capital?",
+    "tipo": "semantica",
+    "camada": 1,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6458442"
+    ],
+    "ancora": "Resolução 38/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_068",
+    "query": "Que diploma alterou a estrutura orgânica da secretaria responsável pelas finanças no governo regional da Madeira em 2026?",
+    "tipo": "semantica",
+    "camada": 1,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6467931"
+    ],
+    "ancora": "Decreto 5/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_069",
+    "query": "Que câmara municipal do distrito de Aveiro abriu concurso para contratar serviços de socorro e atendimento médico de urgência fora do ambiente hospitalar?",
+    "tipo": "semantica",
+    "camada": 1,
+    "ground_truth": "O Município de Espinho abriu o concurso público para contratar serviços de prevenção e emergência pré-hospitalar.",
+    "documentos_esperados": [
+      "6478710"
+    ],
+    "ancora": "Anúncio 6643/2026",
+    "para_geracao": true
+  },
+  {
+    "id": "ID_070",
+    "query": "Por que motivo cessou o vínculo de emprego público de um assistente operacional, com efeitos em março de 2026?",
+    "tipo": "semantica",
+    "camada": 1,
+    "ground_truth": "O vínculo de emprego público do assistente operacional Miguel Nuno Clara Pinto cessou por motivo de falecimento, com efeitos a 30 de março de 2026.",
+    "documentos_esperados": [
+      "6506277"
+    ],
+    "ancora": "Aviso 8070/2026",
+    "para_geracao": true
+  },
+  {
+    "id": "ID_071",
+    "query": "Que autarquia da margem sul do Tejo abriu concurso para renovar a subscrição de software de virtualização de servidores?",
+    "tipo": "semantica",
+    "camada": 1,
+    "ground_truth": "O Município de Almada abriu o concurso público para a subscrição de licenciamento VMware (software de virtualização).",
+    "documentos_esperados": [
+      "6481733"
+    ],
+    "ancora": "Anúncio 6969/2026",
+    "para_geracao": true
+  },
+  {
+    "id": "ID_072",
+    "query": "Que sanção disciplinar aplicou a ordem profissional dos contabilistas a um dos seus membros por deliberação do final de 2025?",
+    "tipo": "semantica",
+    "camada": 1,
+    "ground_truth": "A Ordem dos Contabilistas Certificados aplicou uma sanção disciplinar de multa no valor de 1.000€, acrescida da sanção acessória de restituição de toda a documentação contabilística da sociedade, Sustentável Momento, L.da, por deliberação do Conselho Jurisdicional de 30/12/2025.",
+    "documentos_esperados": [
+      "6482836"
+    ],
+    "ancora": "Acórdão 5/2026",
+    "para_geracao": true
+  },
+  {
+    "id": "ID_073",
+    "query": "Que técnico superior da área de engenharia mecânica concluiu com sucesso o seu período experimental numa câmara municipal?",
+    "tipo": "semantica",
+    "camada": 1,
+    "ground_truth": "O trabalhador Nuno Miguel Correia Gonçalves, da carreira de técnico superior na atividade de engenharia mecânica, concluiu com sucesso o período experimental.",
+    "documentos_esperados": [
+      "6400900"
+    ],
+    "ancora": "Aviso 156/2026",
+    "para_geracao": true
+  },
+  {
+    "id": "ID_074",
+    "query": "Que junta de freguesia da zona de Mação abriu consulta pública sobre o seu projeto de regulamento de taxas e licenças?",
+    "tipo": "semantica",
+    "camada": 1,
+    "ground_truth": "A Junta de Freguesia da Fundada abriu a consulta pública sobre o Projeto de Regulamento de Taxas e Licenças da Freguesia da Fundada.",
+    "documentos_esperados": [
+      "6414321"
+    ],
+    "ancora": "Aviso 893/2026",
+    "para_geracao": true
+  },
+  {
+    "id": "ID_075",
+    "query": "Um agente da unidade especial da polícia responsável pela proteção do chefe de Estado recebeu um louvor, quem o atribuiu e a quem o atribuiu?",
+    "tipo": "semantica",
+    "camada": 1,
+    "ground_truth": "O louvor foi atribuído pelo Presidente da República, Marcelo Rebelo de Sousa, ao agente principal de polícia Bruno Alexandre Sousa Portela, do Corpo de Segurança Pessoal da Unidade Especial de Polícia da PSP.",
+    "documentos_esperados": [
+      "6455186"
+    ],
+    "ancora": "Louvor 106/2026",
+    "para_geracao": true
+  },
+  {
+    "id": "ID_076",
+    "query": "Que docente foi designado para um cargo de vice-direção num instituto politécnico do norte, na região do Cávado, ficando responsável pelas áreas de empreendedorismo e ligação aos antigos estudantes?",
+    "tipo": "semantica",
+    "camada": 2,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6407192"
+    ],
+    "ancora": "Despacho 344/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_077",
+    "query": "Que estrutura urbana antiga de uma cidade do Minho recebeu proteção patrimonial oficial de uma autarquia, sem que fosse necessário definir uma faixa de salvaguarda em redor por já se situar numa zona de requalificação?",
+    "tipo": "semantica",
+    "camada": 2,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6423284"
+    ],
+    "ancora": "Edital 71/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_078",
+    "query": "Que hospital da região do Ribatejo abriu concurso para adquirir e instalar tecnologia que permite realizar operações com o auxílio de braços mecânicos comandados à distância pelo cirurgião?",
+    "tipo": "semantica",
+    "camada": 2,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6453341"
+    ],
+    "ancora": "Anúncio 4529/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_079",
+    "query": "Que central de compras do Estado lançou um concurso internacional para adquirir uma frota de quase três dezenas de viaturas destinadas ao ramo aéreo das Forças Armadas?",
+    "tipo": "semantica",
+    "camada": 2,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6431660"
+    ],
+    "ancora": "Anúncio 2619/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_080",
+    "query": "Que câmara municipal de Trás-os-Montes renovou por mais três anos os mandatos das suas chefias intermédias, entre as quais os responsáveis pela divisão financeira, pela área das tecnologias de informação e por uma unidade que junta contabilidade e compras públicas?",
+    "tipo": "semantica",
+    "camada": 2,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6469375"
+    ],
+    "ancora": "Aviso 5257/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_081",
+    "query": "Que reconhecimento público atribuiu uma câmara municipal do distrito do Porto a uma dirigente pelo seu contributo na área da intervenção social, educação e coesão da comunidade local?",
+    "tipo": "semantica",
+    "camada": 2,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6421814"
+    ],
+    "ancora": "Louvor 32/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_082",
+    "query": "Que profissional foi nomeada, por três anos, para chefiar o serviço responsável por obras e infraestruturas municipais numa autarquia do distrito de Santarém, após um processo de recrutamento para um cargo de direção intermédia?",
+    "tipo": "semantica",
+    "camada": 2,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "4474207"
+    ],
+    "ancora": "Despacho 3551/2021",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_083",
+    "query": "Que hospital da zona da Covilhã abriu concurso para adquirir material implantável destinado à regeneração de tecido ósseo, do tipo que o organismo acaba por absorver?",
+    "tipo": "semantica",
+    "camada": 2,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6457238"
+    ],
+    "ancora": "Anúncio 4899/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_084",
+    "query": "Que militar do Exército, que colaborou no projeto das viaturas blindadas Pandur e passou mais de uma década numa equipa de administração e logística de um organismo nacional de segurança, foi distinguido com um louvor ao aproximar-se do fim da sua atividade?",
+    "tipo": "semantica",
+    "camada": 2,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6455204"
+    ],
+    "ancora": "Louvor 110/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_085",
+    "query": "Que orientação foi emitida pelo topo da magistratura responsável pela ação penal para uniformizar, entre os seus magistrados, a forma como devem interpretar e aplicar a lei que regula as medidas de combate à criminalidade organizada e económico-financeira?",
+    "tipo": "semantica",
+    "camada": 2,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6423238"
+    ],
+    "ancora": "Diretiva 1/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_086",
+    "query": "Que hospital do Alentejo Central abriu concurso para contratar o serviço de deslocação de pacientes que não se encontram em situação de emergência?",
+    "tipo": "semantica",
+    "camada": 2,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6412815"
+    ],
+    "ancora": "Anúncio 786/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_087",
+    "query": "Que oficial da polícia foi distinguida pelo comando da unidade encarregue de proteger as duas residências oficiais do chefe de Estado, incluindo o palácio onde se realiza anualmente uma conhecida feira de livros?",
+    "tipo": "semantica",
+    "camada": 2,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6451163"
+    ],
+    "ancora": "Louvor 96/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_088",
+    "query": "Que câmara municipal tornou permanente a mudança de funções de três funcionários administrativos, um dos quais passou a assegurar a gestão de habitação social e de alojamento para estudantes?",
+    "tipo": "semantica",
+    "camada": 2,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6479764"
+    ],
+    "ancora": "Aviso 6045/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_089",
+    "query": "Que autarquia da área do Porto abriu concurso para contratar serviços de apoio ao funcionamento das escolas do seu concelho?",
+    "tipo": "semantica",
+    "camada": 2,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6414697"
+    ],
+    "ancora": "Anúncio 967/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_090",
+    "query": "Que câmara municipal do distrito de Braga abriu concurso para o fornecimento de materiais granulados destinados à pavimentação asfáltica das suas estradas em 2026?",
+    "tipo": "semantica",
+    "camada": 2,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6450203"
+    ],
+    "ancora": "Anúncio 4344/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_091",
+    "query": "Que junta de freguesia aprovou o regulamento de utilização e funcionamento do seu pavilhão desportivo, em Lamelas?",
+    "tipo": "semantica",
+    "camada": 2,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6482925"
+    ],
+    "ancora": "Regulamento 272/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_092",
+    "query": "Que resolução do Governo aprovou o instrumento estratégico que define as orientações de desenvolvimento e uso do solo para a região central do país, elaborado pela respetiva comissão de coordenação regional e servindo de referência aos planos dos municípios dessa zona?",
+    "tipo": "semantica",
+    "camada": 2,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6484664"
+    ],
+    "ancora": "Resolução 57/2026",
+    "para_geracao": false
+  },
+  {
+    "id": "ID_093",
+    "query": "Que organismo público responsável pela prevenção de acidentes nas estradas abriu concurso para contratar espaço nos meios de comunicação, com vista a uma campanha de sensibilização dos condutores no período da Páscoa?",
+    "tipo": "semantica",
+    "camada": 2,
+    "ground_truth": "A Autoridade Nacional de Segurança Rodoviária (ANSR) abriu o concurso público para a contratação de meios publicitários destinados à divulgação da Campanha de Segurança Rodoviária Páscoa 2026.",
+    "documentos_esperados": [
+      "6458738"
+    ],
+    "ancora": "Anúncio 5035/2026",
+    "para_geracao": true
+  },
+  {
+    "id": "ID_094",
+    "query": "Que dois dirigentes foram eleitos para os cargos executivos de topo do órgão que gere de forma partilhada um conjunto de municípios da região do Ave, no norte do país?",
+    "tipo": "semantica",
+    "camada": 2,
+    "ground_truth": "Na CIM do Ave, foi eleito Artur Guilherme Lima de Sousa Emílio para Primeiro-Secretário do Secretariado Executivo Intermunicipal e Sérgio Alberto Castro da Rocha para Secretário Intermunicipal do Secretariado Executivo Intermunicipal.",
+    "documentos_esperados": [
+      "6441879"
+    ],
+    "ancora": "Aviso 3429/2026",
+    "para_geracao": true
+  },
+  {
+    "id": "ID_095",
+    "query": "Que assistente técnico viu confirmada em definitivo a sua transferência de uma câmara municipal do nordeste transmontano para os quadros da administração fiscal do Estado, ficando afeto aos serviços de finanças de Bragança?",
+    "tipo": "semantica",
+    "camada": 2,
+    "ground_truth": "O assistente técnico Ricardo Jorge Preto Garcia viu consolidada em definitivo a sua mobilidade da Câmara Municipal de Miranda do Douro para o mapa de pessoal da Autoridade Tributária e Aduaneira, ficando colocado na Direção de Finanças de Bragança.",
+    "documentos_esperados": [
+      "6408682"
+    ],
+    "ancora": "Aviso 638/2026",
+    "para_geracao": true
+  },
+  {
+    "id": "ID_096",
+    "query": "Que unidade hospitalar do Porto abriu concurso para adquirir material de diagnóstico laboratorial usado para detetar alterações genéticas em células através de marcadores fluorescentes?",
+    "tipo": "semantica",
+    "camada": 2,
+    "ground_truth": "O Instituto Português de Oncologia do Porto Francisco Gentil, EPE abriu o concurso público para a aquisição de Sondas FISH.",
+    "documentos_esperados": [
+      "6506406"
+    ],
+    "ancora": "Anúncio 8902/2026",
+    "para_geracao": true
+  },
+  {
+    "id": "ID_097",
+    "query": "Que câmara municipal da zona da Bairrada, no distrito de Aveiro, aprovou uma alteração ao seu regulamento de apoio às associações locais?",
+    "tipo": "semantica",
+    "camada": 2,
+    "ground_truth": "A Câmara Municipal de Oliveira do Bairro aprovou a alteração ao Regulamento Municipal de Apoio às Associações de Oliveira do Bairro.",
+    "documentos_esperados": [
+      "4472249"
+    ],
+    "ancora": "Regulamento 319/2021",
+    "para_geracao": true
+  },
+  {
+    "id": "ID_098",
+    "query": "Que despacho definiu a composição do órgão responsável por coordenar a avaliação de desempenho dos serviços de apoio social de uma universidade do Minho?",
+    "tipo": "semantica",
+    "camada": 2,
+    "ground_truth": "O Despacho (extrato) n.º 3546/2021 definiu a composição do Conselho Coordenador da Avaliação dos Serviços de Ação Social da Universidade do Minho (SASUM).",
+    "documentos_esperados": [
+      "4474183"
+    ],
+    "ancora": "Despacho 3546/2021",
+    "para_geracao": true
+  },
+  {
+    "id": "ID_099",
+    "query": "Que diploma introduziu a primeira alteração ao regime que compensa financeiramente as organizações do setor pesqueiro pelos custos de conservação e armazenamento do pescado, para estabilizar o mercado?",
+    "tipo": "semantica",
+    "camada": 2,
+    "ground_truth": "A Portaria 78/2021, de 6 de abril, introduziu a primeira alteração ao Regulamento do Regime de Apoio à Armazenagem dos Produtos da Pesca (aprovado pela Portaria 215/2016, de 4 de agosto).",
+    "documentos_esperados": [
+      "4476138"
+    ],
+    "ancora": "Portaria 78/2021",
+    "para_geracao": true
+  },
+  {
+    "id": "ID_0100",
+    "query": "Que dirigente teve renovado o seu mandato como chefe da divisão financeira de uma universidade pública situada numa região autónoma insular?",
+    "tipo": "semantica",
+    "camada": 2,
+    "ground_truth": "O Dr. Nélio Dantas dos Santos teve renovada a sua comissão de serviço no cargo de Chefe de Divisão na Unidade Económica Financeira da Universidade da Madeira, com efeitos a 7 de janeiro de 2026.",
+    "documentos_esperados": [
+      "6438762"
+    ],
+    "ancora": "Aviso 3020/2026",
+    "para_geracao": true
+  }
+]

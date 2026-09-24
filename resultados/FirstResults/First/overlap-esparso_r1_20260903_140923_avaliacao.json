@@ -1,0 +1,83 @@
+{
+  "condicao": "overlap-esparso",
+  "framework": "overlap",
+  "repeticao": 1,
+  "config": {
+    "gen_model": "llama-3.3-70b-versatile",
+    "gen_provider": "groq",
+    "gen_temperature": 0,
+    "extract_model": "llama-3.1-8b-instant",
+    "judge_model": "gemini/gemini-2.5-flash",
+    "embedding": "intfloat/multilingual-e5-small",
+    "embedding_dim": 384,
+    "parser": "docling+tesseract-por",
+    "tokenizer_orcamento": "tiktoken/cl100k_base",
+    "context_budget_tokens": 6000,
+    "vector_db": "qdrant",
+    "collection": "benchmark_overlap",
+    "top_k": 5,
+    "variante": "esparso",
+    "modo": "esparso",
+    "janela_chars": 1200,
+    "overlap_chars": 180,
+    "segmentacao": "cega (fixed-size + overlap)"
+  },
+  "n_queries": 256,
+  "n_erros": 0,
+  "orcamento_contexto": {},
+  "tempos": {
+    "retrieval_medio_s": 0.08013445883989334,
+    "geracao_media_s": 0.0,
+    "total_medio_s": 0.08018581662327051
+  },
+  "retrieval": {
+    "precision@5": 0.2470703125,
+    "recall@5": 0.96484375,
+    "mrr": 0.8939453125,
+    "ndcg@5": 0.9116605400583128,
+    "hit_rate@5": 0.96484375,
+    "n_queries": 256,
+    "ic95_recall": [
+      0.9414,
+      0.9844
+    ],
+    "ic95_hit": [
+      0.9414,
+      0.9844
+    ]
+  },
+  "retrieval_estratificado": {
+    "tipo=identificador": {
+      "precision@5": 0.24226441631504922,
+      "recall@5": 0.9662447257383966,
+      "mrr": 0.8924753867791843,
+      "ndcg@5": 0.9109075875735362,
+      "hit_rate@5": 0.9662447257383966,
+      "n_queries": 237,
+      "ic95_recall": [
+        0.9409,
+        0.9873
+      ],
+      "ic95_hit": [
+        0.9409,
+        0.9873
+      ]
+    },
+    "tipo=semantica": {
+      "precision@5": 0.30701754385964913,
+      "recall@5": 0.9473684210526315,
+      "mrr": 0.9122807017543859,
+      "ndcg@5": 0.9210526315789473,
+      "hit_rate@5": 0.9473684210526315,
+      "n_queries": 19,
+      "ic95_recall": [
+        0.8421,
+        1.0
+      ],
+      "ic95_hit": [
+        0.8421,
+        1.0
+      ]
+    }
+  }
+}

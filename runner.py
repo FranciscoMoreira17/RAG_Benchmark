@@ -6,7 +6,7 @@ Executa uma condição experimental: ingestão → queries → exportação.
 Uso:
     python runner.py --framework langchain
     python runner.py --framework llamaindex
-    python runner.py --framework hibrido --variante denso/esparso/hibrido
+    python runner.py --framework ULS --variante denso/esparso/hibrido
     python runner.py --framework estrutural --variante enriquecido/enriquecido_grafo 
     python runner.py --framework langchain --so-retrieval (Apenas realizar retrieval)
     python runner.py --framework todas
@@ -35,7 +35,7 @@ from config import (
 
 RESULTADOS_DIR = os.path.join(os.path.dirname(__file__), "resultados")
 
-DATASET_PATH = os.getenv("DATASET_PATH", os.path.join(_BENCHMARK_DIR, "dataset_dre.json"))
+DATASET_PATH = os.getenv("DATASET_PATH", os.path.join(_BENCHMARK_DIR, "dataset_dre_manual.json"))
 
 
 def carregar_dataset():
@@ -177,7 +177,7 @@ def executar_benchmark(
     respostas_previas = {}
     if retomar:
         import glob as _glob
-        padrao = os.path.join(RESULTADOS_DIR, f"llamaindex_r1_20260729_095358.json")
+        padrao = os.path.join(RESULTADOS_DIR, f"{nome_run}_r{repeticao}_*.json")
         anteriores = sorted(_glob.glob(padrao))
         if anteriores:
             with open(anteriores[-1], "r", encoding="utf-8") as f:
@@ -297,8 +297,10 @@ def executar_benchmark(
 _FRAMEWORKS = {
     "langchain": "frameworks.rag_langchain",
     "llamaindex": "frameworks.rag_llamaindex",
-    "hibrido": "frameworks.rag_hibrido",
+    "ULS": "frameworks.rag_UnitLevelSegmentation",
     "estrutural": "frameworks.rag_estrutural",
+    "overlap": "frameworks.rag_overlap",
+
 }
 
 
@@ -345,11 +347,7 @@ def main():
                 retomar=args.retomar,
             )
 
-    if args.ablacao:
-        from frameworks.rag_okf import VARIANTES
-        for v in VARIANTES:
-            corre("ragokf", v)
-    elif args.framework == "todas":
+    if args.framework == "todas":
         for nome in _FRAMEWORKS:
             corre(nome)
     else:

@@ -22,26 +22,47 @@ JUIZ_MODELO = os.getenv("JUDGE_MODEL_GROQ", "openai/gpt-oss-120b")
 JUIZ_SLEEP = float(os.getenv("JUDGE_SLEEP", "10"))
 JUIZ_MAX_RETRIES = int(os.getenv("JUDGE_MAX_RETRIES", "6"))
 
-PROMPT_AVALIACAO = """És um avaliador rigoroso de sistemas de resposta a perguntas sobre \
-legislação portuguesa. Avalias UMA resposta segundo três critérios, com base \
-apenas na informação fornecida. Não uses conhecimento externo.
+PROMPT_AVALIACAO = """És um avaliador rigoroso e imparcial de sistemas de resposta a \
+perguntas sobre legislação portuguesa. A tua tarefa é avaliar UMA resposta segundo \
+três critérios independentes, baseando-te EXCLUSIVAMENTE na informação fornecida \
+abaixo. Não uses conhecimento externo nem opiniões próprias.
 
-CRITÉRIOS (cada um de 0.0 a 1.0):
+Avalia a exatidão e a fundamentação, nunca o comprimento nem a fluência: uma \
+resposta curta e correta vale mais do que uma longa e imprecisa. Não deixes que a \
+presença de números, citações ou linguagem técnica influencie a pontuação se a \
+substância não estiver correta.
 
-1. fidelidade (faithfulness): A RESPOSTA é integralmente suportada pelo CONTEXTO?
-   - 1.0 = toda a informação da resposta está no contexto.
-   - 0.5 = parte está no contexto, parte não.
-   - 0.0 = a resposta afirma coisas que o contexto não suporta (alucinação).
+CRITÉRIOS (cada um pontuado de forma contínua entre 0.0 e 1.0; podes usar qualquer \
+valor no intervalo, como 0.3 ou 0.85 (as âncoras abaixo são apenas guias):
 
-2. relevancia (answer_relevancy): A RESPOSTA responde diretamente à PERGUNTA?
-   - 1.0 = responde de forma completa e focada.
-   - 0.5 = responde parcialmente ou com informação a mais/irrelevante.
-   - 0.0 = não responde à pergunta.
+1. fidelidade (faithfulness): avalia a RESPOSTA APENAS contra o CONTEXTO RECUPERADO \
+(ignora a REFERÊNCIA neste critério):
+   Toda a informação afirmada na resposta está suportada pelo contexto?
+   - 1.0 = tudo o que a resposta afirma está no contexto.
+   - 0.5 = parte está suportada, parte não.
+   - 0.0 = a resposta afirma factos que o contexto não suporta (alucinação).
+   Nota: se a resposta declarar honestamente que a informação não consta do \
+contexto, a fidelidade é ALTA (não inventou), mesmo que não responda à pergunta.
 
-3. correcao (correctness): A RESPOSTA está de acordo com a REFERÊNCIA correta?
-   - 1.0 = factualmente equivalente à referência.
-   - 0.5 = parcialmente correta.
-   - 0.0 = contradiz ou falha a referência.
+2. relevancia (answer_relevancy): avalia a RESPOSTA APENAS contra a PERGUNTA \
+(ignora a referência e o contexto neste critério):
+   A resposta aborda diretamente aquilo que foi perguntado?
+   - 1.0 = responde de forma completa e focada ao que foi perguntado.
+   - 0.5 = responde parcialmente, ou dilui a resposta com informação irrelevante.
+   - 0.0 = não responde à pergunta ou desvia-se do tema.
+
+3. correcao (correctness): avalia a RESPOSTA contra a REFERÊNCIA correta:
+   A resposta é factualmente equivalente à referência?
+   - 1.0 = factualmente equivalente à referência (ainda que com outras palavras).
+   - 0.5 = parcialmente correta, ou correta mas incompleta face à referência.
+   - 0.0 = contradiz a referência ou falha o facto essencial.
+   Nota: uma resposta pode ser fiel ao contexto (critério 1) e ainda assim \
+incorreta, se o contexto não continha a informação certa. Avalia a correção de \
+forma independente da fidelidade.
+
+Procede por esta ordem: primeiro analisa a resposta à luz de cada critério, \
+explicando brevemente o teu raciocínio; só depois atribui as três pontuações \
+coerentes com essa análise.
 
 PERGUNTA:
 {pergunta}
@@ -55,8 +76,10 @@ REFERÊNCIA (resposta correta):
 RESPOSTA A AVALIAR:
 {resposta}
 
-Responde APENAS com um objeto JSON válido, sem texto antes ou depois, no formato:
-{{"fidelidade": <float>, "relevancia": <float>, "correcao": <float>, "justificacao": "<breve>"}}"""
+Responde APENAS com um objeto JSON válido, sem qualquer texto antes ou depois, \
+com a justificação ANTES das pontuações, no formato exato:
+{{"justificacao": "<análise breve dos três critérios>", "fidelidade": <float>, \
+"relevancia": <float>, "correcao": <float>}}"""
 
 
 def _extrair_json(texto: str) -> dict | None:

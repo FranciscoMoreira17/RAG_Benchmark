@@ -37,11 +37,11 @@ QDRANT_URL = os.getenv("QDRANT_URL", "http://localhost:6333")
 DOCS_DIR = os.getenv("DOCS_DIR", "./documents")
 
 # ── Modelos ──────────────────────────────────────────────────
-GEN_MODEL = os.getenv("GEN_MODEL", "llama-3.3-70b-versatile")
+GEN_MODEL = os.getenv("GEN_MODEL", "qwen/qwen3.8-27b")
 GEN_PROVIDER = os.getenv("GEN_PROVIDER", "groq")
 GEN_TEMPERATURE = 0
 
-EXTRACT_MODEL = os.getenv("EXTRACT_MODEL", "llama-3.1-8b-instant")
+EXTRACT_MODEL = os.getenv("EXTRACT_MODEL", "openai/gpt-oss-20b")
 
 JUDGE_MODEL = os.getenv("JUDGE_MODEL", "gemini/gemini-2.5-flash")
 
@@ -58,6 +58,7 @@ _COLLECTIONS = {
     "llamaindex": os.getenv("QDRANT_COLLECTION_LLAMAINDEX", "benchmark_llamaindex"),
     "hibrido": os.getenv("QDRANT_COLLECTION_HIBRIDO", "benchmark_hibrido"),
     "estrutural": os.getenv("QDRANT_COLLECTION_ESTRUTURAL", "benchmark_estrutural"),
+    "overlap": os.getenv("QDRANT_COLLECTION_OVERLAP", "benchmark_overlap"),
 }
 
 
@@ -218,7 +219,11 @@ SYSTEM_PROMPT = (
     "Responde EXCLUSIVAMENTE com base no contexto fornecido. "
     "Se a informação não estiver no contexto, diz explicitamente que "
     "não encontraste essa informação nos documentos disponíveis. "
-    "Cita sempre o artigo e diploma de onde retiras a informação."
+    "Responde de forma direta e concisa, numa ou duas frases, sem preâmbulos, "
+    "indo diretamente ao facto perguntado e usando a terminologia do documento. "
+    "Quando a informação provier de um articulado legal, indica o artigo e o "
+    "diploma; quando provier de um anúncio, aviso ou outro ato administrativo, "
+    "identifica o documento-fonte."
 )
 
 
