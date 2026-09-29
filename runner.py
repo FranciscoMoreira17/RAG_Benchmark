@@ -300,7 +300,7 @@ _FRAMEWORKS = {
     "ULS": "frameworks.rag_UnitLevelSegmentation",
     "estrutural": "frameworks.rag_estrutural",
     "overlap": "frameworks.rag_overlap",
-
+    "uls_qwen": "frameworks.rag_UnitLevelSegmentationQwen",
 }
 
 

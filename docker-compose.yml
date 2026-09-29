@@ -2,10 +2,15 @@
 # RAG Benchmark - Infraestrutura Completa
 #
 # Serviços:
-#   qdrant     → Vector DB (collections separadas por framework)
+#   qdrant     → Vector DB (collections separadas por framework E por embedder)
 #   phoenix    → Tracing + avaliação (UI: http://localhost:6006)
-#   ollama     → LLM juiz local para RAGAS/RAGChecker
+#   ollama     → LLM juiz local (opcional)
 #
+# Collections criadas:
+#   E5-small  (384 dims) : benchmark_<framework>
+#   Qwen3     (1024 dims): benchmark_<framework>_qwen
+#
+# As duas dimensões coexistem: um embedder nunca escreve na collection do outro.
 ###############################################################################
 
 services:
@@ -38,23 +43,28 @@ services:
     entrypoint: ["/bin/sh", "-c"]
     command:
       - |
-        echo "=== A criar collections Qdrant (1024 dims, cosine) ==="
-
-        for COLLECTION in benchmark_langchain benchmark_llamaindex benchmark_graphrag benchmark_okf; do
-          echo "  → $$COLLECTION"
+        echo "=== A criar collections E5-small (384 dims, cosine) ==="
+        for COLLECTION in benchmark_langchain benchmark_llamaindex benchmark_hibrido benchmark_estrutural benchmark_overlap; do
+          echo "  -> $$COLLECTION (384)"
           curl -sf -X PUT "http://qdrant:6333/collections/$$COLLECTION" \
             -H "Content-Type: application/json" \
-            -d '{
-              "vectors": {
-                "size": 1024,
-                "distance": "Cosine"
-              }
-            }' || echo "    (já existe ou erro)"
+            -d '{"vectors": {"size": 384, "distance": "Cosine"}}' \
+            || echo "    (ja existe ou erro)"
         done
 
         echo ""
-        echo "=== Collections criadas ==="
-        curl -sf "http://qdrant:6333/collections" | head -c 500
+        echo "=== A criar collections Qwen3 (1024 dims, cosine) ==="
+        for COLLECTION in benchmark_langchain_qwen benchmark_llamaindex_qwen benchmark_hibrido_qwen benchmark_estrutural_qwen benchmark_overlap_qwen; do
+          echo "  -> $$COLLECTION (1024)"
+          curl -sf -X PUT "http://qdrant:6333/collections/$$COLLECTION" \
+            -H "Content-Type: application/json" \
+            -d '{"vectors": {"size": 1024, "distance": "Cosine"}}' \
+            || echo "    (ja existe ou erro)"
+        done
+
+        echo ""
+        echo "=== Collections existentes ==="
+        curl -sf "http://qdrant:6333/collections" | head -c 800
         echo ""
         echo "=== Pronto ==="
 
@@ -71,7 +81,7 @@ services:
       - phoenix_data:/data
     restart: unless-stopped
 
-  # Ollama - LLM Juiz Local ─────────────────────────────────
+  # Ollama - LLM Juiz Local (opcional) ──────────────────────
   ollama:
     image: ollama/ollama:latest
     container_name: ollama

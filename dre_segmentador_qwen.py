@@ -26,14 +26,12 @@ sem ela, usa-se uma estimativa por caracteres (~4 chars/token).
 import re
 from collections import Counter
 
-# ── Parametros estruturais (inalterados) ─────────────────────────────
-LIMIAR_BLOCO_UNICO = 8000     # chars: acima disto, documento sem artigos -> janela
+LIMIAR_BLOCO_UNICO = 8000     
 JANELA_CHARS = 4000
 JANELA_OVERLAP = 400
 MIN_SEGMENTO_CHARS = 40
 MIN_RACIO_SEQUENCIA = 0.6
 
-# ── Teto de tokens (novo) ────────────────────────────────────────────
 TETO_TOKENS = 2048            # nenhum segmento deve exceder isto
 SUBJANELA_OVERLAP_TOKENS = 100  # overlap ao sub-dividir por janela (em tokens aprox.)
 
@@ -42,11 +40,9 @@ RE_ARTIGO = re.compile(
     re.IGNORECASE,
 )
 
-# Numeracao interna de um artigo: "1 -", "1.", "2 -", alineas "a)", "b)"
 RE_NUM_INTERNO = re.compile(r"(?:^|\n)\s*(?:\d+\s*[\.\-\u2013]|[a-z]\))\s", re.IGNORECASE)
 
 
-# ── Contagem de tokens (injetavel; fallback por caracteres) ──────────
 def _tokens_por_chars(texto: str) -> int:
     """Estimativa barata: ~4 caracteres por token. Usada se nao houver tokenizer."""
     return max(1, len(texto) // 4)
