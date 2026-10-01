@@ -1,21 +1,6 @@
 """
 rag_UnitLevelSegmentationQwen.py — Variante Qwen3 da UnitLevelSegmentation
 =========================================================================
-Cópia da rag_UnitLevelSegmentation.py, com o embedder denso trocado do
-E5-small (384d) para o Qwen3-Embedding-0.6B (1024d, janela 2048).
-
-A LÓGICA DE RETRIEVAL É IDÊNTICA à versão E5 — denso, esparso (BM25) e
-híbrido (RRF), mesma fusão, mesmo prefetch, mesmo gerador. A ÚNICA variável
-que muda é o modelo de embedding denso e a sua dimensão. É isso que permite
-isolar o efeito do embedder na recuperação densa e semântica.
-
-Diferenças face à versão E5:
-  - embedder denso: Qwen3-0.6B (float16, attn eager, teto de tokens)
-  - dimensão dos vetores densos: 1024 (não 384)
-  - collection: benchmark_hibrido_qwen (não benchmark_hibrido) — não colide
-    com o índice E5, preservando-o para comparação
-  - nome_run e fingerprint identificam a variante Qwen
-  - segmentação com teto de tokens (dre_segmentador_qwen), tokenizer do Qwen3
 """
 
 import os
