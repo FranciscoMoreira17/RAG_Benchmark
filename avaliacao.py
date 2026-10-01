@@ -138,12 +138,13 @@ def metricas_retrieval(resultados: list[dict], k: int = 5) -> dict:
             if g and g not in vistos:
                 vistos.add(g)
                 docs_unicos.append(g)
+        agg["ndist"].append(len(docs_unicos))
         recuperados = docs_unicos[:k]
 
         rels = [1.0 if g in alvos else 0.0 for g in recuperados]
         acertos = len(alvos & set(recuperados))
 
-        agg["precision"].append(sum(rels) / max(1, len(recuperados)))
+        agg["precision"].append(sum(rels) / k)
         agg["recall"].append(acertos / len(alvos))
         agg["mrr"].append(next((1/(i+1) for i,x in enumerate(rels) if x>0), 0.0))
         n_rel = int(sum(rels))
@@ -161,6 +162,7 @@ def metricas_retrieval(resultados: list[dict], k: int = 5) -> dict:
         f"ndcg@{k}": statistics.mean(agg["ndcg"]),
         f"hit_rate@{k}": statistics.mean(agg["hit"]),
         "n_queries": len(agg["precision"]),
+        "docs_distintos_min": min(agg["ndist"]),
         "ic95_recall": bootstrap_ic(agg["recall"]),
         "ic95_hit": bootstrap_ic(agg["hit"]),
     }
@@ -558,6 +560,8 @@ def avaliar_ficheiro(caminho: str, so_retrieval: bool = False,
     resumo["retrieval_estratificado"] = metricas_estratificadas(resultados, k=k)
     resumo["retrieval_por_camada"] = estratificacao_por_camada(resultados, k=k)
     resumo["retrieval_tipo_camada"] = estratificacao_tipo_camada(resultados, k=k)
+    resumo["retrieval_curva"] = {str(kk): metricas_retrieval(resultados, k=kk)
+                                 for kk in (1, 3, 5, 10, 20)}
 
     if not so_retrieval:
         from juiz_llm import avaliar_llm_juiz
@@ -666,6 +670,19 @@ def comparar():
                       "mrr": mrr_m, "ndcg@5": ndcg_m, "precision@5": prec_m})
         return pd.DataFrame(L)
 
+    def tab_curva():
+        L = []
+        for cond, reps in sorted(por_condicao.items()):
+            lc = {"condicao": cond}
+            for kk in (1, 3, 5, 10, 20):
+                v, _ = media_desvio(reps, lambda r, kk=kk:
+                    ((r.get("retrieval_curva") or {}).get(str(kk)) or {}).get(f"hit_rate@{kk}"))
+                lc[f"hit@{kk}"] = v
+            dm, _ = media_desvio(reps, lambda r: g_retr(r, "docs_distintos_min"))
+            lc["docs_distintos_min"] = dm
+            L.append(lc)
+        return pd.DataFrame(L)
+
     def tab_estrato(bloco, ordem, etiqueta):
         L = []
         for cond, reps in sorted(por_condicao.items()):
@@ -726,6 +743,7 @@ def comparar():
 
     tabelas = [
         ("1. RETRIEVAL - GERAL", tab_geral()),
+        ("1b. RETRIEVAL - CURVA hit@k (dedup por documento)", tab_curva()),
         ("2. RETRIEVAL - POR TIPO (factual/lookup vs semantica)",
          tab_estrato("retrieval_estratificado",
                      ["tipo=factual/lookup", "tipo=semantica"], "tipo")),
@@ -796,7 +814,8 @@ def main():
     p.add_argument("--sem-ragchecker", action="store_true",
                    help="Salta o RAGChecker (lento e redundante com RAGAS/Phoenix)")
     p.add_argument("--langsmith", action="store_true")
-    p.add_argument("--k", type=int, default=5)
+    p.add_argument("--k", type=int, default=5, choices=[5],
+                   help="Fixo em 5. A curva @1/3/5/10/20 e calculada automaticamente.")
     args = p.parse_args()
 
     if args.comparar:

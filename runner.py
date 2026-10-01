@@ -295,12 +295,15 @@ def executar_benchmark(
 # CLI
 # =====================================================================
 _FRAMEWORKS = {
+    #Frameworks com Modelo E5-Small multilingue
     "langchain": "frameworks.rag_langchain",
     "llamaindex": "frameworks.rag_llamaindex",
     "ULS": "frameworks.rag_UnitLevelSegmentation",
     "estrutural": "frameworks.rag_estrutural",
     "overlap": "frameworks.rag_overlap",
+    # Frameworks com Modelo Qwen3-Embedding
     "uls_qwen": "frameworks.rag_UnitLevelSegmentationQwen",
+    "langchain_qwen": "frameworks.rag_langchainQwen"
 }
 
 

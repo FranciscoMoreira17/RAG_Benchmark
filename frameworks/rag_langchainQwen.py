@@ -16,9 +16,7 @@ from config import (
 from runner import FrameworkBase
 from dre_loader import carregar_corpus_dre, corpus_fingerprint
 
-# Reutiliza o MESMO embedder Qwen3 validado (float16 + attn eager).
-# Uma só implementação evita divergências entre frameworks.
-from rag_UnitLevelSegmentationQwen import _get_embedder
+from frameworks.rag_UnitLevelSegmentationQwen import _get_embedder
 
 from langchain_core.documents import Document
 from langchain_core.prompts import ChatPromptTemplate

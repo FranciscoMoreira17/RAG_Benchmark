@@ -1,0 +1,11 @@
+{
+  "fingerprint": "a3138360fe66a9f3",
+  "config": {
+    "pipeline": "langchain-recursive-qwen",
+    "chunk_size": 1000,
+    "overlap": 200,
+    "embedder": "qwen3-0.6b",
+    "dim": 1024
+  },
+  "quando": "2026-10-01T17:10:57.470939+00:00"
+}
