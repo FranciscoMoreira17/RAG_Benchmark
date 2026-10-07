@@ -1,5 +1,5 @@
 """
-rag_langchainQwen.py — LangChain com embedder Qwen3 (controlo: capacidade vs janela)
+rag_langchainQwen.py - LangChain com embedder Qwen3
 ====================================================================================
 """
 

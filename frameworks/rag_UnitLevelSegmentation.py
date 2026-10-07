@@ -1,5 +1,5 @@
 """
-rag_UnitLevelSegmentation.py — Retrieval denso, esparso (BM25) e híbrido (RRF)
+rag_UnitLevelSegmentation.py - Retrieval denso, esparso (BM25) e híbrido (RRF)
 =================================================================
 Uma framework, três condições, um índice. Cada ponto no Qdrant tem
 DOIS vetores: denso (E5, 384d, semântico) e esparso (BM25, lexical).
@@ -12,7 +12,7 @@ Indexa-se uma vez; o modo de retrieval é escolhido no responder().
 Porque isto importa para a tese: o corpus DRE está cheio de
 identificadores (números de anúncio, NIPC, entidades). O BM25
 resolve-os por correspondência exata; o denso capta paráfrase. A
-comparação das três condições responde à pergunta central — o
+comparação das três condições responde à pergunta central - o
 retrieval semântico acrescenta valor neste corpus, ou o BM25 basta?
 
 Unidade indexada = SEGMENTO. Alvo de retrieval = doc_id (guid) do
@@ -20,7 +20,7 @@ documento-pai. Vários segmentos podem partilhar doc_id; na
 avaliação conta se o doc_id certo foi recuperado.
 
 Nota: geração usa o mesmo gerador e orçamento das outras condições,
-para paridade. O BM25 puro raramente é usado com geração — mas
+para paridade. O BM25 puro raramente é usado com geração - mas
 mantém-se disponível para completude.
 """
 

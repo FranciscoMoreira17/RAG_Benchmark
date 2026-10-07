@@ -1,5 +1,5 @@
 """
-rag_estrutural.py — RAG Estrutural (contribuição da tese)
+rag_estrutural.py - RAG Estrutural (contribuição da tese)
 ==========================================================
 Método domain-specific para legislação portuguesa. Estende a
 segmentação estrutural DRE (já usada pelo híbrido) com duas técnicas,

@@ -1,5 +1,5 @@
 """
-rag_overlap.py — Segmentação cega por janela deslizante (fixed-size + overlap)
+rag_overlap.py - Segmentação cega por janela deslizante (fixed-size + overlap)
 ==============================================================================
 Condição de baseline: fixed-size chunking com overlap, CEGO à estrutura.
 Ao contrário do RAG Estrutural (que deteta artigos/blocos/janelas), esta
@@ -12,7 +12,7 @@ documentos em janelas de tamanho fixo em caracteres, com sobreposição.
 
 O tamanho de 1200 chars foi fixado empiricamente (ver medir_tokens_chunk.py):
 com o tokenizer do E5, ~99.5% dos chunks ficam <= 512 tokens (P99 = 478),
-a janela do modelo — evitando truncagem silenciosa no embedding denso.
+a janela do modelo - evitando truncagem silenciosa no embedding denso.
 
 Propósito na tese: isolar o valor da segmentação consciente da estrutura.
 Comparada com o RAG Estrutural sob o mesmo embedder e o mesmo retrieval,

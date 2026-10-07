@@ -1,0 +1,279 @@
+{
+  "condicao": "overlap-hibrido",
+  "framework": "overlap",
+  "repeticao": 1,
+  "config": {
+    "gen_model": "qwen/qwen3.8-27b",
+    "gen_provider": "groq",
+    "gen_temperature": 0,
+    "extract_model": "openai/gpt-oss-20b",
+    "judge_model": "gemini/gemini-2.5-flash",
+    "embedding": "intfloat/multilingual-e5-small",
+    "embedding_dim": 384,
+    "parser": "docling+tesseract-por",
+    "tokenizer_orcamento": "tiktoken/cl100k_base",
+    "context_budget_tokens": 6000,
+    "vector_db": "qdrant",
+    "collection": "benchmark_overlap",
+    "top_k": 100,
+    "variante": "hibrido",
+    "modo": "hibrido",
+    "janela_chars": 1200,
+    "overlap_chars": 180,
+    "segmentacao": "cega (fixed-size + overlap)"
+  },
+  "n_queries": 100,
+  "n_erros": 0,
+  "orcamento_contexto": {},
+  "tempos": {
+    "retrieval_medio_s": 0.08752292633056641,
+    "geracao_media_s": 0.0,
+    "total_medio_s": 0.0877001404762268
+  },
+  "retrieval": {
+    "precision@5": 0.134,
+    "recall@5": 0.67,
+    "mrr": 0.5398333333333334,
+    "ndcg@5": 0.5726782208511821,
+    "hit_rate@5": 0.67,
+    "n_queries": 100,
+    "docs_distintos_min": 6,
+    "ic95_recall": [
+      0.57,
+      0.76
+    ],
+    "ic95_hit": [
+      0.57,
+      0.76
+    ]
+  },
+  "retrieval_estratificado": {
+    "tipo=factual/lookup": {
+      "precision@5": 0.17200000000000001,
+      "recall@5": 0.86,
+      "mrr": 0.715,
+      "ndcg@5": 0.7521808868043303,
+      "hit_rate@5": 0.86,
+      "n_queries": 50,
+      "docs_distintos_min": 43,
+      "ic95_recall": [
+        0.76,
+        0.94
+      ],
+      "ic95_hit": [
+        0.76,
+        0.94
+      ]
+    },
+    "tipo=semantica": {
+      "precision@5": 0.096,
+      "recall@5": 0.48,
+      "mrr": 0.3646666666666667,
+      "ndcg@5": 0.39317555489803396,
+      "hit_rate@5": 0.48,
+      "n_queries": 50,
+      "docs_distintos_min": 6,
+      "ic95_recall": [
+        0.34,
+        0.62
+      ],
+      "ic95_hit": [
+        0.34,
+        0.62
+      ]
+    }
+  },
+  "retrieval_por_camada": {
+    "camada=facil": {
+      "precision@5": 0.136,
+      "recall@5": 0.68,
+      "mrr": 0.5813333333333334,
+      "ndcg@5": 0.6059484925750983,
+      "hit_rate@5": 0.68,
+      "n_queries": 50,
+      "docs_distintos_min": 47,
+      "ic95_recall": [
+        0.54,
+        0.8
+      ],
+      "ic95_hit": [
+        0.54,
+        0.8
+      ]
+    },
+    "camada=dificil": {
+      "precision@5": 0.132,
+      "recall@5": 0.66,
+      "mrr": 0.49833333333333335,
+      "ndcg@5": 0.539407949127266,
+      "hit_rate@5": 0.66,
+      "n_queries": 50,
+      "docs_distintos_min": 6,
+      "ic95_recall": [
+        0.52,
+        0.78
+      ],
+      "ic95_hit": [
+        0.52,
+        0.78
+      ]
+    }
+  },
+  "retrieval_tipo_camada": {
+    "tipo=factual/lookup|camada=facil": {
+      "precision@5": 0.184,
+      "recall@5": 0.92,
+      "mrr": 0.8333333333333334,
+      "ndcg@5": 0.8557115704285749,
+      "hit_rate@5": 0.92,
+      "n_queries": 25,
+      "docs_distintos_min": 50,
+      "ic95_recall": [
+        0.8,
+        1.0
+      ],
+      "ic95_hit": [
+        0.8,
+        1.0
+      ]
+    },
+    "tipo=factual/lookup|camada=dificil": {
+      "precision@5": 0.16,
+      "recall@5": 0.8,
+      "mrr": 0.5966666666666667,
+      "ndcg@5": 0.6486502031800855,
+      "hit_rate@5": 0.8,
+      "n_queries": 25,
+      "docs_distintos_min": 43,
+      "ic95_recall": [
+        0.64,
+        0.96
+      ],
+      "ic95_hit": [
+        0.64,
+        0.96
+      ]
+    },
+    "tipo=semantica|camada=facil": {
+      "precision@5": 0.08800000000000001,
+      "recall@5": 0.44,
+      "mrr": 0.3293333333333333,
+      "ndcg@5": 0.35618541472162163,
+      "hit_rate@5": 0.44,
+      "n_queries": 25,
+      "docs_distintos_min": 47,
+      "ic95_recall": [
+        0.24,
+        0.64
+      ],
+      "ic95_hit": [
+        0.24,
+        0.64
+      ]
+    },
+    "tipo=semantica|camada=dificil": {
+      "precision@5": 0.10400000000000001,
+      "recall@5": 0.52,
+      "mrr": 0.4,
+      "ndcg@5": 0.43016569507444635,
+      "hit_rate@5": 0.52,
+      "n_queries": 25,
+      "docs_distintos_min": 6,
+      "ic95_recall": [
+        0.32,
+        0.72
+      ],
+      "ic95_hit": [
+        0.32,
+        0.72
+      ]
+    }
+  },
+  "retrieval_curva": {
+    "1": {
+      "precision@1": 0.45,
+      "recall@1": 0.45,
+      "mrr": 0.45,
+      "ndcg@1": 0.45,
+      "hit_rate@1": 0.45,
+      "n_queries": 100,
+      "docs_distintos_min": 6,
+      "ic95_recall": [
+        0.35,
+        0.55
+      ],
+      "ic95_hit": [
+        0.35,
+        0.55
+      ]
+    },
+    "3": {
+      "precision@3": 0.20666666666666667,
+      "recall@3": 0.62,
+      "mrr": 0.5283333333333333,
+      "ndcg@3": 0.5520208679642895,
+      "hit_rate@3": 0.62,
+      "n_queries": 100,
+      "docs_distintos_min": 6,
+      "ic95_recall": [
+        0.52,
+        0.71
+      ],
+      "ic95_hit": [
+        0.52,
+        0.71
+      ]
+    },
+    "5": {
+      "precision@5": 0.134,
+      "recall@5": 0.67,
+      "mrr": 0.5398333333333334,
+      "ndcg@5": 0.5726782208511821,
+      "hit_rate@5": 0.67,
+      "n_queries": 100,
+      "docs_distintos_min": 6,
+      "ic95_recall": [
+        0.57,
+        0.76
+      ],
+      "ic95_hit": [
+        0.57,
+        0.76
+      ]
+    },
+    "10": {
+      "precision@10": 0.07300000000000001,
+      "recall@10": 0.73,
+      "mrr": 0.5474007936507936,
+      "ndcg@10": 0.5916395229999114,
+      "hit_rate@10": 0.73,
+      "n_queries": 100,
+      "docs_distintos_min": 6,
+      "ic95_recall": [
+        0.64,
+        0.82
+      ],
+      "ic95_hit": [
+        0.64,
+        0.82
+      ]
+    },
+    "20": {
+      "precision@20": 0.041,
+      "recall@20": 0.82,
+      "mrr": 0.5537922998054577,
+      "ndcg@20": 0.6145692192065095,
+      "hit_rate@20": 0.82,
+      "n_queries": 100,
+      "docs_distintos_min": 6,
+      "ic95_recall": [
+        0.74,
+        0.89
+      ],
+      "ic95_hit": [
+        0.74,
+        0.89
+      ]
+    }
+  }
+}

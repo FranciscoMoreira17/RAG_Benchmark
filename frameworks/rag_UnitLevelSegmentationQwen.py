@@ -1,5 +1,5 @@
 """
-rag_UnitLevelSegmentationQwen.py — Variante Qwen3 da UnitLevelSegmentation
+rag_UnitLevelSegmentationQwen.py - Variante Qwen3 da UnitLevelSegmentation
 =========================================================================
 """
 
@@ -16,12 +16,12 @@ from config import (
 )
 from runner import FrameworkBase
 from dre_loader import carregar_corpus_dre, corpus_fingerprint
-from dre_segmentador_qwen import segmentar_corpus
+from dre_segmentador import segmentar_corpus
 
 from qdrant_client import models as qm
 from fastembed import SparseTextEmbedding
 
-COLLECTION = "benchmark_hibrido_qwen"     
+COLLECTION = "benchmark_hibrido_qwen_orig"     
 QWEN_MODEL = "Qwen/Qwen3-Embedding-0.6B"
 QWEN_DIM = 1024                           
 TETO_TOKENS = 2048                         
@@ -127,7 +127,8 @@ class Framework(FrameworkBase):
     def config_ingestao(self) -> dict:
         # Identifica a variante Qwen: fingerprint distinto do índice E5.
         return {"pipeline": "dre-hibrido-qwen", "embedder": QWEN_MODEL,
-                "dim": QWEN_DIM, "teto_tokens": TETO_TOKENS, "bm25": BM25_MODEL}
+        "dim": QWEN_DIM, "max_seq": TETO_TOKENS,
+        "segmentacao": "original-sem-teto", "bm25": BM25_MODEL}
 
     def descricao(self) -> dict:
         return {"variante": self.variante, "modo": self.modo,
@@ -139,8 +140,7 @@ class Framework(FrameworkBase):
         docs = carregar_corpus_dre()
 
         # Segmentação COM TETO de tokens, usando o tokenizer do Qwen3.
-        segmentos, rel_seg = segmentar_corpus(
-            docs, teto_tokens=TETO_TOKENS, contar_tokens=emb.contar_tokens)
+        segmentos, rel_seg = segmentar_corpus(docs)
 
         textos = [s["texto"] for s in segmentos]
 

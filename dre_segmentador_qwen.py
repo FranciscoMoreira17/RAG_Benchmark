@@ -1,7 +1,6 @@
 """
 dre_segmentador.py - Segmentacao consciente da estrutura (com TETO de tokens)
 =============================================================================
-Reformulacao do OKF para corpus heterogeneo.
 
   1. ARTIGO  - so quando ha sequencia real de artigos (>=2, comecando
                em 1 ou 2, maioria dos saltos +1).

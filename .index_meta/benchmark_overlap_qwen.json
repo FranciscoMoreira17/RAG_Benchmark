@@ -1,0 +1,11 @@
+{
+  "fingerprint": "ff4428a13ceea036",
+  "config": {
+    "pipeline": "dre-overlap-qwen",
+    "embedder": "qwen3-0.6b",
+    "bm25": "Qdrant/bm25",
+    "janela_chars": 1200,
+    "overlap_chars": 180
+  },
+  "quando": "2026-10-02T14:02:34.412077+00:00"
+}

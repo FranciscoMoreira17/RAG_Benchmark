@@ -1,0 +1,279 @@
+{
+  "condicao": "overlap-esparso",
+  "framework": "overlap",
+  "repeticao": 1,
+  "config": {
+    "gen_model": "qwen/qwen3.8-27b",
+    "gen_provider": "groq",
+    "gen_temperature": 0,
+    "extract_model": "openai/gpt-oss-20b",
+    "judge_model": "gemini/gemini-2.5-flash",
+    "embedding": "intfloat/multilingual-e5-small",
+    "embedding_dim": 384,
+    "parser": "docling+tesseract-por",
+    "tokenizer_orcamento": "tiktoken/cl100k_base",
+    "context_budget_tokens": 6000,
+    "vector_db": "qdrant",
+    "collection": "benchmark_overlap",
+    "top_k": 100,
+    "variante": "esparso",
+    "modo": "esparso",
+    "janela_chars": 1200,
+    "overlap_chars": 180,
+    "segmentacao": "cega (fixed-size + overlap)"
+  },
+  "n_queries": 100,
+  "n_erros": 0,
+  "orcamento_contexto": {},
+  "tempos": {
+    "retrieval_medio_s": 0.10299276828765869,
+    "geracao_media_s": 0.0,
+    "total_medio_s": 0.10327922821044921
+  },
+  "retrieval": {
+    "precision@5": 0.14400000000000002,
+    "recall@5": 0.72,
+    "mrr": 0.6183333333333333,
+    "ndcg@5": 0.6435077231117291,
+    "hit_rate@5": 0.72,
+    "n_queries": 100,
+    "docs_distintos_min": 25,
+    "ic95_recall": [
+      0.63,
+      0.81
+    ],
+    "ic95_hit": [
+      0.63,
+      0.81
+    ]
+  },
+  "retrieval_estratificado": {
+    "tipo=factual/lookup": {
+      "precision@5": 0.17200000000000001,
+      "recall@5": 0.86,
+      "mrr": 0.8033333333333333,
+      "ndcg@5": 0.8178557852142875,
+      "hit_rate@5": 0.86,
+      "n_queries": 50,
+      "docs_distintos_min": 39,
+      "ic95_recall": [
+        0.76,
+        0.94
+      ],
+      "ic95_hit": [
+        0.76,
+        0.94
+      ]
+    },
+    "tipo=semantica": {
+      "precision@5": 0.116,
+      "recall@5": 0.58,
+      "mrr": 0.43333333333333335,
+      "ndcg@5": 0.4691596610091708,
+      "hit_rate@5": 0.58,
+      "n_queries": 50,
+      "docs_distintos_min": 25,
+      "ic95_recall": [
+        0.44,
+        0.72
+      ],
+      "ic95_hit": [
+        0.44,
+        0.72
+      ]
+    }
+  },
+  "retrieval_por_camada": {
+    "camada=facil": {
+      "precision@5": 0.14400000000000002,
+      "recall@5": 0.72,
+      "mrr": 0.612,
+      "ndcg@5": 0.6384483585769308,
+      "hit_rate@5": 0.72,
+      "n_queries": 50,
+      "docs_distintos_min": 39,
+      "ic95_recall": [
+        0.6,
+        0.84
+      ],
+      "ic95_hit": [
+        0.6,
+        0.84
+      ]
+    },
+    "camada=dificil": {
+      "precision@5": 0.14400000000000002,
+      "recall@5": 0.72,
+      "mrr": 0.6246666666666667,
+      "ndcg@5": 0.6485670876465274,
+      "hit_rate@5": 0.72,
+      "n_queries": 50,
+      "docs_distintos_min": 25,
+      "ic95_recall": [
+        0.6,
+        0.84
+      ],
+      "ic95_hit": [
+        0.6,
+        0.84
+      ]
+    }
+  },
+  "retrieval_tipo_camada": {
+    "tipo=factual/lookup|camada=facil": {
+      "precision@5": 0.17600000000000002,
+      "recall@5": 0.88,
+      "mrr": 0.8533333333333333,
+      "ndcg@5": 0.86,
+      "hit_rate@5": 0.88,
+      "n_queries": 25,
+      "docs_distintos_min": 39,
+      "ic95_recall": [
+        0.72,
+        1.0
+      ],
+      "ic95_hit": [
+        0.72,
+        1.0
+      ]
+    },
+    "tipo=factual/lookup|camada=dificil": {
+      "precision@5": 0.168,
+      "recall@5": 0.84,
+      "mrr": 0.7533333333333333,
+      "ndcg@5": 0.7757115704285749,
+      "hit_rate@5": 0.84,
+      "n_queries": 25,
+      "docs_distintos_min": 57,
+      "ic95_recall": [
+        0.68,
+        0.96
+      ],
+      "ic95_hit": [
+        0.68,
+        0.96
+      ]
+    },
+    "tipo=semantica|camada=facil": {
+      "precision@5": 0.112,
+      "recall@5": 0.56,
+      "mrr": 0.37066666666666664,
+      "ndcg@5": 0.4168967171538616,
+      "hit_rate@5": 0.56,
+      "n_queries": 25,
+      "docs_distintos_min": 45,
+      "ic95_recall": [
+        0.36,
+        0.76
+      ],
+      "ic95_hit": [
+        0.36,
+        0.76
+      ]
+    },
+    "tipo=semantica|camada=dificil": {
+      "precision@5": 0.12000000000000001,
+      "recall@5": 0.6,
+      "mrr": 0.496,
+      "ndcg@5": 0.5214226048644799,
+      "hit_rate@5": 0.6,
+      "n_queries": 25,
+      "docs_distintos_min": 25,
+      "ic95_recall": [
+        0.4,
+        0.8
+      ],
+      "ic95_hit": [
+        0.4,
+        0.8
+      ]
+    }
+  },
+  "retrieval_curva": {
+    "1": {
+      "precision@1": 0.56,
+      "recall@1": 0.56,
+      "mrr": 0.56,
+      "ndcg@1": 0.56,
+      "hit_rate@1": 0.56,
+      "n_queries": 100,
+      "docs_distintos_min": 25,
+      "ic95_recall": [
+        0.46,
+        0.66
+      ],
+      "ic95_hit": [
+        0.46,
+        0.66
+      ]
+    },
+    "3": {
+      "precision@3": 0.22333333333333333,
+      "recall@3": 0.67,
+      "mrr": 0.6083333333333333,
+      "ndcg@3": 0.624165082750002,
+      "hit_rate@3": 0.67,
+      "n_queries": 100,
+      "docs_distintos_min": 25,
+      "ic95_recall": [
+        0.58,
+        0.76
+      ],
+      "ic95_hit": [
+        0.58,
+        0.76
+      ]
+    },
+    "5": {
+      "precision@5": 0.14400000000000002,
+      "recall@5": 0.72,
+      "mrr": 0.6183333333333333,
+      "ndcg@5": 0.6435077231117291,
+      "hit_rate@5": 0.72,
+      "n_queries": 100,
+      "docs_distintos_min": 25,
+      "ic95_recall": [
+        0.63,
+        0.81
+      ],
+      "ic95_hit": [
+        0.63,
+        0.81
+      ]
+    },
+    "10": {
+      "precision@10": 0.079,
+      "recall@10": 0.79,
+      "mrr": 0.6277777777777778,
+      "ndcg@10": 0.6662607618819585,
+      "hit_rate@10": 0.79,
+      "n_queries": 100,
+      "docs_distintos_min": 25,
+      "ic95_recall": [
+        0.71,
+        0.87
+      ],
+      "ic95_hit": [
+        0.71,
+        0.87
+      ]
+    },
+    "20": {
+      "precision@20": 0.042,
+      "recall@20": 0.84,
+      "mrr": 0.6312663067926226,
+      "ndcg@20": 0.678919584584072,
+      "hit_rate@20": 0.84,
+      "n_queries": 100,
+      "docs_distintos_min": 25,
+      "ic95_recall": [
+        0.77,
+        0.91
+      ],
+      "ic95_hit": [
+        0.77,
+        0.91
+      ]
+    }
+  }
+}

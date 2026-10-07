@@ -1,5 +1,5 @@
 """
-rag_llamaindex.py — Implementação LlamaIndex para o Benchmark
+rag_llamaindex.py - Implementação LlamaIndex para o Benchmark
 ================================================================
 Usa os componentes nativos do LlamaIndex:
   - SimpleDirectoryReader para ingestão de PDFs

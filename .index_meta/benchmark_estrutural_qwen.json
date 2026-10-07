@@ -1,0 +1,9 @@
+{
+  "fingerprint": "79705372b35fd636",
+  "config": {
+    "pipeline": "estrutural-enriquecido-qwen",
+    "bm25": "Qdrant/bm25",
+    "embedder": "qwen3-0.6b"
+  },
+  "quando": "2026-10-02T20:57:13.440334+00:00"
+}

@@ -1,5 +1,5 @@
 """
-rag_langchain.py — Implementação LangChain para o Benchmark
+rag_langchain.py - Implementação LangChain para o Benchmark
 ==============================================================
 Usa os componentes nativos do LangChain:
   - PyMuPDFLoader para ingestão de PDFs
@@ -8,9 +8,7 @@ Usa os componentes nativos do LangChain:
   - ChatGoogleGenerativeAI para geração
   - LCEL chain (prompt | llm | parser)
 
-A segmentação e o chunking são decisões DO LANGCHAIN — não usamos
-a segmentação por artigo do OKF nem nenhuma lógica custom.
-Isto garante que estamos a avaliar a framework, não o nosso código.
+
 """
 
 import os

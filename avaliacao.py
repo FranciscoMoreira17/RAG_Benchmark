@@ -39,7 +39,7 @@ if _DIR not in sys.path:
 
 load_dotenv()
 
-RESULTADOS_DIR = os.path.join(_DIR, "resultados")
+RESULTADOS_DIR = os.path.join(_DIR, "resultados/ThirdResults-Qwen")
 JUDGE_MODEL = os.getenv("JUDGE_MODEL", "gemini/gemini-2.5-flash")
 
 JUDGE_MAX_WORKERS = int(os.getenv("JUDGE_MAX_WORKERS", "1"))
@@ -743,7 +743,7 @@ def comparar():
 
     tabelas = [
         ("1. RETRIEVAL - GERAL", tab_geral()),
-        ("1b. RETRIEVAL - CURVA hit@k (dedup por documento)", tab_curva()),
+        ("1b. RETRIEVAL - CURVA hit@k", tab_curva()),
         ("2. RETRIEVAL - POR TIPO (factual/lookup vs semantica)",
          tab_estrato("retrieval_estratificado",
                      ["tipo=factual/lookup", "tipo=semantica"], "tipo")),

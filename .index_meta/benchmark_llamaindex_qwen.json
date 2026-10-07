@@ -1,0 +1,11 @@
+{
+  "fingerprint": "2f0ec10219209a26",
+  "config": {
+    "pipeline": "llamaindex-sentence-qwen",
+    "chunk_size": 1024,
+    "overlap": 200,
+    "embedder": "qwen3-0.6b",
+    "dim": 1024
+  },
+  "quando": "2026-10-01T19:56:54.007820+00:00"
+}

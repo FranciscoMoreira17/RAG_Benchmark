@@ -1,8 +1,6 @@
 """
 dre_segmentador.py - Segmentação consciente da estrutura
 ==============================================================
-Reformulação do OKF para corpus heterogéneo. 
-
   1. ARTIGO  - só quando há sequencia real de artigos (>=2, começando
                em 1 ou 2, maioria dos saltos +1). Isto aceita leis,
                decretos-lei, regulamentos e os avisos/despachos que
