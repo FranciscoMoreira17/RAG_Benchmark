@@ -44,7 +44,7 @@ def main():
 
     from dre_loader import carregar_corpus_dre
     # NOTA: o teu import aponta para dre_segmentador_qwen; mantido tal como o tens.
-    from dre_segmentador_qwen import segmentar_corpus
+    from dre_segmentador_v2 import segmentar_corpus
 
     docs = carregar_corpus_dre(relatorio=False)
     amostra = random.Random(SEED).sample(docs, min(args.n, len(docs)))

@@ -5,7 +5,7 @@ dre_segmentador.py - Segmentação consciente da estrutura
                em 1 ou 2, maioria dos saltos +1). Isto aceita leis,
                decretos-lei, regulamentos e os avisos/despachos que
                publicam estatutos ou regulamentos internos.
-  2. BLOCO   - documento inteiro como uma unidade. Documentos curtos
+  2. Documento   - documento inteiro como uma unidade. Documentos curtos
                sem articulado (a maioria: anúncios, avisos simples,
                louvores, editais).
   3. JANELA  - documentos longos (>LIMIAR) sem articulado: janelas

@@ -304,6 +304,7 @@ _FRAMEWORKS = {
     # Frameworks com Modelo Qwen3-Embedding
     "uls_qwen": "frameworks.rag_UnitLevelSegmentationQwen",
     "uls_qwen512": "frameworks.rag_UnitLevelSegmentationQwen512",
+    "uls_qwenv2": "frameworks.rag_ULSQwenV2",
     "documento_qwen": "frameworks.rag_documentoQwen",
     "langchain_qwen": "frameworks.rag_langchainQwen",
     "llamaindex_qwen": "frameworks.rag_llamaindexQwen",
