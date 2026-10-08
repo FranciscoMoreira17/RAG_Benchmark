@@ -1,5 +1,5 @@
 """
-rag_UnitLevelSegmentationQwen.py - Variante Qwen3 da UnitLevelSegmentation
+rag_documentoQwen.py - Variante Qwen3
 =========================================================================
 
 Este framework testa
@@ -29,7 +29,7 @@ from dre_segmentador import segmentar_corpus
 from qdrant_client import models as qm
 from fastembed import SparseTextEmbedding
 
-COLLECTION = "benchmark_hibrido_qwen_orig"     #"benchmark_hibrido_qwen_512" // "benchmark_hibrido_qwen_orig"
+COLLECTION = "benchmark_documento_qwen"     #"benchmark_hibrido_qwen_512" // "benchmark_hibrido_qwen_orig"
 QWEN_MODEL = "Qwen/Qwen3-Embedding-0.6B"
 QWEN_DIM = 1024                           
 TETO_TOKENS = 2048             # 512 para comparar com E5-512, 2048 valor original escolhido do Qwen3-Embedding-0.6B           
@@ -103,7 +103,7 @@ def _get_embedder() -> Qwen3Embedder:
 
 class Framework(FrameworkBase):
 
-    nome = "ULS_qwen"
+    nome = "documento_qwen"
     usa_qdrant = True
 
     def __init__(self, variante: str = "hibrido"):
@@ -112,7 +112,7 @@ class Framework(FrameworkBase):
         self.variante = variante
         self.modo = VARIANTES[variante]["modo"]
         self.collection = COLLECTION
-        self.nome_run = f"UnitLevelSegmentationQwen-{variante}"
+        self.nome_run = f"documento-qwen-{variante}"
         self._groq = None
         self._sparse = None
         self._embedder = None
@@ -136,7 +136,7 @@ class Framework(FrameworkBase):
         # Identifica a variante Qwen: fingerprint distinto do índice E5.
         return {"pipeline": "dre-hibrido-qwen", "embedder": QWEN_MODEL,
         "dim": QWEN_DIM, "max_seq": TETO_TOKENS,
-        "segmentacao": "original-sem-teto", "bm25": BM25_MODEL}
+        "segmentacao": "documento-inteiro", "bm25": BM25_MODEL}
 
     def descricao(self) -> dict:
         return {"variante": self.variante, "modo": self.modo,
@@ -147,8 +147,13 @@ class Framework(FrameworkBase):
         emb = self._get_emb()
         docs = carregar_corpus_dre()
 
-        # Segmentação COM TETO de tokens, usando o tokenizer do Qwen3.
-        segmentos, rel_seg = segmentar_corpus(docs)
+        segmentos = [{
+            "doc_id": d["id"], "chunk_id": f"{d['id']}::0", "texto": d["texto"],
+            "rotulo": "documento", "nivel_segmentacao": "documento",
+            "titulo": d["titulo"], "tipo": d["tipo"], "numero": d["numero"],
+            "data_publicacao": d["data_publicacao"], "url": d["url"],
+        } for d in docs]
+        rel_seg = {"distribuicao_nivel_documento": {"documento": len(docs)}}
 
         textos = [s["texto"] for s in segmentos]
 

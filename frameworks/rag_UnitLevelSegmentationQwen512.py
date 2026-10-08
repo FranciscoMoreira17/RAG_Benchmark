@@ -29,11 +29,11 @@ from dre_segmentador import segmentar_corpus
 from qdrant_client import models as qm
 from fastembed import SparseTextEmbedding
 
-COLLECTION = "benchmark_hibrido_qwen_orig"     #"benchmark_hibrido_qwen_512" // "benchmark_hibrido_qwen_orig"
+COLLECTION = "benchmark_hibrido_qwen_512"     #"benchmark_hibrido_qwen_512" // "benchmark_hibrido_qwen_orig"
 QWEN_MODEL = "Qwen/Qwen3-Embedding-0.6B"
 QWEN_DIM = 1024                           
-TETO_TOKENS = 2048             # 512 para comparar com E5-512, 2048 valor original escolhido do Qwen3-Embedding-0.6B           
-QWEN_BATCH = 4                             
+TETO_TOKENS = 512             # 512 para comparar com E5-512, 2048 valor original escolhido do Qwen3-Embedding-0.6B           
+QWEN_BATCH = 8                             
 BM25_MODEL = "Qdrant/bm25"
 PREFETCH = 50                             
 
@@ -103,7 +103,7 @@ def _get_embedder() -> Qwen3Embedder:
 
 class Framework(FrameworkBase):
 
-    nome = "ULS_qwen"
+    nome = "uls_qwen512"
     usa_qdrant = True
 
     def __init__(self, variante: str = "hibrido"):
@@ -112,7 +112,7 @@ class Framework(FrameworkBase):
         self.variante = variante
         self.modo = VARIANTES[variante]["modo"]
         self.collection = COLLECTION
-        self.nome_run = f"UnitLevelSegmentationQwen-{variante}"
+        self.nome_run = f"UnitLevelSegmentationQwen512-{variante}"
         self._groq = None
         self._sparse = None
         self._embedder = None

@@ -303,6 +303,8 @@ _FRAMEWORKS = {
     "overlap": "frameworks.rag_overlap",
     # Frameworks com Modelo Qwen3-Embedding
     "uls_qwen": "frameworks.rag_UnitLevelSegmentationQwen",
+    "uls_qwen512": "frameworks.rag_UnitLevelSegmentationQwen512",
+    "documento_qwen": "frameworks.rag_documentoQwen",
     "langchain_qwen": "frameworks.rag_langchainQwen",
     "llamaindex_qwen": "frameworks.rag_llamaindexQwen",
     "overlap_qwen": "frameworks.rag_overlapQwen",
