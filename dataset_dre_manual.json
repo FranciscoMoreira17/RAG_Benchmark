@@ -9,7 +9,8 @@
       "6415922"
     ],
     "ancora": "Lei 5/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_002",
@@ -21,7 +22,8 @@
       "6421760"
     ],
     "ancora": "Aviso 1359/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_003",
@@ -33,7 +35,8 @@
       "6421672"
     ],
     "ancora": "Édito 11/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_004",
@@ -45,7 +48,8 @@
       "6423298"
     ],
     "ancora": "Edital 73/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_005",
@@ -57,7 +61,8 @@
       "6458229"
     ],
     "ancora": "Mapa 2/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_006",
@@ -69,7 +74,8 @@
       "6432456"
     ],
     "ancora": "Anúncio 2923/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_007",
@@ -81,7 +87,8 @@
       "6407240"
     ],
     "ancora": "Anúncio 478/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_008",
@@ -93,7 +100,8 @@
       "6408720"
     ],
     "ancora": "Despacho 370/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_009",
@@ -105,7 +113,8 @@
       "6470861"
     ],
     "ancora": "Aviso 5379/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_010",
@@ -117,7 +126,8 @@
       "4476135"
     ],
     "ancora": "Lei 14/2021",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_011",
@@ -129,7 +139,8 @@
       "4478242"
     ],
     "ancora": "Aviso 6425/2021",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_012",
@@ -141,7 +152,8 @@
       "6444334"
     ],
     "ancora": "Aviso 3590/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_013",
@@ -153,7 +165,8 @@
       "6424667"
     ],
     "ancora": "Decreto-lei 17/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_014",
@@ -165,7 +178,8 @@
       "6430178"
     ],
     "ancora": "Despacho 1060/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_015",
@@ -177,7 +191,8 @@
       "6423403"
     ],
     "ancora": "Decreto-lei 15/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_016",
@@ -189,7 +204,8 @@
       "6417306"
     ],
     "ancora": "Aviso 1029/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_017",
@@ -201,7 +217,8 @@
       "6414267"
     ],
     "ancora": "Regulamento 39/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_018",
@@ -213,7 +230,8 @@
       "6470911"
     ],
     "ancora": "Aviso 5426/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_019",
@@ -225,7 +243,8 @@
       "6431684"
     ],
     "ancora": "Anúncio 2643/2026",
-    "para_geracao": true
+    "para_geracao": true,
+    "subconjunto": "original"
   },
   {
     "id": "ID_020",
@@ -237,7 +256,8 @@
       "6417231"
     ],
     "ancora": "Despacho 640/2026",
-    "para_geracao": true
+    "para_geracao": true,
+    "subconjunto": "original"
   },
   {
     "id": "ID_021",
@@ -249,7 +269,8 @@
       "6430242"
     ],
     "ancora": "Despacho 1082/2026",
-    "para_geracao": true
+    "para_geracao": true,
+    "subconjunto": "original"
   },
   {
     "id": "ID_022",
@@ -261,7 +282,8 @@
       "6449376"
     ],
     "ancora": "Aviso 3939/2026",
-    "para_geracao": true
+    "para_geracao": true,
+    "subconjunto": "original"
   },
   {
     "id": "ID_023",
@@ -273,7 +295,8 @@
       "4476167"
     ],
     "ancora": "Aviso 6310/2021",
-    "para_geracao": true
+    "para_geracao": true,
+    "subconjunto": "original"
   },
   {
     "id": "ID_024",
@@ -285,7 +308,8 @@
       "6404175"
     ],
     "ancora": "Despacho 291/2026",
-    "para_geracao": true
+    "para_geracao": true,
+    "subconjunto": "original"
   },
   {
     "id": "ID_025",
@@ -297,7 +321,8 @@
       "6418796"
     ],
     "ancora": "Deliberação 73/2026",
-    "para_geracao": true
+    "para_geracao": true,
+    "subconjunto": "original"
   },
   {
     "id": "ID_026",
@@ -309,7 +334,8 @@
       "6415805"
     ],
     "ancora": "Aviso 947/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_027",
@@ -321,7 +347,8 @@
       "6417344"
     ],
     "ancora": "Acordo 1/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_028",
@@ -333,7 +360,8 @@
       "6432952"
     ],
     "ancora": "Anúncio 3002/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_029",
@@ -345,7 +373,8 @@
       "6451360"
     ],
     "ancora": "Aviso 4093/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_030",
@@ -357,7 +386,8 @@
       "6458336"
     ],
     "ancora": "Aviso 4525/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_031",
@@ -369,7 +399,8 @@
       "6466731"
     ],
     "ancora": "Anúncio 5578/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_032",
@@ -381,7 +412,8 @@
       "6465905"
     ],
     "ancora": "Aviso 5031/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_033",
@@ -393,7 +425,8 @@
       "4477170"
     ],
     "ancora": "Anúncio 4450/2021",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_034",
@@ -405,7 +438,8 @@
       "6467823"
     ],
     "ancora": "Aviso 5129/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_035",
@@ -417,7 +451,8 @@
       "6420252"
     ],
     "ancora": "Aviso 1254/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_036",
@@ -429,7 +464,8 @@
       "6463305"
     ],
     "ancora": "Aviso 4853/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_037",
@@ -441,7 +477,8 @@
       "6443200"
     ],
     "ancora": "Despacho 2019/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_038",
@@ -453,7 +490,8 @@
       "6481444"
     ],
     "ancora": "Anúncio 6871/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_039",
@@ -465,7 +503,8 @@
       "6431256"
     ],
     "ancora": "Anúncio 2506/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_040",
@@ -477,7 +516,8 @@
       "6436850"
     ],
     "ancora": "Aviso 2972/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_041",
@@ -489,7 +529,8 @@
       "6420301"
     ],
     "ancora": "Aviso 1297/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_042",
@@ -501,7 +542,8 @@
       "6497951"
     ],
     "ancora": "Anúncio 8285/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_043",
@@ -513,7 +555,8 @@
       "6504692"
     ],
     "ancora": "Despacho 4586/2026",
-    "para_geracao": true
+    "para_geracao": true,
+    "subconjunto": "original"
   },
   {
     "id": "ID_044",
@@ -525,7 +568,8 @@
       "6453342"
     ],
     "ancora": "Anúncio 4530/2026",
-    "para_geracao": true
+    "para_geracao": true,
+    "subconjunto": "original"
   },
   {
     "id": "ID_045",
@@ -537,7 +581,8 @@
       "4478207"
     ],
     "ancora": "Declaração 280/2021",
-    "para_geracao": true
+    "para_geracao": true,
+    "subconjunto": "original"
   },
   {
     "id": "ID_046",
@@ -549,7 +594,8 @@
       "4478679"
     ],
     "ancora": "Anúncio 4519/2021",
-    "para_geracao": true
+    "para_geracao": true,
+    "subconjunto": "original"
   },
   {
     "id": "ID_047",
@@ -561,7 +607,8 @@
       "6435679"
     ],
     "ancora": "Anúncio 3191/2026",
-    "para_geracao": true
+    "para_geracao": true,
+    "subconjunto": "original"
   },
   {
     "id": "ID_048",
@@ -573,7 +620,8 @@
       "6420276"
     ],
     "ancora": "Aviso 1274/2026",
-    "para_geracao": true
+    "para_geracao": true,
+    "subconjunto": "original"
   },
   {
     "id": "ID_049",
@@ -585,7 +633,8 @@
       "6505216"
     ],
     "ancora": "Anúncio 8830/2026",
-    "para_geracao": true
+    "para_geracao": true,
+    "subconjunto": "original"
   },
   {
     "id": "ID_050",
@@ -597,7 +646,8 @@
       "6413666"
     ],
     "ancora": "Anúncio 833/2026",
-    "para_geracao": true
+    "para_geracao": true,
+    "subconjunto": "original"
   },
   {
     "id": "ID_051",
@@ -609,7 +659,8 @@
       "6420357"
     ],
     "ancora": "Anúncio 1386/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_052",
@@ -621,7 +672,8 @@
       "6481395"
     ],
     "ancora": "Regulamento 267/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_053",
@@ -633,7 +685,8 @@
       "4474283"
     ],
     "ancora": "Declaração 119/2021",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_054",
@@ -645,7 +698,8 @@
       "6406192"
     ],
     "ancora": "Anúncio 452/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_055",
@@ -657,7 +711,8 @@
       "6432283"
     ],
     "ancora": "Despacho 1501/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_056",
@@ -669,7 +724,8 @@
       "6400995"
     ],
     "ancora": "Anúncio 102/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_057",
@@ -681,7 +737,8 @@
       "6432406"
     ],
     "ancora": "Anúncio 2873/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_058",
@@ -693,7 +750,8 @@
       "6480665"
     ],
     "ancora": "Aviso 6107-A/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_059",
@@ -705,7 +763,8 @@
       "6404700"
     ],
     "ancora": "Anúncio 377/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_060",
@@ -717,7 +776,8 @@
       "6418906"
     ],
     "ancora": "Anúncio 1284/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_061",
@@ -729,7 +789,8 @@
       "4478139"
     ],
     "ancora": "Alvará 6/2021",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_062",
@@ -741,7 +802,8 @@
       "6420209"
     ],
     "ancora": "Parecer 1/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_063",
@@ -753,7 +815,8 @@
       "6443253"
     ],
     "ancora": "Aviso 3477/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_064",
@@ -765,7 +828,8 @@
       "4478177"
     ],
     "ancora": "Contrato 193/2021",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_065",
@@ -777,7 +841,8 @@
       "6446186"
     ],
     "ancora": "Anúncio 3999/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_066",
@@ -789,7 +854,8 @@
       "6404208"
     ],
     "ancora": "Aviso 561/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_067",
@@ -801,7 +867,8 @@
       "6458442"
     ],
     "ancora": "Resolução 38/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_068",
@@ -813,7 +880,8 @@
       "6467931"
     ],
     "ancora": "Decreto 5/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_069",
@@ -825,7 +893,8 @@
       "6478710"
     ],
     "ancora": "Anúncio 6643/2026",
-    "para_geracao": true
+    "para_geracao": true,
+    "subconjunto": "original"
   },
   {
     "id": "ID_070",
@@ -837,7 +906,8 @@
       "6506277"
     ],
     "ancora": "Aviso 8070/2026",
-    "para_geracao": true
+    "para_geracao": true,
+    "subconjunto": "original"
   },
   {
     "id": "ID_071",
@@ -849,7 +919,8 @@
       "6481733"
     ],
     "ancora": "Anúncio 6969/2026",
-    "para_geracao": true
+    "para_geracao": true,
+    "subconjunto": "original"
   },
   {
     "id": "ID_072",
@@ -861,7 +932,8 @@
       "6482836"
     ],
     "ancora": "Acórdão 5/2026",
-    "para_geracao": true
+    "para_geracao": true,
+    "subconjunto": "original"
   },
   {
     "id": "ID_073",
@@ -873,7 +945,8 @@
       "6400900"
     ],
     "ancora": "Aviso 156/2026",
-    "para_geracao": true
+    "para_geracao": true,
+    "subconjunto": "original"
   },
   {
     "id": "ID_074",
@@ -885,7 +958,8 @@
       "6414321"
     ],
     "ancora": "Aviso 893/2026",
-    "para_geracao": true
+    "para_geracao": true,
+    "subconjunto": "original"
   },
   {
     "id": "ID_075",
@@ -897,7 +971,8 @@
       "6455186"
     ],
     "ancora": "Louvor 106/2026",
-    "para_geracao": true
+    "para_geracao": true,
+    "subconjunto": "original"
   },
   {
     "id": "ID_076",
@@ -909,7 +984,8 @@
       "6407192"
     ],
     "ancora": "Despacho 344/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_077",
@@ -921,7 +997,8 @@
       "6423284"
     ],
     "ancora": "Edital 71/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_078",
@@ -933,7 +1010,8 @@
       "6453341"
     ],
     "ancora": "Anúncio 4529/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_079",
@@ -945,7 +1023,8 @@
       "6431660"
     ],
     "ancora": "Anúncio 2619/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_080",
@@ -957,7 +1036,8 @@
       "6469375"
     ],
     "ancora": "Aviso 5257/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_081",
@@ -969,7 +1049,8 @@
       "6421814"
     ],
     "ancora": "Louvor 32/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_082",
@@ -981,7 +1062,8 @@
       "4474207"
     ],
     "ancora": "Despacho 3551/2021",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_083",
@@ -993,7 +1075,8 @@
       "6457238"
     ],
     "ancora": "Anúncio 4899/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_084",
@@ -1005,7 +1088,8 @@
       "6455204"
     ],
     "ancora": "Louvor 110/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_085",
@@ -1017,7 +1101,8 @@
       "6423238"
     ],
     "ancora": "Diretiva 1/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_086",
@@ -1029,7 +1114,8 @@
       "6412815"
     ],
     "ancora": "Anúncio 786/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_087",
@@ -1041,7 +1127,8 @@
       "6451163"
     ],
     "ancora": "Louvor 96/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_088",
@@ -1053,7 +1140,8 @@
       "6479764"
     ],
     "ancora": "Aviso 6045/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_089",
@@ -1065,7 +1153,8 @@
       "6414697"
     ],
     "ancora": "Anúncio 967/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_090",
@@ -1077,7 +1166,8 @@
       "6450203"
     ],
     "ancora": "Anúncio 4344/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_091",
@@ -1089,7 +1179,8 @@
       "6482925"
     ],
     "ancora": "Regulamento 272/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_092",
@@ -1101,7 +1192,8 @@
       "6484664"
     ],
     "ancora": "Resolução 57/2026",
-    "para_geracao": false
+    "para_geracao": false,
+    "subconjunto": "original"
   },
   {
     "id": "ID_093",
@@ -1113,7 +1205,8 @@
       "6458738"
     ],
     "ancora": "Anúncio 5035/2026",
-    "para_geracao": true
+    "para_geracao": true,
+    "subconjunto": "original"
   },
   {
     "id": "ID_094",
@@ -1125,7 +1218,8 @@
       "6441879"
     ],
     "ancora": "Aviso 3429/2026",
-    "para_geracao": true
+    "para_geracao": true,
+    "subconjunto": "original"
   },
   {
     "id": "ID_095",
@@ -1137,7 +1231,8 @@
       "6408682"
     ],
     "ancora": "Aviso 638/2026",
-    "para_geracao": true
+    "para_geracao": true,
+    "subconjunto": "original"
   },
   {
     "id": "ID_096",
@@ -1149,7 +1244,8 @@
       "6506406"
     ],
     "ancora": "Anúncio 8902/2026",
-    "para_geracao": true
+    "para_geracao": true,
+    "subconjunto": "original"
   },
   {
     "id": "ID_097",
@@ -1161,7 +1257,8 @@
       "4472249"
     ],
     "ancora": "Regulamento 319/2021",
-    "para_geracao": true
+    "para_geracao": true,
+    "subconjunto": "original"
   },
   {
     "id": "ID_098",
@@ -1173,7 +1270,8 @@
       "4474183"
     ],
     "ancora": "Despacho 3546/2021",
-    "para_geracao": true
+    "para_geracao": true,
+    "subconjunto": "original"
   },
   {
     "id": "ID_099",
@@ -1185,7 +1283,8 @@
       "4476138"
     ],
     "ancora": "Portaria 78/2021",
-    "para_geracao": true
+    "para_geracao": true,
+    "subconjunto": "original"
   },
   {
     "id": "ID_0100",
@@ -1197,6 +1296,427 @@
       "6438762"
     ],
     "ancora": "Aviso 3020/2026",
-    "para_geracao": true
+    "para_geracao": true,
+    "subconjunto": "original"
+  },
+  {
+    "id": "ID_101",
+    "query": "Na Direção Regional do Turismo da Madeira, quem substitui o diretor regional nas suas ausências ou impedimentos",
+    "tipo": "factual/lookup",
+    "camada": 1,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6399167"
+    ],
+    "artigo_esperado": "Artigo 4.º, n.º 4",
+    "ancora": "Decreto 1/2026",
+    "para_geracao": false,
+    "subconjunto": "articulado"
+  },
+  {
+    "id": "ID_102",
+    "query": "Na Junta de Freguesia de Areeiro, que serviço é responsável por gerir o funcionamento dos Postos Médicos?",
+    "tipo": "factual/lookup",
+    "camada": 1,
+    "ground_truth": "O Núcleo da Saúde é o serviço responsável por gerir o funcionamento dos Postos Médicos da Junta de Freguesia de Areeiro, nos termos da alínea b) do artigo 16.º do Regulamento 11/2026 (Regulamento da Orgânica da Junta de Freguesia de Areeiro)",
+    "documentos_esperados": [
+      "6401959"
+    ],
+    "artigo_esperado": "Artigo 16.º, alínea b)",
+    "ancora": "Regulamento 11/2026",
+    "para_geracao": true,
+    "subconjunto": "articulado"
+  },
+  {
+    "id": "ID_103",
+    "query": "No Conselho Científico da Faculdade de Medicina e Ciências Biomédicas da Universidade do Algarve, que desconto no vencimento mensal implica cada falta injustificada de um membro às reuniões?",
+    "tipo": "factual/lookup",
+    "camada": 1,
+    "ground_truth": "Cada falta injustificada implica a dedução de 1/30 do vencimento mensal do membro em causa, nos termos do n.º 4 do artigo 13.º do Regulamento 172/2026 (Regulamento do Conselho Científico da Faculdade de Medicina e Ciências Biomédicas da Universidade do Algarve)",
+    "documentos_esperados": [
+      "6447255"
+    ],
+    "ancora": "Regulamento 172/2026",
+    "artigo_esperado": "Artigo 13.º, n.º 4",
+    "para_geracao": true,
+    "subconjunto": "articulado"
+  },
+  {
+    "id": "ID_104",
+    "query": "Segundo o Decreto n.º 6/2021, de 3 de abril, que regulamenta o estado de emergência, a que horas encerram os estabelecimentos de restauração para serviço em esplanadas abertas durante os dias de semana?",
+    "tipo": "factual/lookup",
+    "camada": 1,
+    "ground_truth": "Os estabelecimentos de restauração e similares encerram às 22:30 h durante os dias de semana para efeitos de serviço de refeições em esplanadas abertas, nos termos do n.º 4 do artigo 18.º do Decreto n.º 6/2021, de 3 de abril.",
+    "documentos_esperados": [
+      "4473631"
+    ],
+    "ancora": "Decreto 6/2021",
+    "artigo_esperado": "Artigo 18.º, n.º 4",
+    "para_geracao": true,
+    "subconjunto": "articulado"
+  },
+  {
+    "id": "ID_105",
+    "query": "Na ZEC Douro Internacional, que entidades têm competência para fiscalizar o cumprimento das medidas de gestão?",
+    "tipo": "factual/lookup",
+    "camada": 1,
+    "ground_truth": "A fiscalização do cumprimento das medidas de gestão na ZEC Douro Internacional compete ao ICNF, I. P., às comissões de coordenação e desenvolvimento regional, à Guarda Nacional Republicana e à Polícia de Segurança Pública, nos termos do artigo 9.º do Decreto-Lei n.º 23/2026, de 28 de janeiro",
+    "documentos_esperados": [
+      "6426434"
+    ],
+    "ancora": "Decreto-lei 23/2026",
+    "artigo_esperado": "Artigo 9.º",
+    "para_geracao": true,
+    "subconjunto": "articulado"
+  },
+  {
+    "id": "ID_106",
+    "query": "No Projeto de Regulamento de Apoio ao Movimento Associativo da Freguesia de Carnide, a partir de que montante os apoios financeiros têm de ser atribuídos mediante celebração de contrato-programa?",
+    "tipo": "factual/lookup",
+    "camada": 1,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6504941"
+    ],
+    "ancora": "Edital 397/2026",
+    "artigo_esperado": "Artigo 14.º, n.º 1",
+    "para_geracao": false,
+    "subconjunto": "articulado"
+  },
+  {
+    "id": "ID_107",
+    "query": "No projeto de revisão do Regulamento de Resíduos e Limpeza Urbana do Município de Mira, qual é o comprimento máximo permitido para os ramos de árvores entregues como resíduos verdes?",
+    "tipo": "factual/lookup",
+    "camada": 1,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6423306"
+    ],
+    "ancora": "Aviso 1514/2026",
+    "artigo_esperado": "Artigo 27.º, n.º 4, alínea a)",
+    "para_geracao": false,
+    "subconjunto": "articulado"
+  },
+  {
+    "id": "ID_108",
+    "query": "Em que dia se celebra o dia da Escola Superior Agrária de Santarém?",
+    "tipo": "factual/lookup",
+    "camada": 2,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6431386"
+    ],
+    "ancora": "Despacho 1305/2026",
+    "artigo_esperado": "Artigo 5.º, n.º 5",
+    "para_geracao": false,
+    "subconjunto": "articulado"
+  },
+  {
+    "id": "ID_109",
+    "query": "Quantas divisões ou gabinetes pode ter, no máximo, a direção-geral que trata dos recursos humanos da Defesa?",
+    "tipo": "factual/lookup",
+    "camada": 2,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6400664"
+    ],
+    "ancora": "Portaria 3/2026",
+    "artigo_esperado": "Artigo 5.º, n.º 1",
+    "para_geracao": false,
+    "subconjunto": "articulado"
+  },
+  {
+    "id": "ID_110",
+    "query": "Quantos créditos do primeiro ano é preciso ter aprovados para passar ao segundo ano do doutoramento em Finanças do Iscte?",
+    "tipo": "factual/lookup",
+    "camada": 2,
+    "ground_truth": "A inscrição no segundo ano curricular do Doutoramento em Finanças do Iscte requer a aprovação de 48 créditos ECTS do primeiro ano do curso de doutoramento, nos termos da alínea a) do n.º 1 do artigo 11.º das Normas Regulamentares Específicas do Doutoramento em Finanças, publicadas pelo Despacho n.º 3550/2026.",
+    "documentos_esperados": [
+      "6481241"
+    ],
+    "ancora": "Despacho 3550/2026",
+    "artigo_esperado": "Artigo 11.º, n.º 1, alínea a)",
+    "para_geracao": true,
+    "subconjunto": "articulado"
+  },
+  {
+    "id": "ID_111",
+    "query": "A que posição da tabela salarial corresponde o vencimento de um chefe de núcleo na Câmara de Fafe?",
+    "tipo": "factual/lookup",
+    "camada": 2,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6414276"
+    ],
+    "ancora": "Regulamento 41/2026",
+    "artigo_esperado": "Artigo 16.º, n.º 2",
+    "para_geracao": false,
+    "subconjunto": "articulado"
+  },
+  {
+    "id": "ID_112",
+    "query": "De quanto em quanto tempo tem de ser revisto o código da Câmara de Mora sobre assédio no trabalho?",
+    "tipo": "factual/lookup",
+    "camada": 2,
+    "ground_truth": "O Código de Boa Conduta para a Prevenção e Combate ao Assédio Laboral do Município de Mora deve ser revisto no prazo de quatro anos ou sempre que tal se justifique, nos termos do artigo 12.º do Código, publicado pelo Aviso n.º 4250/2026/2.",
+    "documentos_esperados": [
+      "6455374"
+    ],
+    "ancora": "Aviso 4250/2026",
+    "artigo_esperado": "Artigo 12.º",
+    "para_geracao": true,
+    "subconjunto": "articulado"
+  },
+  {
+    "id": "ID_113",
+    "query": "Que serviço da Câmara de Câmara de Lobos é responsável pela taxa cobrada aos turistas?",
+    "tipo": "factual/lookup",
+    "camada": 2,
+    "ground_truth": "A Divisão de Gestão de Financiamentos, que depende diretamente do Departamento de Economia e Finanças, coordena todas as operações, intervenções e funcionalidades da Taxa Turística Municipal, nos termos da alínea a) do ponto 4) do artigo 28.º da Estrutura Flexível dos Serviços do Município de Câmara de Lobos, publicada pela Deliberação n.º 268/2026.",
+    "documentos_esperados": [
+      "6472757"
+    ],
+    "ancora": "Deliberação 268/2026",
+    "artigo_esperado": "Artigo 28.º, n.º 4",
+    "para_geracao": true,
+    "subconjunto": "articulado"
+  },
+  {
+    "id": "ID_114",
+    "query": "Até quanto tempo depois de um participante terminar um ensaio clínico de um medicamento se presume que os danos na sua saúde foram causados pelo ensaio?",
+    "tipo": "factual/lookup",
+    "camada": 2,
+    "ground_truth": "Presumem-se causados pelo ensaio clínico os danos que afetem a saúde do sujeito do ensaio durante a realização do ensaio e no ano seguinte à conclusão da sua participação, nos termos do n.º 4 do artigo 12.º da Lei n.º 9/2026, de 6 de março.",
+    "documentos_esperados": [
+      "6465988"
+    ],
+    "ancora": "Lei 9/2026",
+    "artigo_esperado": "Artigo 12.º, n.º 4",
+    "para_geracao": true,
+    "subconjunto": "articulado"
+  },
+  {
+    "id": "ID_115",
+    "query": "Na Câmara de Mangualde, que serviço trata dos contratos de água e da leitura dos contadores?",
+    "tipo": "factual/lookup",
+    "camada": 2,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6456888"
+    ],
+    "ancora": "Regulamento 193/2026",
+    "artigo_esperado": "Artigo 17.º, n.º 2",
+    "para_geracao": false,
+    "subconjunto": "articulado"
+  },
+  {
+    "id": "ID_116",
+    "query": "Se o cabo ficar preso e eu não conseguir desligar o meu carro elétrico do posto de carregamento, quanto tempo tem o operador do posto para resolver a situação?",
+    "tipo": "semantica",
+    "camada": 1,
+    "ground_truth": "O respetivo operador de pontos de carregamento (OPC) deve corrigir a impossibilidade de desligar um cabo de carregamento no prazo máximo de 4 horas, a contar do momento em que toma conhecimento da ocorrência, nos termos do artigo 66.º do Regulamento da Mobilidade Elétrica, aprovado pelo Regulamento n.º 7/2026 da ERSE.",
+    "documentos_esperados": [
+      "6401837"
+    ],
+    "ancora": "Regulamento 7/2026",
+    "artigo_esperado": "Artigo 66.º",
+    "para_geracao": true,
+    "subconjunto": "articulado"
+  },
+  {
+    "id": "ID_117",
+    "query": "Tenho uma árvore no meu terreno em Gavião e a câmara mandou-me cortá-la por questões de segurança. O que acontece se eu deixar passar o prazo sem fazer nada?",
+    "tipo": "semantica",
+    "camada": 1,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6424805"
+    ],
+    "ancora": "Regulamento 92/2026",
+    "artigo_esperado": "Artigo 46.º, n.º 3",
+    "para_geracao": false,
+    "subconjunto": "articulado"
+  },
+  {
+    "id": "ID_118",
+    "query": "Trabalho na Câmara de Azambuja e um fornecedor ofereceu-me um presente que vale bem mais de cem euros. A quem o devo entregar e dentro de que prazo?",
+    "tipo": "semantica",
+    "camada": 1,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6421765"
+    ],
+    "ancora": "Edital 67/2026",
+    "artigo_esperado": "Artigo 9.º, n.º 4",
+    "para_geracao": false,
+    "subconjunto": "articulado"
+  },
+  {
+    "id": "ID_119",
+    "query": "Na Câmara de Valpaços, que serviço verifica se os vendedores das feiras e mercados têm as taxas e licenças em dia?",
+    "tipo": "semantica",
+    "camada": 1,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6412787"
+    ],
+    "ancora": "Despacho 474/2026",
+    "artigo_esperado": "Artigo 19.º, alínea c)",
+    "para_geracao": false,
+    "subconjunto": "articulado"
+  },
+  {
+    "id": "ID_120",
+    "query": "Quero abrir um pequeno hotel isolado no campo, fora das zonas urbanas do concelho de Albufeira. Em que freguesia é que isso é permitido e qual a área mínima de terreno exigida?",
+    "tipo": "semantica",
+    "camada": 1,
+    "ground_truth": "Os estabelecimentos hoteleiros isolados só são admitidos na freguesia de Paderne, com uma área mínima da propriedade de 5 hectares, nos termos das alíneas a) e c) do artigo 4.º do Anexo IV do Regulamento do Plano Diretor Municipal de Albufeira, republicado pela Declaração n.º 15/2026/2.",
+    "documentos_esperados": [
+      "6447283"
+    ],
+    "ancora": "Declaração 15/2026/2",
+    "artigo_esperado": "Artigo 4.º",
+    "para_geracao": true,
+    "subconjunto": "articulado"
+  },
+  {
+    "id": "ID_121",
+    "query": "Vou instalar uma unidade industrial no Crato, mesmo ao lado de uma zona de moradias. Que exigências tenho de cumprir quanto a árvores e espaços verdes à volta das instalações?",
+    "tipo": "semantica",
+    "camada": 1,
+    "ground_truth": "Na instalação de unidades de atividades económicas, industriais ou comerciais, tem de ser assegurada uma forte componente paisagística para integrar as edificações e as compatibilizar com os usos da área envolvente. Quando a unidade confinar com áreas habitacionais ou de lazer, tem de prever a plantação de cortinas arbóreas de dimensão adequada e assegurar áreas livres e ajardinadas não destinadas a outros fins, nomeadamente estacionamento ou circulação. Tudo isto consta do n.º 4 do artigo 35.º do Regulamento Municipal de Gestão do Arvoredo em Meio Urbano do Município do Crato (Regulamento n.º 206/2026).",
+    "documentos_esperados": [
+      "6459837"
+    ],
+    "ancora": "Regulamento 206/2026",
+    "artigo_esperado": "Artigo 35.º, n.º 4",
+    "para_geracao": true,
+    "subconjunto": "articulado"
+  },
+  {
+    "id": "ID_122",
+    "query": "Sou reformado e moro em Santa Vitória, no concelho de Beja. Se usar o transporte da junta de freguesia para ir a uma consulta médica em Beja, tenho de pagar?",
+    "tipo": "semantica",
+    "camada": 1,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6404210"
+    ],
+    "ancora": "Regulamento 17/2026",
+    "artigo_esperado": "Artigo 10.º, n.º 4",
+    "para_geracao": false,
+    "subconjunto": "articulado"
+  },
+  {
+    "id": "ID_123",
+    "query": "Quantos lugares de estacionamento, para carros e para camiões, tem de garantir no mínimo o grande armazém de distribuição que uma empresa privada vai construir numa freguesia rural da ilha do Pico, onde o plano de ordenamento do concelho foi temporariamente posto de lado para o permitir?",
+    "tipo": "semantica",
+    "camada": 2,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6443217"
+    ],
+    "ancora": "Aviso 3444/2026",
+    "artigo_esperado": "Artigo 2.º, n.º 4",
+    "para_geracao": false,
+    "subconjunto": "articulado"
+  },
+  {
+    "id": "ID_124",
+    "query": "Posso passear de barco com motor a gasolina nas barragens que ficam dentro da área protegida da serra raiana conhecida pelo lince-ibérico?",
+    "tipo": "semantica",
+    "camada": 2,
+    "ground_truth": "Não. Na ZEC Malcata e na ZPE Serra da Malcata é interdita a navegação recreativa com embarcações propulsionadas a motor de combustão interna nas albufeiras da Meimoa e do Sabugal, nos termos da alínea h) do n.º 1 do artigo 5.º do Decreto-Lei n.º 18/2026, de 27 de janeiro.",
+    "documentos_esperados": [
+      "6424668"
+    ],
+    "ancora": "Decreto-lei 18/2026",
+    "artigo_esperado": "Artigo 5.º, n.º 1",
+    "para_geracao": true,
+    "subconjunto": "articulado"
+  },
+  {
+    "id": "ID_125",
+    "query": "Moro em Sacavém, num prédio antigo, e não aguento o barulho do trânsito e dos aviões. Se a câmara me apoiar na troca das janelas por outras que isolem melhor o som, até quanto me pagam por metro quadrado?",
+    "tipo": "semantica",
+    "camada": 2,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6434840"
+    ],
+    "ancora": "Aviso 2827/2026",
+    "artigo_esperado": "Artigo 11.º, n.º 3",
+    "para_geracao": false,
+    "subconjunto": "articulado"
+  },
+  {
+    "id": "ID_126",
+    "query": "Tenho um terreno no novo parque empresarial que a câmara da “capital do calçado” está a criar junto à autoestrada. O que acontece ao meu lote se, esgotado o prazo total que o plano dá para tudo ficar pronto, eu ainda não tiver acabado de construir?",
+    "tipo": "semantica",
+    "camada": 2,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6503399"
+    ],
+    "ancora": "Aviso 7793/2026",
+    "artigo_esperado": "Artigo 26.º, n.º 3",
+    "para_geracao": false,
+    "subconjunto": "articulado"
+  },
+  {
+    "id": "ID_127",
+    "query": "Queria filmar com um drone as garças e outras aves da zona alagadiça protegida que fica entre Coimbra e Condeixa. Há alguma altura do ano em que isso não é permitido?",
+    "tipo": "semantica",
+    "camada": 2,
+    "ground_truth": "Sim. Na ZEC e ZPE Paul de Arzila é interdito o sobrevoo abaixo de 1000 pés de aeronaves com motor, tripuladas ou não tripuladas, entre 1 de novembro e 30 de junho, nos termos da alínea f) do n.º 1 do artigo 5.º do Decreto-Lei n.º 51/2026, de 16 de fevereiro.",
+    "documentos_esperados": [
+      "6441674"
+    ],
+    "ancora": "Decreto-lei 51/2026",
+    "artigo_esperado": "Artigo 5.º, n.º 1",
+    "para_geracao": true,
+    "subconjunto": "articulado"
+  },
+  {
+    "id": "ID_128",
+    "query": "Deixei o carro estacionado mesmo em frente aos caixotes do lixo da minha rua, na cidade dos arcebispos, e o camião da recolha não os conseguiu despejar. Que multa posso apanhar por isso?",
+    "tipo": "semantica",
+    "camada": 2,
+    "ground_truth": "Pode incorrer numa contraordenação punível com coima de 150 € a 1500 €, no caso de pessoas singulares, por impedir, por qualquer meio, o acesso dos munícipes ou dos serviços de limpeza aos recipientes colocados na via pública para deposição ou recolha de resíduos urbanos. Assim dispõe a alínea gg) do n.º 2 do artigo 77.º do Regulamento do Serviço de Gestão de Resíduos Urbanos do Município de Braga, republicado em anexo ao Regulamento n.º 357/2026.",
+    "documentos_esperados": [
+      "6503393"
+    ],
+    "ancora": "Regulamento 357/2026",
+    "artigo_esperado": "Artigo 77.º",
+    "para_geracao": true,
+    "subconjunto": "articulado"
+  },
+  {
+    "id": "ID_129",
+    "query": "Estou a fazer o doutoramento na área que estuda as culturas e sociedades humanas, no instituto universitário público de Lisboa que fica na Avenida das Forças Armadas. No balanço que tenho de entregar no fim do terceiro ano, já me exigem alguma parte escrita da tese?",
+    "tipo": "semantica",
+    "camada": 2,
+    "ground_truth": "",
+    "documentos_esperados": [
+      "6479717"
+    ],
+    "ancora": "Despacho 3488/2026",
+    "artigo_esperado": "Artigo 16.º, n.º 2",
+    "para_geracao": false,
+    "subconjunto": "articulado"
+  },
+  {
+    "id": "ID_130",
+    "query": "Quem já ganhou a distinção que uma câmara algarvia entrega de dois em dois anos, em nome da antiga primeira-dama, a quem se destaca na defesa da igualdade entre mulheres e homens, quanto tempo tem de esperar para poder voltar a concorrer?",
+    "tipo": "semantica",
+    "camada": 2,
+    "ground_truth": "Para se candidatar ao Prémio Maria Barroso, a pessoa não pode ter recebido este Prémio nas cinco edições anteriores, nos termos da alínea b) do n.º 2 do artigo 4.º do Regulamento do Prémio Maria Barroso, do Município de Lagoa (Regulamento n.º 255/2026).",
+    "documentos_esperados": [
+      "6476339"
+    ],
+    "ancora": "Regulamento 255/2026",
+    "artigo_esperado": "Artigo 4.º, n.º 2",
+    "para_geracao": true,
+    "subconjunto": "articulado"
   }
 ]
