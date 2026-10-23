@@ -21,6 +21,8 @@ from config import (
     get_groq_client,
     SYSTEM_PROMPT,
     GEN_MODEL,
+    BM25_MODEL,
+    BM25_LANGUAGE,
 )
 from runner import FrameworkBase
 from dre_loader import carregar_corpus_dre, corpus_fingerprint
@@ -34,7 +36,6 @@ QWEN_MODEL = "Qwen/Qwen3-Embedding-0.6B"
 QWEN_DIM = 1024                           
 TETO_TOKENS = 2048             # 512 para comparar com E5-512, 2048 valor original escolhido do Qwen3-Embedding-0.6B           
 QWEN_BATCH = 4                             
-BM25_MODEL = "Qdrant/bm25"
 PREFETCH = 50                             
 
 VARIANTES = {
@@ -124,7 +125,7 @@ class Framework(FrameworkBase):
 
     def _get_sparse(self):
         if self._sparse is None:
-            self._sparse = SparseTextEmbedding(model_name=BM25_MODEL)
+            self._sparse = SparseTextEmbedding(model_name=BM25_MODEL, language=BM25_LANGUAGE)
         return self._sparse
 
     def _get_groq(self):

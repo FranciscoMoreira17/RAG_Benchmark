@@ -28,6 +28,8 @@ from config import (
     SYSTEM_PROMPT,
     GEN_MODEL,
     EMBEDDING_DIM,
+    BM25_MODEL,
+    BM25_LANGUAGE,
 )
 from runner import FrameworkBase
 from dre_loader import carregar_corpus_dre, corpus_fingerprint
@@ -43,7 +45,6 @@ from fastembed import SparseTextEmbedding
 COLLECTION = "benchmark_overlap_qwen"
 QWEN_DIM = 1024
 EMBEDDING_MODEL="qwen3-0.6b"
-BM25_MODEL = "Qdrant/bm25"
 PREFETCH = 50
 
 JANELA_CHARS = 1200
@@ -132,7 +133,7 @@ class Framework(FrameworkBase):
 
     def _get_sparse(self):
         if self._sparse is None:
-            self._sparse = SparseTextEmbedding(model_name=BM25_MODEL)
+            self._sparse = SparseTextEmbedding(model_name=BM25_MODEL, language=BM25_LANGUAGE)
         return self._sparse
 
     def _get_groq(self):

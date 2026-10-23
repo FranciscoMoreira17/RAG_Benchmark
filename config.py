@@ -51,7 +51,8 @@ CONTEXT_BUDGET_TOKENS = int(os.getenv("CONTEXT_BUDGET_TOKENS", "6000"))
 
 # Rate limiting
 SLEEP_ENTRE_QUERIES = float(os.getenv("SLEEP_ENTRE_QUERIES", "15"))
-
+BM25_LANGUAGE = "portuguese"
+BM25_MODEL = "Qdrant/bm25"
 
 _COLLECTIONS = {
     "langchain": os.getenv("QDRANT_COLLECTION_LANGCHAIN", "benchmark_langchain"),
