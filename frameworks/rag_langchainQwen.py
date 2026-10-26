@@ -12,6 +12,8 @@ from config import (
     SYSTEM_PROMPT,
     GEN_MODEL,
     QDRANT_URL,
+    montar_contexto_detalhe,
+    GEN_CANDIDATOS,
 )
 from runner import FrameworkBase
 from dre_loader import carregar_corpus_dre, corpus_fingerprint
@@ -150,12 +152,22 @@ class Framework(FrameworkBase):
         }
 
     def responder(self, query: str, top_k: int = 5) -> dict:
+        """
+        Pipeline:
+          1. similarity_search_with_score no Qdrant
+          2. Formatar contexto
+          3. Invocar chain LCEL
+        """
         vs = self._get_vectorstore()
+    
+        # Retrieval
         t0 = time.time()
-        resultados = vs.similarity_search_with_score(query, k=top_k)
+        resultados = vs.similarity_search_with_score(query, k=GEN_CANDIDATOS)
         tempo_retrieval = time.time() - t0
-
-        contextos, metadados = [], []
+    
+        # Extrair contextos e metadados (alvo por guid)
+        contextos = []
+        metadados = []
         for doc, score in resultados:
             contextos.append(doc.page_content)
             metadados.append({
@@ -164,25 +176,26 @@ class Framework(FrameworkBase):
                 "tipo": doc.metadata.get("tipo", ""),
                 "numero": doc.metadata.get("numero", ""),
                 "score": float(score),
-                "method": "langchain-qwen-denso",
+                "method": "langchain-denso",
             })
-
+    
         blocos = [
             f"--- FONTE ({m['tipo']} {m['numero']}) ---\n{c}"
             for c, m in zip(contextos, metadados)
         ]
-        contexto_formatado, n_usados, n_tokens = montar_contexto(blocos)
-
+        contexto_formatado, n_usados, n_tokens, blocos_usados = montar_contexto_detalhe(blocos)
+    
+        # Geração
         t0 = time.time()
         resposta = self.chain.invoke({
             "contexto": contexto_formatado,
             "pergunta": query,
         })
         tempo_geracao = time.time() - t0
-
+    
         return {
             "resposta": resposta,
-            "contextos": contextos[:n_usados],
+            "contextos": blocos_usados,
             "metadados": metadados[:n_usados],
             "tempo_retrieval_s": tempo_retrieval,
             "tempo_geracao_s": tempo_geracao,

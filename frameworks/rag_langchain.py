@@ -24,6 +24,8 @@ from config import (
     GEN_TEMPERATURE,
     QDRANT_URL,
     EMBEDDING_DIM,
+    montar_contexto_detalhe,
+    GEN_CANDIDATOS,
 )
 from runner import FrameworkBase
 from dre_loader import carregar_corpus_dre, corpus_fingerprint
@@ -203,7 +205,7 @@ class Framework(FrameworkBase):
 
         # Retrieval
         t0 = time.time()
-        resultados = vs.similarity_search_with_score(query, k=top_k)
+        resultados = vs.similarity_search_with_score(query, k=GEN_CANDIDATOS)
         tempo_retrieval = time.time() - t0
 
         # Extrair contextos e metadados (alvo por guid)
@@ -224,7 +226,7 @@ class Framework(FrameworkBase):
             f"--- FONTE ({m['tipo']} {m['numero']}) ---\n{c}"
             for c, m in zip(contextos, metadados)
         ]
-        contexto_formatado, n_usados, n_tokens = montar_contexto(blocos)
+        contexto_formatado, n_usados, n_tokens, blocos_usados = montar_contexto_detalhe(blocos)
 
         # Geração
         t0 = time.time()
@@ -236,7 +238,7 @@ class Framework(FrameworkBase):
     
         return {
             "resposta": resposta,
-            "contextos": contextos[:n_usados],
+            "contextos": blocos_usados,
             "metadados": metadados[:n_usados],
             "tempo_retrieval_s": tempo_retrieval,
             "tempo_geracao_s": tempo_geracao,

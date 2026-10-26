@@ -48,6 +48,8 @@ JUDGE_MODEL = os.getenv("JUDGE_MODEL", "gemini/gemini-2.5-flash")
 GROQ_BASE_URL = "https://api.groq.com/openai/v1"
 
 CONTEXT_BUDGET_TOKENS = int(os.getenv("CONTEXT_BUDGET_TOKENS", "6000"))
+CONTEXT_BUDGET_TOKENS = 4096
+GEN_CANDIDATOS = 20
 
 # Rate limiting
 SLEEP_ENTRE_QUERIES = float(os.getenv("SLEEP_ENTRE_QUERIES", "15"))
@@ -89,27 +91,49 @@ except Exception:
     TOKENIZER_NAME = "heuristica/chars-div-4"
 
 
-def montar_contexto(
-    blocos: list[str],
-    budget: int = CONTEXT_BUDGET_TOKENS,
-) -> tuple[str, int, int]:
+
+
+def _truncar_tokens(texto: str, max_tokens: int) -> str:
+    """Maior prefixo de `texto` com <= max_tokens (pesquisa binária; serve para qualquer contador)."""
+    if contar_tokens(texto) <= max_tokens:
+        return texto
+    lo, hi = 0, len(texto)
+    while lo < hi:
+        mid = (lo + hi + 1) // 2
+        if contar_tokens(texto[:mid]) <= max_tokens:
+            lo = mid
+        else:
+            hi = mid - 1
+    return texto[:lo]
+
+
+def montar_contexto_detalhe(blocos: list[str], budget: int = CONTEXT_BUDGET_TOKENS,
+                            min_resto: int = 50):
     """
-    Preenche o orçamento de tokens por ordem de ranking.
-
-    Blocos que não cabem inteiros são descartados (não truncados),
-    para não entregar ao gerador artigos cortados a meio — o que
-    penalizaria injustamente as condições com chunks grandes.
-
-    Devolve (contexto_formatado, n_blocos_usados, n_tokens_usados).
+    Preenche o orçamento por ordem de ranking. O primeiro bloco que não cabe
+    é truncado ao espaço restante e o processo para.
+    Devolve (contexto, n_blocos_usados, n_tokens, blocos_usados).
     """
     usados, total = [], 0
     for b in blocos:
         n = contar_tokens(b)
-        if total + n > budget:
+        if total + n <= budget:
+            usados.append(b)
+            total += n
             continue
-        usados.append(b)
-        total += n
-    return "\n\n".join(usados), len(usados), total
+        resto = budget - total
+        if resto > min_resto:
+            t = _truncar_tokens(b, resto)
+            usados.append(t)
+            total += contar_tokens(t)
+        break
+    return "\n\n".join(usados), len(usados), total, usados
+
+
+def montar_contexto(blocos, budget=CONTEXT_BUDGET_TOKENS):
+    """Compatibilidade: mesma assinatura de antes."""
+    c, n, t, _ = montar_contexto_detalhe(blocos, budget)
+    return c, n, t
 
 
 # Phoenix Tracing

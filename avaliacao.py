@@ -54,7 +54,7 @@ load_dotenv()
 # Configuração
 # =====================================================================
 RESULTADOS_DIR = os.getenv("RESULTADOS_DIR",
-                           os.path.join(_DIR, "resultados", "Top100", "Estudo3"))
+                           os.path.join(_DIR, "resultados", "Top100", "Estudo1"))
 DATASET_PATH = os.getenv("DATASET_PATH", os.path.join(_DIR, "dataset_dre_manual.json"))
 JUDGE_MODEL_GROQ = os.getenv("JUDGE_MODEL_GROQ", "openai/gpt-oss-120b")
 
@@ -69,22 +69,34 @@ SEED = 42
 
 PARES_POR_ESTUDO = {
     "Estudo1": [
-        # Isolamento de fatores (referência: ULS-Qwen-híbrido)
-        ("UnitLevelSegmentationQwen-hibrido", "overlap-qwen-hibrido"),             # segmentação
-        ("UnitLevelSegmentationQwen-hibrido", "UnitLevelSegmentationQwen-denso"),  # híbrido vs denso
-        ("UnitLevelSegmentationQwen-hibrido", "UnitLevelSegmentation-esparso"),    # híbrido vs esparso
-        ("UnitLevelSegmentationQwen-hibrido", "UnitLevelSegmentation-hibrido"),    # embedder
+        # Regra de decisão: o híbrido só é escolhido se superar o esparso
+        ("UnitLevelSegmentationQwen-hibrido", "UnitLevelSegmentationQwen-esparso"),  # fusão vs BM25
+        ("UnitLevelSegmentationQwen-hibrido", "UnitLevelSegmentationQwen-denso"),    # fusão vs denso
+        # Segmentação (ULS vs tamanho fixo), em cada modo
+        ("UnitLevelSegmentationQwen-hibrido", "overlap-qwen-hibrido"),
+        ("UnitLevelSegmentationQwen-esparso", "overlap-qwen-esparso"),
+        ("UnitLevelSegmentationQwen-denso", "overlap-qwen-denso"),
+        # Embedder
+        ("UnitLevelSegmentationQwen-hibrido", "UnitLevelSegmentation-hibrido"),
         # Baseline
         ("UnitLevelSegmentationQwen-hibrido", "langchain-qwen"),
+        ("UnitLevelSegmentationQwen-esparso", "langchain-qwen"),
     ],
     "Estudo2": [
-        ("UnitLevelSegmentationQwen512-denso", "UnitLevelSegmentation-denso"),     # embedder (janela igual)
-        ("UnitLevelSegmentationQwen-denso", "UnitLevelSegmentationQwen512-denso"), # janela
+        ("UnitLevelSegmentationQwen512-denso", "UnitLevelSegmentation-denso"),      # capacidade (janela igual)
+        ("UnitLevelSegmentationQwen-denso", "UnitLevelSegmentationQwen512-denso"),  # janela
     ],
     "Estudo3": [
+        # Denso: a previsão principal (documento inteiro trunca os articulados)
+        ("UnitLevelSegmentationQwen-denso", "documento-qwen-denso"),
+        ("ULSQwenV2-denso", "UnitLevelSegmentationQwen-denso"),
+        # Esparso: BM25 sobre o documento completo vs artigos; efeito do cabeçalho
+        ("UnitLevelSegmentationQwen-esparso", "documento-qwen-esparso"),
+        ("ULSQwenV2-esparso", "UnitLevelSegmentationQwen-esparso"),
+        # Híbrido
         ("UnitLevelSegmentationQwen-hibrido", "documento-qwen-hibrido"),
-        ("ULSv2Qwen-hibrido", "UnitLevelSegmentationQwen-hibrido"),
-        ("ULSv2Qwen-hibrido", "documento-qwen-hibrido"),
+        ("ULSQwenV2-hibrido", "UnitLevelSegmentationQwen-hibrido"),
+        ("ULSQwenV2-hibrido", "documento-qwen-hibrido"),
         ("estrutural-qwen-enriquecido", "UnitLevelSegmentationQwen-hibrido"),
     ],
 }
