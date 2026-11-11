@@ -11,6 +11,7 @@ Uso:
     python runner.py --framework langchain --so-retrieval (Apenas realizar retrieval)
     python runner.py --framework todas
     python runner.py --framework langchain --repeticoes 3
+    python runner.py --framework langchain_multi --embedder qwen
 """
 
 import os
@@ -310,28 +311,44 @@ _FRAMEWORKS = {
     "llamaindex_qwen": "frameworks.rag_llamaindexQwen",
     "overlap_qwen": "frameworks.rag_overlapQwen",
     "estrutural_qwen": "frameworks.rag_estruturalQwen",
+    # Frameworks com embedder escolhido na CLI (--embedder)
+    "langchain_multi": "frameworks.rag_langchainMulti",
 }
 
+# Excluídas de "--framework todas": repetiriam condições já cobertas
+# pelos ficheiros originais (langchain / langchain_qwen).
+_FORA_DE_TODAS = {"langchain_multi"}
 
-def carregar_framework(nome: str, variante: str | None = None) -> FrameworkBase:
+
+def carregar_framework(nome: str, variante: str | None = None,
+                       embedder: str | None = None) -> FrameworkBase:
     if nome not in _FRAMEWORKS:
         raise ValueError(f"Framework '{nome}' desconhecida. "
                          f"Disponíveis: {list(_FRAMEWORKS.keys())}")
     modulo = importlib.import_module(_FRAMEWORKS[nome])
+    kwargs = {}
     if variante:
-        return modulo.Framework(variante=variante)
-    return modulo.Framework()
+        kwargs["variante"] = variante
+    if embedder:
+        import inspect
+        if "embedder" not in inspect.signature(modulo.Framework.__init__).parameters:
+            raise ValueError(f"A framework '{nome}' não aceita --embedder.")
+        kwargs["embedder"] = embedder
+    return modulo.Framework(**kwargs)
 
 
 def main():
     import argparse
     from config import iniciar_tracing
+    from embedders import EMBEDDERS
 
     p = argparse.ArgumentParser(description="Benchmark RAG — legislação portuguesa")
     p.add_argument("--framework", required=True,
                    choices=list(_FRAMEWORKS.keys()) + ["todas"])
     p.add_argument("--variante", default=None,
                    help="Variante de ablação (só para ragokf)")
+    p.add_argument("--embedder", default=None, choices=list(EMBEDDERS),
+                   help="Modelo de embedding (só frameworks *_multi; omissão: e5)")
     p.add_argument("--ablacao", action="store_true",
                    help="Corre todas as variantes de ablação do ragokf")
     p.add_argument("--top-k", type=int, default=5)
@@ -344,9 +361,9 @@ def main():
                    help="Reutiliza respostas válidas de corrida anterior; só gera as que faltam")
     args = p.parse_args()
 
-    def corre(nome, variante=None):
+    def corre(nome, variante=None, embedder=None):
         for rep in range(1, args.repeticoes + 1):
-            fw = carregar_framework(nome, variante)
+            fw = carregar_framework(nome, variante, embedder)
             iniciar_tracing(projeto=f"rag-benchmark-{getattr(fw, 'nome_run', nome)}")
             executar_benchmark(
                 fw, top_k=args.top_k,
@@ -358,9 +375,10 @@ def main():
 
     if args.framework == "todas":
         for nome in _FRAMEWORKS:
-            corre(nome)
+            if nome not in _FORA_DE_TODAS:
+                corre(nome)
     else:
-        corre(args.framework, args.variante)
+        corre(args.framework, args.variante, args.embedder)
 
 
 if __name__ == "__main__":
