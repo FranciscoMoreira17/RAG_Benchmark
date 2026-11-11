@@ -47,3 +47,5 @@ ollama_data/
 logs/
 
 ~$*
+
+.notas_claude/

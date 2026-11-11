@@ -9,23 +9,24 @@ segmentação estrutural DRE (já usada pelo híbrido) com duas técnicas,
 
 """
 
-import os
 import re
 import time
 import hashlib
-from collections import defaultdict
 
 from config import (
-    embedding_model,
     qdrant_client,
     montar_contexto,
+    get_collection_name,
     get_groq_client,
-    fingerprint_ingestao,
     SYSTEM_PROMPT,
     GEN_MODEL,
-    EMBEDDING_DIM,
+    GEN_TEMPERATURE,
+    GEN_MAX_TOKENS,
     BM25_MODEL,
     BM25_LANGUAGE,
+    PREFETCH,
+    QWEN_DIM,
+    QWEN_TAG,
 )
 from runner import FrameworkBase
 from dre_loader import carregar_corpus_dre, corpus_fingerprint
@@ -39,10 +40,7 @@ except ImportError:
 from qdrant_client import models as qm
 from fastembed import SparseTextEmbedding
 
-COLLECTION = "benchmark_estrutural_qwen"
-QWEN_MODEL = "Qwen/Qwen3-Embedding-0.6B"
-QWEN_DIM = 1024                           
-PREFETCH = 50
+COLLECTION = get_collection_name("estrutural_qwen")
 MAX_GRAFO_EXPANSAO = 3
 
 VARIANTES = {
@@ -143,7 +141,7 @@ class Framework(FrameworkBase):
 
     def config_ingestao(self) -> dict:
         return {"pipeline": "estrutural-enriquecido-qwen", "bm25": BM25_MODEL,
-        "embedder": "qwen3-0.6b"}
+        "embedder": QWEN_TAG}
 
     def descricao(self) -> dict:
         return {"variante": self.variante, "grafo": self.usa_grafo,
@@ -180,10 +178,10 @@ class Framework(FrameworkBase):
             doc_stub = {"texto": s["texto"], "tipo": s["tipo"], "numero": s["numero"]}
             textos_embed.append(texto_enriquecido(doc_stub, fm))
 
-        print(f"    [EST] Embedding denso (E5) de {len(textos_embed)} segmentos enriquecidos...")
+        print(f"    [EST] Embedding denso (Qwen3) de {len(textos_embed)} segmentos enriquecidos...")
         densos = _get_embedder().embed_documents(textos_embed)
 
-        print(f"    [EST] Embedding esparso (BM25)...")
+        print("    [EST] Embedding esparso (BM25)...")
         sparse = self._get_sparse()
         esparsos = list(sparse.embed(textos_embed, batch_size=64))
 
@@ -363,7 +361,7 @@ class Framework(FrameworkBase):
                 {"role": "user",
                  "content": f"CONTEXTO LEGAL:\n{contexto_fmt}\n\nPERGUNTA: {query}"},
             ],
-            temperature=0, max_tokens=1000,
+            temperature=GEN_TEMPERATURE, max_tokens=GEN_MAX_TOKENS,
         )
         resposta = resp.choices[0].message.content
         tempo_geracao = time.time() - t0

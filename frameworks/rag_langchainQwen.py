@@ -8,12 +8,14 @@ import time
 
 from config import (
     qdrant_client,
-    montar_contexto,
+    get_collection_name,
     SYSTEM_PROMPT,
     GEN_MODEL,
     QDRANT_URL,
     montar_contexto_detalhe,
     GEN_CANDIDATOS,
+    QWEN_DIM,
+    QWEN_TAG,
 )
 from runner import FrameworkBase
 from dre_loader import carregar_corpus_dre, corpus_fingerprint
@@ -28,7 +30,7 @@ from langchain_groq import ChatGroq
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_qdrant import QdrantVectorStore
 
-COLLECTION = "benchmark_langchain_qwen"     
+COLLECTION = get_collection_name("langchain_qwen")
 
 
 # =====================================================================
@@ -71,10 +73,10 @@ class Framework(FrameworkBase):
     def config_ingestao(self) -> dict:
         # embedder no fingerprint -> índice distinto do langchain-E5
         return {"pipeline": "langchain-recursive-qwen", "chunk_size": 1000,
-                "overlap": 200, "embedder": "qwen3-0.6b", "dim": 1024}
+                "overlap": 200, "embedder": QWEN_TAG, "dim": QWEN_DIM}
 
     def descricao(self) -> dict:
-        return {"embedder": "qwen3-0.6b", "dim": 1024, "splitter": "recursive-1000-200"}
+        return {"embedder": QWEN_TAG, "dim": QWEN_DIM, "splitter": "recursive-1000-200"}
 
     def _get_vectorstore(self) -> QdrantVectorStore:
         if self._vectorstore is None:

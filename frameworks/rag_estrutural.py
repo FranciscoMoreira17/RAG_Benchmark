@@ -20,7 +20,7 @@ AMBAS SEM LLM:
 Formato intermédio: bundles compatíveis com OKF (markdown + frontmatter
 YAML). NOTA: OKF é o formato de armazenamento, não o método.
 
-Variantes (lidas contra o hibrido-hibrido já medido, que é a base:
+Variantes (lidas contra o UnitLevelSegmentation-hibrido já medido, que é a base:
 estrutural + texto cru + híbrido, sem enriquecimento, sem grafo):
 
   enriquecido        → estrutural + frontmatter no embedding + híbrido
@@ -29,23 +29,24 @@ estrutural + texto cru + híbrido, sem enriquecimento, sem grafo):
 Retrieval: híbrido (denso E5 + BM25, fusão RRF), como as outras.
 """
 
-import os
 import re
 import time
 import hashlib
-from collections import defaultdict
 
 from config import (
     embedding_model,
     qdrant_client,
     montar_contexto,
+    get_collection_name,
     get_groq_client,
-    fingerprint_ingestao,
     SYSTEM_PROMPT,
     GEN_MODEL,
+    GEN_TEMPERATURE,
+    GEN_MAX_TOKENS,
     EMBEDDING_DIM,
     BM25_MODEL,
     BM25_LANGUAGE,
+    PREFETCH,
 )
 from runner import FrameworkBase
 from dre_loader import carregar_corpus_dre, corpus_fingerprint
@@ -54,8 +55,7 @@ from dre_segmentador import segmentar_corpus
 from qdrant_client import models as qm
 from fastembed import SparseTextEmbedding
 
-COLLECTION = "benchmark_estrutural"
-PREFETCH = 50
+COLLECTION = get_collection_name("estrutural")
 MAX_GRAFO_EXPANSAO = 3
 
 VARIANTES = {
@@ -197,7 +197,7 @@ class Framework(FrameworkBase):
         print(f"    [EST] Embedding denso (E5) de {len(textos_embed)} segmentos enriquecidos...")
         densos = embedding_model.embed_documents(textos_embed)
 
-        print(f"    [EST] Embedding esparso (BM25)...")
+        print("    [EST] Embedding esparso (BM25)...")
         sparse = self._get_sparse()
         esparsos = list(sparse.embed(textos_embed, batch_size=64))
 
@@ -377,7 +377,7 @@ class Framework(FrameworkBase):
                 {"role": "user",
                  "content": f"CONTEXTO LEGAL:\n{contexto_fmt}\n\nPERGUNTA: {query}"},
             ],
-            temperature=0, max_tokens=1000,
+            temperature=GEN_TEMPERATURE, max_tokens=GEN_MAX_TOKENS,
         )
         resposta = resp.choices[0].message.content
         tempo_geracao = time.time() - t0

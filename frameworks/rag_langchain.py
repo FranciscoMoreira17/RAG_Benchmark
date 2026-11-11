@@ -1,14 +1,11 @@
 """
 rag_langchain.py - Implementação LangChain para o Benchmark
 ==============================================================
-Usa os componentes nativos do LangChain:
-  - PyMuPDFLoader para ingestão de PDFs
+Usa os componentes nativos do LangChain sobre o corpus DRE:
   - RecursiveCharacterTextSplitter para chunking
-  - QdrantVectorStore para armazenamento
-  - ChatGoogleGenerativeAI para geração
+  - QdrantVectorStore para armazenamento (embedder E5 partilhado)
+  - ChatGroq para geração
   - LCEL chain (prompt | llm | parser)
-
-
 """
 
 import os
@@ -18,12 +15,9 @@ from config import (
     embedding_model,
     qdrant_client,
     get_collection_name,
-    montar_contexto,
     SYSTEM_PROMPT,
     GEN_MODEL,
-    GEN_TEMPERATURE,
     QDRANT_URL,
-    EMBEDDING_DIM,
     montar_contexto_detalhe,
     GEN_CANDIDATOS,
 )
@@ -35,7 +29,6 @@ from langchain_core.documents import Document
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.embeddings import Embeddings
-from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_groq import ChatGroq
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_qdrant import QdrantVectorStore
@@ -72,11 +65,6 @@ class Framework(FrameworkBase):
         self.embeddings = LangChainE5Embeddings()
 
         # LLM
-        #self.llm = ChatGoogleGenerativeAI(
-        #    model=LLM_MODEL,
-        #    temperature=LLM_TEMPERATURE,
-        #)
-
         self.llm = ChatGroq(model=GEN_MODEL, api_key=os.environ.get("GROQ_API_KEY"))
 
         # Text splitter (decisão nativa do LangChain)

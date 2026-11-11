@@ -1,28 +1,29 @@
 """
 rag_UnitLevelSegmentationQwen.py - Variante Qwen3 da UnitLevelSegmentation
 =========================================================================
-
-Este framework testa
-Collections Qdrant --
-    "benchmark_hibrido_qwen_orig" -- com vetores densos (Qwen3) e esparsos (BM25). 
-O embedding denso é feito com o modelo Qwen3-Embedding-0.6B.
-    "benchmark_hibrido_qwen_512" -- com vetores densos (Qwen3) e esparsos (BM25).
-O embedding denso é feito com o modelo Qwen3-Embedding-0.6B, mas com teto de 512 tokens (para comparar com E5-512).
-
+Segmentação UnitLevelSegmentation (dre_segmentador, sem teto de tokens) com
+embedding denso Qwen3-Embedding-0.6B (max_seq 2048) + esparso BM25.
+Collection: benchmark_hibrido_qwen_orig
 """
 
-import os
 import time
 import hashlib
 
 from config import (
     qdrant_client,
     montar_contexto,
+    get_collection_name,
     get_groq_client,
     SYSTEM_PROMPT,
     GEN_MODEL,
+    GEN_TEMPERATURE,
+    GEN_MAX_TOKENS,
     BM25_MODEL,
     BM25_LANGUAGE,
+    PREFETCH,
+    QWEN_MODEL,
+    QWEN_DIM,
+    QWEN_TAG,
 )
 from runner import FrameworkBase
 from dre_loader import carregar_corpus_dre, corpus_fingerprint
@@ -31,12 +32,9 @@ from dre_segmentador import segmentar_corpus
 from qdrant_client import models as qm
 from fastembed import SparseTextEmbedding
 
-COLLECTION = "benchmark_hibrido_qwen_orig"     #"benchmark_hibrido_qwen_512" // "benchmark_hibrido_qwen_orig"
-QWEN_MODEL = "Qwen/Qwen3-Embedding-0.6B"
-QWEN_DIM = 1024                           
-TETO_TOKENS = 2048             # 512 para comparar com E5-512, 2048 valor original escolhido do Qwen3-Embedding-0.6B           
-QWEN_BATCH = 4                             
-PREFETCH = 50                             
+COLLECTION = get_collection_name("uls_qwen")
+TETO_TOKENS = 2048    # max_seq do embedder
+QWEN_BATCH = 4
 
 VARIANTES = {
     "denso":   {"modo": "denso"},
@@ -141,14 +139,14 @@ class Framework(FrameworkBase):
 
     def descricao(self) -> dict:
         return {"variante": self.variante, "modo": self.modo,
-                "embedder": "qwen3-0.6b", "dim": QWEN_DIM}
+                "embedder": QWEN_TAG, "dim": QWEN_DIM}
 
 
     def ingerir(self) -> dict:
         emb = self._get_emb()
         docs = carregar_corpus_dre()
 
-        # Segmentação COM TETO de tokens, usando o tokenizer do Qwen3.
+        # Segmentação original, sem teto de tokens (o embedder trunca a max_seq).
         segmentos, rel_seg = segmentar_corpus(docs)
 
         textos = [s["texto"] for s in segmentos]
@@ -156,7 +154,7 @@ class Framework(FrameworkBase):
         print(f"    [QWEN] Embedding denso (Qwen3) de {len(textos)} segmentos...")
         densos = emb.embed_documents(textos)
 
-        print(f"    [QWEN] Embedding esparso (BM25)...")
+        print("    [QWEN] Embedding esparso (BM25)...")
         sparse = self._get_sparse()
         esparsos = list(sparse.embed(textos, batch_size=64))
 
@@ -304,7 +302,7 @@ class Framework(FrameworkBase):
                 {"role": "user",
                  "content": f"CONTEXTO LEGAL:\n{contexto_fmt}\n\nPERGUNTA: {query}"},
             ],
-            temperature=0, max_tokens=1000,
+            temperature=GEN_TEMPERATURE, max_tokens=GEN_MAX_TOKENS,
         )
         resposta = resp.choices[0].message.content
         tempo_geracao = time.time() - t0

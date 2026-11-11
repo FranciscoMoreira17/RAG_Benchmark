@@ -6,16 +6,20 @@ E5-small (384d) -> Qwen3-Embedding-0.6B (1024d).
 
 """
 
-import os
 import time
 
 from config import (
     qdrant_client,
     montar_contexto,
+    get_collection_name,
     get_groq_client,
     SYSTEM_PROMPT,
     GEN_MODEL,
     GEN_TEMPERATURE,
+    GEN_MAX_TOKENS,
+    QWEN_MODEL,
+    QWEN_DIM,
+    QWEN_TAG,
 )
 from runner import FrameworkBase
 from dre_loader import carregar_corpus_dre, corpus_fingerprint
@@ -32,7 +36,7 @@ from llama_index.core.schema import Document
 from llama_index.vector_stores.qdrant import QdrantVectorStore
 
 
-COLLECTION = "benchmark_llamaindex_qwen"     # NAO colide com a collection E5
+COLLECTION = get_collection_name("llamaindex_qwen")     # NAO colide com a collection E5
 
 
 # =====================================================================
@@ -42,7 +46,7 @@ class LlamaIndexQwenEmbedding(BaseEmbedding):
 
     def __init__(self):
         super().__init__(
-            model_name="Qwen/Qwen3-Embedding-0.6B",
+            model_name=QWEN_MODEL,
             embed_batch_size=32,
         )
 
@@ -82,10 +86,10 @@ class Framework(FrameworkBase):
 
     def config_ingestao(self) -> dict:
         return {"pipeline": "llamaindex-sentence-qwen", "chunk_size": 1024,
-                "overlap": 200, "embedder": "qwen3-0.6b", "dim": 1024}
+                "overlap": 200, "embedder": QWEN_TAG, "dim": QWEN_DIM}
 
     def descricao(self) -> dict:
-        return {"embedder": "qwen3-0.6b", "dim": 1024, "splitter": "sentence-1024-200"}
+        return {"embedder": QWEN_TAG, "dim": QWEN_DIM, "splitter": "sentence-1024-200"}
 
     def _get_vector_store(self) -> QdrantVectorStore:
         return QdrantVectorStore(client=qdrant_client, collection_name=self.collection)
@@ -196,7 +200,7 @@ class Framework(FrameworkBase):
                  "content": f"CONTEXTO LEGAL:\n{contexto_fmt}\n\nPERGUNTA: {query}"},
             ],
             temperature=GEN_TEMPERATURE,
-            max_tokens=1000,
+            max_tokens=GEN_MAX_TOKENS,
         )
         resposta = resp.choices[0].message.content
         tempo_geracao = time.time() - t0

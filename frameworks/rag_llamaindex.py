@@ -27,9 +27,8 @@ from config import (
     SYSTEM_PROMPT,
     GEN_MODEL,
     GEN_TEMPERATURE,
-    QDRANT_URL,
-    EMBEDDING_DIM,
-    DOCS_DIR,
+    GEN_MAX_TOKENS,
+    EMBEDDING_MODEL_NAME,
 )
 from runner import FrameworkBase
 from dre_loader import carregar_corpus_dre, corpus_fingerprint
@@ -37,13 +36,11 @@ from dre_loader import carregar_corpus_dre, corpus_fingerprint
 # ── LlamaIndex imports ───────────────────────────────────────
 from llama_index.core import (
     VectorStoreIndex,
-    SimpleDirectoryReader,
     StorageContext,
     Settings,
 )
 from llama_index.core.node_parser import SentenceSplitter
 from llama_index.core.embeddings import BaseEmbedding
-from llama_index.core.schema import TextNode
 from llama_index.core.prompts import PromptTemplate
 from llama_index.vector_stores.qdrant import QdrantVectorStore
 from llama_index.llms.groq import Groq
@@ -61,7 +58,7 @@ class LlamaIndexE5Embedding(BaseEmbedding):
 
     def __init__(self):
         super().__init__(
-            model_name="intfloat/multilingual-e5-large",
+            model_name=EMBEDDING_MODEL_NAME,   # só rótulo: os vetores vêm do embedding_model
             embed_batch_size=32,
         )
 
@@ -95,11 +92,6 @@ class Framework(FrameworkBase):
         self.embed_model = LlamaIndexE5Embedding()
 
         # LLM
-        #self.llm = GoogleGenAI(
-        #    model=LLM_MODEL,
-        #    temperature=LLM_TEMPERATURE,
-        #)
-
         self.llm = Groq(model=GEN_MODEL, api_key=os.environ.get("GROQ_API_KEY"))
 
         # Node parser (decisão nativa do LlamaIndex — sentence splitting)
@@ -151,6 +143,9 @@ class Framework(FrameworkBase):
     # Ingestão
     # ─────────────────────────────────────────────────────────
     def config_ingestao(self) -> dict:
+        # ATENÇÃO: o SentenceSplitter usa chunk_size=1024, mas o fingerprint
+        # regista 512 desde a ingestão original. Mantém-se o 512 para não
+        # invalidar o índice existente; corrigir implica re-ingerir.
         return {"pipeline": "llamaindex-sentence", "chunk_size": 512}
 
     def ingerir(self) -> dict:
@@ -293,7 +288,7 @@ class Framework(FrameworkBase):
                  "content": f"CONTEXTO LEGAL:\n{contexto_fmt}\n\nPERGUNTA: {query}"},
             ],
             temperature=GEN_TEMPERATURE,
-            max_tokens=1000,
+            max_tokens=GEN_MAX_TOKENS,
         )
         resposta = resp.choices[0].message.content
         tempo_geracao = time.time() - t0

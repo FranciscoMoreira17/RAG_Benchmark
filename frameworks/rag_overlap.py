@@ -19,7 +19,7 @@ Comparada com o RAG Estrutural sob o mesmo embedder e o mesmo retrieval,
 a diferença entre esta condição e a estrutural é APENAS a inteligência de
 segmentação. É o degrau mais ingénuo da escada de ablação.
 
-Reutiliza toda a lógica de retrieval do rag_hibrido (denso/esparso/híbrido
+Reutiliza toda a lógica de retrieval do rag_UnitLevelSegmentation (denso/esparso/híbrido
 por RRF); só muda a segmentação (cega) e a collection.
 
   --variante denso     → só similaridade vetorial (E5)
@@ -36,12 +36,16 @@ from config import (
     embedding_model,
     qdrant_client,
     montar_contexto,
+    get_collection_name,
     get_groq_client,
     SYSTEM_PROMPT,
     GEN_MODEL,
+    GEN_TEMPERATURE,
+    GEN_MAX_TOKENS,
     EMBEDDING_DIM,
     BM25_MODEL,
     BM25_LANGUAGE,
+    PREFETCH,
 )
 from runner import FrameworkBase
 from dre_loader import carregar_corpus_dre, corpus_fingerprint
@@ -49,8 +53,7 @@ from dre_loader import carregar_corpus_dre, corpus_fingerprint
 from qdrant_client import models as qm
 from fastembed import SparseTextEmbedding
 
-COLLECTION = "benchmark_overlap"
-PREFETCH = 50
+COLLECTION = get_collection_name("overlap")
 
 JANELA_CHARS = 1200
 OVERLAP_PCT = 0.15
@@ -175,7 +178,7 @@ class Framework(FrameworkBase):
         print(f"    [OVL] Embedding denso (E5) de {len(textos)} segmentos...")
         densos = embedding_model.embed_documents(textos)
 
-        print(f"    [OVL] Embedding esparso (BM25)...")
+        print("    [OVL] Embedding esparso (BM25)...")
         sparse = self._get_sparse()
         esparsos = list(sparse.embed(textos, batch_size=64))
 
@@ -327,7 +330,7 @@ class Framework(FrameworkBase):
                 {"role": "user",
                  "content": f"CONTEXTO LEGAL:\n{contexto_fmt}\n\nPERGUNTA: {query}"},
             ],
-            temperature=0, max_tokens=1000,
+            temperature=GEN_TEMPERATURE, max_tokens=GEN_MAX_TOKENS,
         )
         resposta = resp.choices[0].message.content
         tempo_geracao = time.time() - t0

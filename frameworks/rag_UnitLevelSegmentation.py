@@ -24,7 +24,6 @@ para paridade. O BM25 puro raramente é usado com geração - mas
 mantém-se disponível para completude.
 """
 
-import os
 import time
 import hashlib
 
@@ -32,13 +31,16 @@ from config import (
     embedding_model,
     qdrant_client,
     montar_contexto,
+    get_collection_name,
     get_groq_client,
-    fingerprint_ingestao,
     SYSTEM_PROMPT,
     GEN_MODEL,
+    GEN_TEMPERATURE,
+    GEN_MAX_TOKENS,
     EMBEDDING_DIM,
     BM25_MODEL,
     BM25_LANGUAGE,
+    PREFETCH,
 )
 from runner import FrameworkBase
 from dre_loader import carregar_corpus_dre, corpus_fingerprint
@@ -47,8 +49,7 @@ from dre_segmentador import segmentar_corpus
 from qdrant_client import models as qm
 from fastembed import SparseTextEmbedding
 
-COLLECTION = "benchmark_hibrido"      # partilhada pelas três variantes
-PREFETCH = 50                          # candidatos por ramo antes da fusão
+COLLECTION = get_collection_name("uls")      # partilhada pelas três variantes
 
 VARIANTES = {
     "denso":   {"modo": "denso"},
@@ -105,7 +106,7 @@ class Framework(FrameworkBase):
         print(f"    [HIB] Embedding denso (E5) de {len(textos)} segmentos...")
         densos = embedding_model.embed_documents(textos)
 
-        print(f"    [HIB] Embedding esparso (BM25)...")
+        print("    [HIB] Embedding esparso (BM25)...")
         sparse = self._get_sparse()
         esparsos = list(sparse.embed(textos, batch_size=64))
 
@@ -260,7 +261,7 @@ class Framework(FrameworkBase):
                 {"role": "user",
                  "content": f"CONTEXTO LEGAL:\n{contexto_fmt}\n\nPERGUNTA: {query}"},
             ],
-            temperature=0, max_tokens=1000,
+            temperature=GEN_TEMPERATURE, max_tokens=GEN_MAX_TOKENS,
         )
         resposta = resp.choices[0].message.content
         tempo_geracao = time.time() - t0
