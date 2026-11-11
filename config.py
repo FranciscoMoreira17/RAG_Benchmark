@@ -5,7 +5,6 @@ Tudo o que TEM de ser idêntico entre condições experimentais vive aqui:
   - Modelo de embedding (E5) e respectivos prefixos
   - Orçamento de contexto em tokens (equalização entre frameworks)
   - Prompt de sistema
-  - Extracção de texto (Docling + OCR selectivo)
   - Cliente Qdrant
 
 Cada framework adapta estes componentes à sua interface, mas nunca
@@ -14,19 +13,12 @@ estratégia de indexação/retrieval, e não o embedder ou o parser.
 """
 
 import os
-import re
 import glob
 import json
 import hashlib
 from dotenv import load_dotenv
 
 load_dotenv()
-
-# Validação
-_REQUIRED = ["GOOGLE_API_KEY"]
-for var in _REQUIRED:
-    if var not in os.environ:
-        raise EnvironmentError(f"Variável '{var}' não definida no .env")
 
 # Constantes
 EMBEDDING_MODEL_NAME = os.getenv("EMBEDDING_MODEL", "intfloat/multilingual-e5-small")
@@ -37,27 +29,53 @@ QDRANT_URL = os.getenv("QDRANT_URL", "http://localhost:6333")
 DOCS_DIR = os.getenv("DOCS_DIR", "./documents")
 
 # ── Modelos ──────────────────────────────────────────────────
-GEN_MODEL = os.getenv("GEN_MODEL", "llama-3.3-70b-versatile")
+GEN_MODEL = os.getenv("GEN_MODEL", "qwen/qwen3.8-27b")
 GEN_PROVIDER = os.getenv("GEN_PROVIDER", "groq")
 GEN_TEMPERATURE = 0
+GEN_MAX_TOKENS = 1000
 
-EXTRACT_MODEL = os.getenv("EXTRACT_MODEL", "llama-3.1-8b-instant")
+EXTRACT_MODEL = os.getenv("EXTRACT_MODEL", "openai/gpt-oss-20b")
 
 JUDGE_MODEL = os.getenv("JUDGE_MODEL", "gemini/gemini-2.5-flash")
 
 GROQ_BASE_URL = "https://api.groq.com/openai/v1"
 
-CONTEXT_BUDGET_TOKENS = int(os.getenv("CONTEXT_BUDGET_TOKENS", "6000"))
+CONTEXT_BUDGET_TOKENS = 4096     # fixo: equalização entre frameworks
+GEN_CANDIDATOS = 20
 
 # Rate limiting
 SLEEP_ENTRE_QUERIES = float(os.getenv("SLEEP_ENTRE_QUERIES", "15"))
+BM25_LANGUAGE = "portuguese"
+BM25_MODEL = "Qdrant/bm25"
 
+# Candidatos por ramo (denso / BM25) antes da fusão RRF
+PREFETCH = 50
 
+# ── Embedder Qwen3 (frameworks *Qwen) ────────────────────────
+# QWEN_MODEL, QWEN_DIM e QWEN_TAG entram no fingerprint dos índices Qwen:
+# mudar qualquer um deles obriga a re-ingerir essas collections.
+QWEN_MODEL = os.getenv("QWEN_EMBEDDING_MODEL", "Qwen/Qwen3-Embedding-0.6B")
+QWEN_DIM = 1024
+QWEN_TAG = "qwen3-0.6b"
+
+# Collection Qdrant de cada framework (chave = Framework.nome em minúsculas).
+# Só langchain/llamaindex aceitam override pelo .env.
 _COLLECTIONS = {
+    # E5 (EMBEDDING_DIM)
     "langchain": os.getenv("QDRANT_COLLECTION_LANGCHAIN", "benchmark_langchain"),
     "llamaindex": os.getenv("QDRANT_COLLECTION_LLAMAINDEX", "benchmark_llamaindex"),
-    "hibrido": os.getenv("QDRANT_COLLECTION_HIBRIDO", "benchmark_hibrido"),
-    "estrutural": os.getenv("QDRANT_COLLECTION_ESTRUTURAL", "benchmark_estrutural"),
+    "uls": "benchmark_hibrido",
+    "estrutural": "benchmark_estrutural",
+    "overlap": "benchmark_overlap",
+    # Qwen3 (QWEN_DIM)
+    "langchain_qwen": "benchmark_langchain_qwen",
+    "llamaindex_qwen": "benchmark_llamaindex_qwen",
+    "uls_qwen": "benchmark_hibrido_qwen_orig",
+    "uls_qwen512": "benchmark_hibrido_qwen_512",
+    "ulsv2_qwen": "benchmark_ulsv2_qwen",
+    "documento_qwen": "benchmark_documento_qwen",
+    "estrutural_qwen": "benchmark_estrutural_qwen",
+    "overlap_qwen": "benchmark_overlap_qwen",
 }
 
 
@@ -87,27 +105,49 @@ except Exception:
     TOKENIZER_NAME = "heuristica/chars-div-4"
 
 
-def montar_contexto(
-    blocos: list[str],
-    budget: int = CONTEXT_BUDGET_TOKENS,
-) -> tuple[str, int, int]:
+
+
+def _truncar_tokens(texto: str, max_tokens: int) -> str:
+    """Maior prefixo de `texto` com <= max_tokens (pesquisa binária; serve para qualquer contador)."""
+    if contar_tokens(texto) <= max_tokens:
+        return texto
+    lo, hi = 0, len(texto)
+    while lo < hi:
+        mid = (lo + hi + 1) // 2
+        if contar_tokens(texto[:mid]) <= max_tokens:
+            lo = mid
+        else:
+            hi = mid - 1
+    return texto[:lo]
+
+
+def montar_contexto_detalhe(blocos: list[str], budget: int = CONTEXT_BUDGET_TOKENS,
+                            min_resto: int = 50):
     """
-    Preenche o orçamento de tokens por ordem de ranking.
-
-    Blocos que não cabem inteiros são descartados (não truncados),
-    para não entregar ao gerador artigos cortados a meio — o que
-    penalizaria injustamente as condições com chunks grandes.
-
-    Devolve (contexto_formatado, n_blocos_usados, n_tokens_usados).
+    Preenche o orçamento por ordem de ranking. O primeiro bloco que não cabe
+    é truncado ao espaço restante e o processo para.
+    Devolve (contexto, n_blocos_usados, n_tokens, blocos_usados).
     """
     usados, total = [], 0
     for b in blocos:
         n = contar_tokens(b)
-        if total + n > budget:
+        if total + n <= budget:
+            usados.append(b)
+            total += n
             continue
-        usados.append(b)
-        total += n
-    return "\n\n".join(usados), len(usados), total
+        resto = budget - total
+        if resto > min_resto:
+            t = _truncar_tokens(b, resto)
+            usados.append(t)
+            total += contar_tokens(t)
+        break
+    return "\n\n".join(usados), len(usados), total, usados
+
+
+def montar_contexto(blocos, budget=CONTEXT_BUDGET_TOKENS):
+    """Compatibilidade: mesma assinatura de antes."""
+    c, n, t, _ = montar_contexto_detalhe(blocos, budget)
+    return c, n, t
 
 
 # Phoenix Tracing
@@ -192,11 +232,6 @@ def get_groq_client() -> OpenAI:
     )
 
 
-from google import genai
-
-google_client = genai.Client(api_key=os.environ["GOOGLE_API_KEY"])
-
-
 def gerar_resposta(prompt: str, system_prompt: str = "") -> str:
     """Geração via Groq (idêntica em todas as condições)."""
     client = get_groq_client()
@@ -208,7 +243,7 @@ def gerar_resposta(prompt: str, system_prompt: str = "") -> str:
         model=GEN_MODEL,
         messages=messages,
         temperature=GEN_TEMPERATURE,
-        max_tokens=1000,
+        max_tokens=GEN_MAX_TOKENS,
     )
     return resp.choices[0].message.content
 
@@ -218,7 +253,11 @@ SYSTEM_PROMPT = (
     "Responde EXCLUSIVAMENTE com base no contexto fornecido. "
     "Se a informação não estiver no contexto, diz explicitamente que "
     "não encontraste essa informação nos documentos disponíveis. "
-    "Cita sempre o artigo e diploma de onde retiras a informação."
+    "Responde de forma direta e concisa, numa ou duas frases, sem preâmbulos, "
+    "indo diretamente ao facto perguntado e usando a terminologia do documento. "
+    "Quando a informação provier de um articulado legal, indica o artigo e o "
+    "diploma; quando provier de um anúncio, aviso ou outro ato administrativo, "
+    "identifica o documento-fonte."
 )
 
 
@@ -233,145 +272,9 @@ def listar_pdfs() -> list[str]:
 
 
 # =====================================================================
-# Extracção de texto — Docling com OCR selectivo
+# Identificador do parser (entra no fingerprint dos índices — não alterar)
 # =====================================================================
-#from docling.datamodel.base_models import InputFormat
-#from docling.datamodel.pipeline_options import PdfPipelineOptions, TesseractCliOcrOptions
-#from docling.document_converter import DocumentConverter, PdfFormatOption
-
 PARSER_NAME = "docling+tesseract-por"
-PARSER_VERSAO = "v2"          
-MIN_CHARS_POR_PAGINA = 120    
-MIN_RACIO_PAGINAS_COM_TEXTO = 0.95
-
-_CACHE_DIR = os.path.join(DOCS_DIR, ".cache_texto")
-_RELATORIO_EXTRACCAO = os.path.join(DOCS_DIR, ".relatorio_extraccao.json")
-
-
-# ##def _criar_converter(force_ocr: bool = False):
-#     opts = PdfPipelineOptions()
-#     opts.do_ocr = True
-#     opts.ocr_options = TesseractCliOcrOptions(
-#         tesseract_cmd=os.getenv("TESSERACT_CMD", r"C:\Program Files\Tesseract-OCR\tesseract.exe"),
-#         lang=["por"],
-#         force_full_page_ocr=force_ocr,
-#     )
-#     return DocumentConverter(
-#         format_options={InputFormat.PDF: PdfFormatOption(pipeline_options=opts)}
-#     )
-
-
-# #_converter_normal = None
-# #_converter_ocr = None
-
-
-# ##def _diagnosticar_paginas(pdf_path: str) -> dict:
-#     """Densidade de texto nativo por página."""
-#     import pymupdf
-#     doc = pymupdf.open(pdf_path)
-#     chars = [len(p.get_text().strip()) for p in doc]
-#     doc.close()
-#     n = len(chars) or 1
-#     com_texto = sum(1 for c in chars if c >= MIN_CHARS_POR_PAGINA)
-#     return {
-#         "n_paginas": len(chars),
-#         "paginas_com_texto": com_texto,
-#         "racio": com_texto / n,
-#         "chars_por_pagina": sum(chars) / n,
-#         "paginas_vazias": [i + 1 for i, c in enumerate(chars) if c < MIN_CHARS_POR_PAGINA],
-#     }
-
-
-# ##def extrair_texto_docs(pdf_path: str, usar_cache: bool = True) -> str:
-#     """
-#     PDF → Markdown via Docling.
-
-#     A decisão de OCR é tomada por densidade de texto, não por
-#     presença. Um documento onde uma parte das páginas está
-#     digitalizada vai por OCR completo: é preferível assumir o custo
-#     e a degradação de OCR em páginas digitais do que perder
-#     silenciosamente as páginas em imagem.
-
-#     Após a conversão há uma verificação de sanidade: se o resultado
-#     for anormalmente curto face ao número de páginas, repete-se com
-#     OCR forçado. Sem esta verificação, uma falha de extracção
-#     propaga-se para o índice sem deixar rasto.
-#     """
-#     global _converter_normal, _converter_ocr
-
-#     os.makedirs(_CACHE_DIR, exist_ok=True)
-
-#     with open(pdf_path, "rb") as f:
-#         h_ficheiro = hashlib.md5(f.read()).hexdigest()[:12]
-#     h_config = hashlib.md5(
-#         f"{PARSER_NAME}|{PARSER_VERSAO}|{MIN_CHARS_POR_PAGINA}|"
-#         f"{MIN_RACIO_PAGINAS_COM_TEXTO}".encode()
-#     ).hexdigest()[:8]
-
-#     nome = os.path.basename(pdf_path)
-#     cache_path = os.path.join(_CACHE_DIR, f"{nome}.{h_ficheiro}.{h_config}.md")
-
-#     if usar_cache and os.path.exists(cache_path):
-#         with open(cache_path, "r", encoding="utf-8") as f:
-#             md = f.read()
-#         print(f"      [Docling] {nome}: {len(md)} chars (cache)")
-#         return md
-
-#     diag = _diagnosticar_paginas(pdf_path)
-#     forcar_ocr = diag["racio"] < MIN_RACIO_PAGINAS_COM_TEXTO
-
-#     def _converter(forcar: bool) -> str:
-#         global _converter_normal, _converter_ocr
-#         if forcar:
-#             if _converter_ocr is None:
-#                 _converter_ocr = _criar_converter(force_ocr=True)
-#             conv = _converter_ocr
-#         else:
-#             if _converter_normal is None:
-#                 _converter_normal = _criar_converter(force_ocr=False)
-#             conv = _converter_normal
-#         texto = conv.convert(pdf_path).document.export_to_markdown()
-#         return re.sub(r"<!--\s*image\s*-->", "", texto).strip()
-
-#     md = _converter(forcar_ocr)
-
-#     # ── Verificação de sanidade ──────────────────────────────
-#     esperado_min = MIN_CHARS_POR_PAGINA * diag["n_paginas"] * 0.5
-#     reprocessado = False
-#     if not forcar_ocr and len(md) < esperado_min:
-#         print(f"      [Docling] {nome}: saída curta ({len(md)} chars) — a repetir com OCR")
-#         md = _converter(True)
-#         forcar_ocr, reprocessado = True, True
-
-#     if len(md) < MIN_CHARS_POR_PAGINA:
-#         raise RuntimeError(
-#             f"Extracção falhou para {nome}: {len(md)} chars após OCR. "
-#             f"Verifica o Tesseract e o idioma 'por'."
-#         )
-
-#     with open(cache_path, "w", encoding="utf-8") as f:
-#         f.write(md)
-
-#     _registar_extraccao(nome, {**diag, "chars_extraidos": len(md),
-#                                "ocr_forcado": forcar_ocr,
-#                                "reprocessado": reprocessado})
-
-#     print(f"      [Docling] {nome}: {len(md)} chars | {diag['n_paginas']} pág "
-#           f"| texto nativo {diag['racio']:.0%} | OCR={'total' if forcar_ocr else 'selectivo'}")
-#     return md
-
-
-
-
-def _registar_extraccao(nome: str, dados: dict):
-    """Relatório de extracção — evidência da qualidade do parsing."""
-    reg = {}
-    if os.path.exists(_RELATORIO_EXTRACCAO):
-        with open(_RELATORIO_EXTRACCAO, "r", encoding="utf-8") as f:
-            reg = json.load(f)
-    reg[nome] = dados
-    with open(_RELATORIO_EXTRACCAO, "w", encoding="utf-8") as f:
-        json.dump(reg, f, ensure_ascii=False, indent=2)
 
 
 # =====================================================================

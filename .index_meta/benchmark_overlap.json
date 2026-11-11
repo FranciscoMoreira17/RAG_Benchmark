@@ -1,0 +1,10 @@
+{
+  "fingerprint": "c63ce2c93eebf1ab",
+  "config": {
+    "pipeline": "dre-overlap",
+    "bm25": "Qdrant/bm25",
+    "janela_chars": 1200,
+    "overlap_chars": 180
+  },
+  "quando": "2026-09-03T09:43:34.712050+00:00"
+}

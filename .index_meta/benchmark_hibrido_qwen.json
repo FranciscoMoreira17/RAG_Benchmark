@@ -1,0 +1,11 @@
+{
+  "fingerprint": "4ccfd7e096c612a9",
+  "config": {
+    "pipeline": "dre-hibrido-qwen",
+    "embedder": "Qwen/Qwen3-Embedding-0.6B",
+    "dim": 1024,
+    "teto_tokens": 2048,
+    "bm25": "Qdrant/bm25"
+  },
+  "quando": "2026-09-29T20:46:02.042033+00:00"
+}

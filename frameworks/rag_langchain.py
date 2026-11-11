@@ -1,16 +1,11 @@
 """
-rag_langchain.py — Implementação LangChain para o Benchmark
+rag_langchain.py - Implementação LangChain para o Benchmark
 ==============================================================
-Usa os componentes nativos do LangChain:
-  - PyMuPDFLoader para ingestão de PDFs
+Usa os componentes nativos do LangChain sobre o corpus DRE:
   - RecursiveCharacterTextSplitter para chunking
-  - QdrantVectorStore para armazenamento
-  - ChatGoogleGenerativeAI para geração
+  - QdrantVectorStore para armazenamento (embedder E5 partilhado)
+  - ChatGroq para geração
   - LCEL chain (prompt | llm | parser)
-
-A segmentação e o chunking são decisões DO LANGCHAIN — não usamos
-a segmentação por artigo do OKF nem nenhuma lógica custom.
-Isto garante que estamos a avaliar a framework, não o nosso código.
 """
 
 import os
@@ -20,12 +15,11 @@ from config import (
     embedding_model,
     qdrant_client,
     get_collection_name,
-    montar_contexto,
     SYSTEM_PROMPT,
     GEN_MODEL,
-    GEN_TEMPERATURE,
     QDRANT_URL,
-    EMBEDDING_DIM,
+    montar_contexto_detalhe,
+    GEN_CANDIDATOS,
 )
 from runner import FrameworkBase
 from dre_loader import carregar_corpus_dre, corpus_fingerprint
@@ -35,7 +29,6 @@ from langchain_core.documents import Document
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.embeddings import Embeddings
-from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_groq import ChatGroq
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_qdrant import QdrantVectorStore
@@ -72,11 +65,6 @@ class Framework(FrameworkBase):
         self.embeddings = LangChainE5Embeddings()
 
         # LLM
-        #self.llm = ChatGoogleGenerativeAI(
-        #    model=LLM_MODEL,
-        #    temperature=LLM_TEMPERATURE,
-        #)
-
         self.llm = ChatGroq(model=GEN_MODEL, api_key=os.environ.get("GROQ_API_KEY"))
 
         # Text splitter (decisão nativa do LangChain)
@@ -205,7 +193,7 @@ class Framework(FrameworkBase):
 
         # Retrieval
         t0 = time.time()
-        resultados = vs.similarity_search_with_score(query, k=top_k)
+        resultados = vs.similarity_search_with_score(query, k=GEN_CANDIDATOS)
         tempo_retrieval = time.time() - t0
 
         # Extrair contextos e metadados (alvo por guid)
@@ -226,7 +214,7 @@ class Framework(FrameworkBase):
             f"--- FONTE ({m['tipo']} {m['numero']}) ---\n{c}"
             for c, m in zip(contextos, metadados)
         ]
-        contexto_formatado, n_usados, n_tokens = montar_contexto(blocos)
+        contexto_formatado, n_usados, n_tokens, blocos_usados = montar_contexto_detalhe(blocos)
 
         # Geração
         t0 = time.time()
@@ -238,7 +226,7 @@ class Framework(FrameworkBase):
     
         return {
             "resposta": resposta,
-            "contextos": contextos[:n_usados],
+            "contextos": blocos_usados,
             "metadados": metadados[:n_usados],
             "tempo_retrieval_s": tempo_retrieval,
             "tempo_geracao_s": tempo_geracao,

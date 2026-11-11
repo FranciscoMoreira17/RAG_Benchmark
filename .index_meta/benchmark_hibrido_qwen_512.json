@@ -1,0 +1,12 @@
+{
+  "fingerprint": "0450e2b9d875367e",
+  "config": {
+    "pipeline": "dre-hibrido-qwen",
+    "embedder": "Qwen/Qwen3-Embedding-0.6B",
+    "dim": 1024,
+    "max_seq": 512,
+    "segmentacao": "original-sem-teto",
+    "bm25": "Qdrant/bm25"
+  },
+  "quando": "2026-10-08T18:57:08.810302+00:00"
+}
