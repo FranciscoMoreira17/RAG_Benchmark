@@ -4,14 +4,13 @@ runner.py - Orquestrador do Benchmark
 Executa uma condição experimental: ingestão → queries → exportação.
 
 Uso:
-    python runner.py --framework langchain
-    python runner.py --framework llamaindex
-    python runner.py --framework ULS --variante denso/esparso/hibrido
-    python runner.py --framework estrutural --variante enriquecido/enriquecido_grafo 
-    python runner.py --framework langchain --so-retrieval (Apenas realizar retrieval)
-    python runner.py --framework todas
-    python runner.py --framework langchain --repeticoes 3
-    python runner.py --framework langchain_multi --embedder qwen
+    python runner.py --framework langchain_multi --embedder e5/qwen
+    python runner.py --framework llamaindex_multi --embedder qwen
+    python runner.py --framework overlap_multi --embedder e5 --variante denso/esparso/hibrido
+    python runner.py --framework estrutural_multi --embedder qwen --variante enriquecido/enriquecido_grafo
+    python runner.py --framework langchain_multi --so-retrieval (Apenas realizar retrieval)
+    python runner.py --framework todas   (cada *_multi corre com todos os embedders)
+    python runner.py --framework langchain_multi --repeticoes 3
 """
 
 import os
@@ -34,7 +33,7 @@ from config import (
     SLEEP_ENTRE_QUERIES,
 )
 
-RESULTADOS_DIR = os.path.join(os.path.dirname(__file__), "resultados")
+RESULTADOS_DIR = os.path.join(os.path.dirname(__file__), "results")
 
 DATASET_PATH = os.getenv("DATASET_PATH", os.path.join(_BENCHMARK_DIR, "dataset_dre_manual.json"))
 
@@ -296,28 +295,20 @@ def executar_benchmark(
 # CLI
 # =====================================================================
 _FRAMEWORKS = {
-    #Frameworks com Modelo E5-Small multilingue
-    "langchain": "frameworks.rag_langchain",
-    "llamaindex": "frameworks.rag_llamaindex",
-    "ULS": "frameworks.rag_UnitLevelSegmentation",
-    "estrutural": "frameworks.rag_estrutural",
-    "overlap": "frameworks.rag_overlap",
-    # Frameworks com Modelo Qwen3-Embedding
-    "uls_qwen": "frameworks.rag_UnitLevelSegmentationQwen",
+    # Frameworks com embedder escolhido na CLI (--embedder; omissão: e5).
+    "langchain_multi": "frameworks.rag_langchainMulti",
+    "llamaindex_multi": "frameworks.rag_llamaindexMulti",
+    "overlap_multi": "frameworks.rag_overlapMulti",
+    "estrutural_multi": "frameworks.rag_estruturalMulti",
+    "uls_multi": "frameworks.rag_ULSMulti",
+    # Casos à parte, só com Qwen3-Embedding
     "uls_qwen512": "frameworks.rag_UnitLevelSegmentationQwen512",
     "uls_qwenv2": "frameworks.rag_ULSQwenV2",
     "documento_qwen": "frameworks.rag_documentoQwen",
-    "langchain_qwen": "frameworks.rag_langchainQwen",
-    "llamaindex_qwen": "frameworks.rag_llamaindexQwen",
-    "overlap_qwen": "frameworks.rag_overlapQwen",
-    "estrutural_qwen": "frameworks.rag_estruturalQwen",
-    # Frameworks com embedder escolhido na CLI (--embedder)
-    "langchain_multi": "frameworks.rag_langchainMulti",
 }
 
-# Excluídas de "--framework todas": repetiriam condições já cobertas
-# pelos ficheiros originais (langchain / langchain_qwen).
-_FORA_DE_TODAS = {"langchain_multi"}
+# Em "--framework todas", estas correm uma vez por embedder registado.
+_MULTI = {"langchain_multi", "llamaindex_multi", "overlap_multi", "estrutural_multi", "uls_multi"}
 
 
 def carregar_framework(nome: str, variante: str | None = None,
@@ -375,7 +366,10 @@ def main():
 
     if args.framework == "todas":
         for nome in _FRAMEWORKS:
-            if nome not in _FORA_DE_TODAS:
+            if nome in _MULTI:
+                for emb in EMBEDDERS:
+                    corre(nome, embedder=emb)
+            else:
                 corre(nome)
     else:
         corre(args.framework, args.variante, args.embedder)
