@@ -25,9 +25,9 @@ from runner import FrameworkBase
 from dre_loader import carregar_corpus_dre, corpus_fingerprint
 
 try:
-    from frameworks.rag_UnitLevelSegmentationQwen import _get_embedder
+    from frameworks.old.rag_UnitLevelSegmentationQwen import _get_embedder
 except ImportError:
-    from rag_UnitLevelSegmentationQwen import _get_embedder
+    from frameworks.old.rag_UnitLevelSegmentationQwen import _get_embedder
 
 from llama_index.core import VectorStoreIndex, StorageContext, Settings
 from llama_index.core.node_parser import SentenceSplitter

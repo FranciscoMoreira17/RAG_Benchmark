@@ -20,7 +20,7 @@ from config import (
 from runner import FrameworkBase
 from dre_loader import carregar_corpus_dre, corpus_fingerprint
 
-from frameworks.rag_UnitLevelSegmentationQwen import _get_embedder
+from frameworks.old.rag_UnitLevelSegmentationQwen import _get_embedder
 
 from langchain_core.documents import Document
 from langchain_core.prompts import ChatPromptTemplate
